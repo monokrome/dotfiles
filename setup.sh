@@ -23,8 +23,12 @@
 configuration_filenames=("setup" "setup.sh")
 
 # By default, we install workstations. However, any other arbitrary string can
-# be considered.
-configuration_type="workstation"
+# be considered when passed as the second argument.
+if [[ $2 == "" ]]; then
+	configuration_type="workstation"
+else
+	configuration_type="${2}"
+fi
 
 # If this script is not provided a platform to install for, then we have to
 # provide an error requesting that one is supplied.
