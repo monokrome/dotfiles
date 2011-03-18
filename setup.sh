@@ -20,7 +20,7 @@
 
 # A list of executable files that we can attempt to find in platform
 # directories. If these exist, they will be executed in this order.
-configuration_filenames=(setup setup.sh)
+configuration_filenames=("setup" "setup.sh")
 
 # By default, we install workstations. However, any other arbitrary string can
 # be considered.
@@ -47,6 +47,7 @@ if [[ ! -d $1 ]]; then
 fi
 
 configuration_directory="${1}/${configuration_type}"
+configuration_system="$(expr "${configuration_directory}" : '\([^/]*\)/.*')"
 
 if [[ ! -d ${configuration_directory} ]]; then
 	# TODO: List the configurations that are provided by this platform.
@@ -65,8 +66,14 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 	found_files=()
 
 	while IFS= read -d '' -r file; do
-		if [[ ./${configuration_directory} == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
+		if [[ ${configuration_directory} == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
 			found_files+=("$file")
 		fi
-	done < <(find . -name "${configuration_filename}" -print0) # | awk '{print length"\t"$0}' | sort -n | cut -f2 | sed '{:q;N;s/\n//g;t q}')
+	done < <(find ${configuration_system} -executable -name "${configuration_filename}" -print0 | awk '{print length"\t"$0}' | sort -n | cut -f2 | sed '{:q;N;s/\n//g;t q}')
+
+	# Finally, loop through each of our configuration files and execute them.
+	for setup_file in ${found_files[@]}; do
+		${setup_file}
+	done
 done
+
