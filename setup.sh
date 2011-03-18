@@ -56,8 +56,6 @@ if [[ ! -d ${configuration_directory} ]]; then
 	exit
 fi
 
-# TODO: Architecture-specific directories where applicable.
-
 # Let the user know that we are about to attempt a configuration with the platform supplied as
 # the specified system directory.
 echo "Attempting to configure using the" "${1}" "platform as a" "${configuration_type}"
@@ -68,6 +66,13 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 	while IFS= read -d '' -r file; do
 		if [[ ${configuration_directory} == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
 			found_files+=("$file")
+
+			# Also, try and find any architecture-specific setup file.
+			arch_setup_file="$(dirname "${file}")/$(uname -m)/${configuration_filename}"
+
+			if [[ -f "${arch_setup_file}" ]]; then
+				found_files+=("${arch_setup_file}")
+			fi
 		fi
 	done < <(find ${configuration_system} -executable -name "${configuration_filename}" -print0 | awk '{print length"\t"$0}' | sort -n | cut -f2 | sed '{:q;N;s/\n//g;t q}')
 
