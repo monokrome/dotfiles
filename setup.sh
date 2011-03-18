@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Should receive a system type to configure. For instance, configuration for
 # archlinux should use:
