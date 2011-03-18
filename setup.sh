@@ -78,6 +78,7 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 				found_files+=("${arch_setup_file}")
 			fi
 		fi
+	# TODO: Finish this part to repair order of execution. The main goal is to do each level in order from `pwd` down.
 	done < <(find "${configuration_system}" -executable -name "${configuration_filename}" -print0 | awk '{print length"\t"$0}' | sort -n | cut -f2 | sed '{:q;N;s/\n//g;t q}')
 
 	# Finally, loop through each of our configuration files and execute them.
