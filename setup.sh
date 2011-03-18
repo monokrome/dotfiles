@@ -64,7 +64,7 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 	found_files=()
 
 	while IFS= read -d '' -r file; do
-		if [[ ${configuration_directory} == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
+		if [[ "${configuration_directory}" == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
 			found_files+=("$file")
 
 			# Also, try and find any architecture-specific setup file.
