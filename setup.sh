@@ -65,7 +65,8 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 	found_files=()
 
 	while IFS= read -d '' -r file; do
-		found_files+=("$file")
-	done < <(find . -name "${configuration_filename}" -print0)
+		if [[ ./${configuration_directory} == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
+			found_files+=("$file")
+		fi
+	done < <(find . -name "${configuration_filename}" -print0) # | awk '{print length"\t"$0}' | sort -n | cut -f2 | sed '{:q;N;s/\n//g;t q}')
 done
-
