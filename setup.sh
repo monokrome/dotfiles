@@ -11,9 +11,9 @@
 #     setup
 #     setup.sh
 #
-# It will also check for a file called i686 on 32bit machines, or x86_64 on
-# 64-bit machines. More platforms can easily by added by creating a
-# directory for that platform and providing any of the scripts as executables
+# It will also check for these files within a directory with the name returned
+# by `uname -r` in each directory. More platforms can easily be added by creating
+# a directory for that platform and providing any of the scripts as executables
 # within that directory or any of it's parent directories as supplied in the
 # command-line.
 #
