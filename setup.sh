@@ -64,27 +64,20 @@ fi
 # the specified system directory.
 echo "Attempting to configure using the" "${1}" "platform as a" "${configuration_type}"
 
-# TODO: Figure out why this doesn't configure the system-type (workstation, server, etc) unless
-#       there is a configuration script for the system architecture.
 for configuration_filename in "${configuration_filenames[@]}"; do
-	found_files=()
+	IFS=/ read -ra dirs <<< "${configuration_directory}"
 
-	while IFS= read -d '' -r file; do
-		if [[ "${configuration_directory}" == $(echo "${file}" | sed "s#\/*${configuration_filename}##g")* ]]; then
-			found_files+=("$file")
+	current_directory="."
 
-			# Also, try and find any architecture-specific setup file.
-			arch_setup_file="$(dirname "${file}")/$(uname -m)/${configuration_filename}"
+	for next_directory in "${dirs[@]}"; do
+		current_directory="${current_directory}/${next_directory}"
 
-			if [[ -f "${arch_setup_file}" ]]; then
-				found_files+=("${arch_setup_file}")
-			fi
+		current_setup_file="${current_directory}/${configuration_filename}"
+
+		if [[ -f "${current_setup_file}" ]]; then
+			command "${current_setup_file}"
 		fi
-	done < <(find "${configuration_system}" -executable -type f -name "${configuration_filename}" | awk '{print length"\t"$0}' | sort -n | cut -f2 | sed "{:q;N;s/\n/\x00/g;t q}")
-
-	# Finally, loop through each of our configuration files and execute them.
-	for setup_file in ${found_files[@]}; do
-		${setup_file}
 	done
+
 done
 
