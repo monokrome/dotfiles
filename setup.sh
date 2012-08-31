@@ -18,6 +18,26 @@
 # command-line.
 #
 
+# Functions for displaying errors
+function printf_error() {
+  printf "!! $@"
+}
+
+function error() {
+  printf_error "$@"
+  echo
+}
+
+# Functions for displaying informational text
+function printf_info() {
+  printf "======> $@"
+}
+
+function info() {
+  printf_info "$@"
+  echo
+}
+
 initial_directory=$(pwd)
 repository_root=$(dirname $0)
 
@@ -50,10 +70,10 @@ fi
 which gits > /dev/null 2> /dev/null
 
 if [[ $? == 1 ]]; then
-  echo "This script currently requires gitslave to be installed. Please install it and try again."
+  error 'This script currently requires gitslave to be installed. Please install it and try again.'
   exit
 else
-  echo "Populating and updating git-slave repositories. Please wait..."
+  info 'Populating and updating git-slave repositories. Please wait...'
 
   gits --no-pager --quiet populate > /dev/null 2> /dev/null
   gits --no-pager --quiet pull > /dev/null 2> /dev/null
@@ -62,10 +82,11 @@ fi
 if [[ ! -d ${operating_system} ]]; then
 	# TODO: Provide a list of supported platforms.
 
-	echo "Detected platform was:" $operating_system
+	info "Detected platform was: $operating_system"
+
   echo
-  echo "If this is not correct, then you must supply a platform to install for as an argument in the following format:"
-	echo "./setup.sh <platform>"
+  info "If this is not correct, then you must supply a platform to install for as an argument in the following format:"
+	echo "    ./setup.sh <platform>"
 
 	exit
 fi
@@ -74,7 +95,7 @@ fi
 if [[ ! -d $operating_system ]]; then
 	# TODO: Provide a list of supported platforms.
 
-	echo "$operating_system is not a supported platform."
+	error "$operating_system is not a supported platform."
 
 	exit
 fi
@@ -85,13 +106,9 @@ configuration_system="$(expr "${configuration_directory}" : '\([^/]*\)/.*')"
 if [[ ! -d ${configuration_directory} ]]; then
 	# TODO: List the configurations that are provided by this platform.
 
-	echo "The" "$operating_system" "platform does not provide a" "${configuration_type}" "configuration."
+	error "The $operating_system platform does not provide a $configuration_type configuration."
 	exit
 fi
-
-function error_text() {
-  echo '!! ' $@
-}
 
 # Installs a configuration onto the machine
 function add_configuration() {
@@ -99,8 +116,8 @@ function add_configuration() {
   result_filename=${HOME}/$@
   result_directory=$(dirname $result_filename)
 
-  printf "======> Installing "
-  printf ${result_filename}
+  printf_info "Installing"
+  printf "$result_filename"
 
   if [[ ! -d ${result_directory} ]]; then
     mkdir -p ${result_directory}
@@ -112,7 +129,8 @@ function add_configuration() {
     diff $target_filename $result_filename > /dev/null 2> /dev/null
 
     if [[ $? == 0 ]]; then
-      echo " (skipping unchanged file)"
+      printf " (skipping unchanged file)"
+      echo
       return
     fi
 
@@ -130,7 +148,7 @@ function shared_source() {
   . ${repository_root}/shared/$@
 }
 
-export -f add_configuration shared_source
+export -f add_configuration shared_source printf_error error printf_info info
 export configuration_directory repository_root operating_system workstation
 
 # Let the user know that we are about to attempt a configuration with the platform supplied as
