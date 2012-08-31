@@ -63,6 +63,8 @@ function git_diff() {
 export PS1='`last_response_code=$?;make_PS1 \W`'
 export EDITOR='vim'
 
+source $HOME/.config/cli-shims/*.sh
+
 function ls() {
   clear
   command ls $@
