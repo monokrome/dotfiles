@@ -18,6 +18,8 @@
 # command-line.
 #
 
+repository_root=$(dirname $0)
+
 # A list of executable files that we can attempt to find in platform
 # directories. If these exist, they will be executed in this order.
 configuration_filenames=("setup" "setup.sh")
@@ -58,13 +60,13 @@ if [[ ! -d $operating_system ]]; then
 	exit
 fi
 
-configuration_directory="${operating_system}/${configuration_type}"
+configuration_directory="${repository_root}/${operating_system}/${configuration_type}"
 configuration_system="$(expr "${configuration_directory}" : '\([^/]*\)/.*')"
 
 if [[ ! -d ${configuration_directory} ]]; then
 	# TODO: List the configurations that are provided by this platform.
 
-	echo "The" "${1}" "platform does not provide a" "${configuration_type}" "configuration."
+	echo "The" "$operating_system" "platform does not provide a" "${configuration_type}" "configuration."
 	exit
 fi
 
@@ -75,12 +77,10 @@ echo "Attempting to configure using the" $operating_system "platform as a" "${co
 for configuration_filename in "${configuration_filenames[@]}"; do
 	IFS=/ read -ra dirs <<< "${configuration_directory}"
 
-	current_directory="."
-
 	for next_directory in "${dirs[@]}"; do
-		current_directory="${current_directory}/${next_directory}"
+		repository_root="${repository_root}/${next_directory}"
 
-		current_setup_file="${current_directory}/${configuration_filename}"
+		current_setup_file="${repository_root}/${configuration_filename}"
 
 		if [[ -f "${current_setup_file}" ]]; then
 			command "${current_setup_file}"
@@ -88,4 +88,11 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 	done
 
 done
+
+# Installs a configuration onto the machine
+function add_configuration() {
+  echo "======> Installing $@"
+
+  ln -s Library/$@ ${HOME}/
+}
 
