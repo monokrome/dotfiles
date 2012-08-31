@@ -1,4 +1,4 @@
 "git://github.com/monokrome/vim-config.git" "Library/.vim"
 #include "Library/.vim/.gitslave"
 "git://github.com/altercation/solarized.git" "Library/solarized"
-"git://github.com/monokrome/cli-shims.git" "Library/cli-shims"
+"git://github.com/monokrome/.config/cli-shims.git" "Library/cli-shims"
