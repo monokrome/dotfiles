@@ -11,6 +11,7 @@ add_configuration .vim
 add_configuration .vimrc
 add_configuration .bash_profile
 add_configuration .bashrc
+add_configuration .config/cli-shims
 
 if [[ $SHELL != $(which zsh) ]]; then
   info 'Changing shell to zsh...'
@@ -18,5 +19,4 @@ if [[ $SHELL != $(which zsh) ]]; then
 else
   info 'Current shell is already zsh. Not changing.'
 fi
-
 
