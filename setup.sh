@@ -57,9 +57,8 @@ if [[ ! -d $operating_system ]]; then
 
 	exit
 fi
-fi
 
-configuration_directory="${1}/${configuration_type}"
+configuration_directory="${operating_system}/${configuration_type}"
 configuration_system="$(expr "${configuration_directory}" : '\([^/]*\)/.*')"
 
 if [[ ! -d ${configuration_directory} ]]; then
@@ -71,7 +70,7 @@ fi
 
 # Let the user know that we are about to attempt a configuration with the platform supplied as
 # the specified system directory.
-echo "Attempting to configure using the" "${1}" "platform as a" "${configuration_type}"
+echo "Attempting to configure using the" $operating_system "platform as a" "${configuration_type}"
 
 for configuration_filename in "${configuration_filenames[@]}"; do
 	IFS=/ read -ra dirs <<< "${configuration_directory}"
