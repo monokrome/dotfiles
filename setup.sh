@@ -46,6 +46,19 @@ else
   operating_system=$1
 fi
 
+# Check if git-slave has been installed
+which gits > /dev/null 2> /dev/null
+
+if [[ $? == 1 ]]; then
+  echo "This script currently requires gitslave to be installed. Please install it and try again."
+  exit
+else
+  echo "Populating and updating git-slave repositories. Please wait..."
+
+  gits populate
+  gits pull
+fi
+
 if [[ ! -d ${operating_system} ]]; then
 	# TODO: Provide a list of supported platforms.
 
