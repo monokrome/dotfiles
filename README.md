@@ -37,7 +37,7 @@ repository and execute them in the following order:
     /linux/server/setup.sh
 
 It is assumed that these files will tell the system what to install. All
-files that are installed are symlinked into this repositories Library
+files that are installed are symlinked into this repositories lib
 directory. This design is intentional, as it means that updating the
 repository will automatically sync any pulled changes on your machine.
 
@@ -48,8 +48,21 @@ code to one of your configurations:
     add_configuration .Xdefaults
 
 This will tell your system to symlink ${HOME}/.Xdefaults to this repository's
-/Library/.Xdefaults file. If your configuration file is the same as the file
+/lib/.Xdefaults file. If your configuration file is the same as the file
 in your repository, then the step will be skipped.
+
+If you ever find yourself needing to share configurations between multiple
+machine types, you are able to do so by leveraging the source_shared function.
+This function allows you to pull arbitrary files out of the repositorie's
+shared directory. For instance, if I had a darwin and linux system - I could
+write generic configurations that need to exist on both machines into a file
+called `/shared/example.sh`. Now, I am able to simply add this in both
+configurations to avoid needing to repeat myself:
+
+    shared_source example.sh
+
+Now, all configurations from example.sh will be applied to anything using that
+command. The script is shared between them.
 
 I WANT ONE!!!
 -------------
@@ -57,3 +70,4 @@ I WANT ONE!!!
 Awesome! I want you to have one, too! Go ahead and pull the `framework` branch
 of this repository, and there is a fresh installation waiting for you to make
 it beautiful!
+

@@ -116,7 +116,7 @@ fi
 
 # Installs a configuration onto the machine
 function add_configuration() {
-  target_filename=${repository_root}/Library/$@
+  target_filename=${repository_root}/lib/$@
   result_filename=${HOME}/$@
   result_directory=$(dirname $result_filename)
 
