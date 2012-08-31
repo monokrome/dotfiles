@@ -18,7 +18,13 @@
 # command-line.
 #
 
+initial_directory=$(pwd)
 repository_root=$(dirname $0)
+
+# Manual method of getting a canonical/absolute path for BSD-like systems.
+cd ${repository_root}
+repository_root=$(pwd)
+cd ${initial_directory}
 
 # A list of executable files that we can attempt to find in platform
 # directories. If these exist, they will be executed in this order.
@@ -70,8 +76,28 @@ if [[ ! -d ${configuration_directory} ]]; then
 	exit
 fi
 
+# Check for MD5 support
+echo test | md5 > /dev/null 2> /dev/null
+md5_exists=$?
+
+function compare_files() {
+  if [[ ${md5_exists} != 0 ]]; then
+    return 0
+  fi
+
+  comparison_a=$(md5 $0)
+  comparison_b=$(md5 $1)
+
+  if [[ ${comparison_a} == ${comparison_b} ]]; then
+    return 1
+  else
+    return 0
+  fi
+}
+
 # Installs a configuration onto the machine
 function add_configuration() {
+  target_filename=${repository_root}/Library/$@
   result_filename=${HOME}/$@
   result_directory=$(dirname $result_filename)
 
@@ -83,6 +109,15 @@ function add_configuration() {
   fi
 
   if [[ -L ${result_filename} || -e ${result_filename} ]]; then
+
+    # Check if files have changed if possible
+    file_has_changed=compare_files "${target_filename}" "${result_filename}"
+
+    if [[ $file_has_changed == 1 ]]; then
+      echo " (unchanged)"
+      return
+    fi
+
     printf " (overwriting)"
 
     rm -rf ${result_filename}
@@ -90,7 +125,7 @@ function add_configuration() {
 
   echo
 
-  ln -s ${repository_root}/Library/$@ ${result_filename}
+  ln -s ${target_filename} ${result_filename}
 }
 
 export -f add_configuration
