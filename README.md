@@ -51,3 +51,15 @@ This will tell your system to symlink ${HOME}/.Xdefaults to this repository's
 /lib/.Xdefaults file. If your configuration file is the same as the file
 in your repository, then the step will be skipped.
 
+If you ever find yourself needing to share configurations between multiple
+machine types, you are able to do so by leveraging the source_shared function.
+This function allows you to pull arbitrary files out of the repositorie's
+shared directory. For instance, if I had a darwin and linux system - I could
+write generic configurations that need to exist on both machines into a file
+called `/shared/example.sh`. Now, I am able to simply add this in both
+configurations to avoid needing to repeat myself:
+
+    shared_source example.sh
+
+Now, all configurations from example.sh will be applied to anything using that
+command. The script is shared between them.
