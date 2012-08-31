@@ -76,6 +76,10 @@ if [[ ! -d ${configuration_directory} ]]; then
 	exit
 fi
 
+function error_text() {
+  echo '!! ' $@
+}
+
 # Installs a configuration onto the machine
 function add_configuration() {
   target_filename=${repository_root}/Library/$@
@@ -95,7 +99,7 @@ function add_configuration() {
     diff $target_filename $result_filename > /dev/null 2> /dev/null
 
     if [[ $? == 0 ]]; then
-      echo " (unchanged)"
+      echo " (skipping unchanged file)"
       return
     fi
 
