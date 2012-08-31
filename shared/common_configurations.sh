@@ -11,7 +11,6 @@ add_configuration .vim
 add_configuration .vimrc
 add_configuration .Xdefaults
 add_configuration .hushlogin
-add_configuration .iterm2
 
 if [[ $SHELL != $(which zsh) ]]; then
   echo '======> Changing shell to zsh...'

@@ -18,3 +18,5 @@ fi
 
 cd ${current_directory}
 
+add_configuration .iterm2
+
