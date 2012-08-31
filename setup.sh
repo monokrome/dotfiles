@@ -96,3 +96,5 @@ function add_configuration() {
   ln -s Library/$@ ${HOME}/
 }
 
+export add_configuration configuration_directory repository_root operating_system workstation
+
