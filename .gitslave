@@ -1,4 +1,3 @@
 "git://github.com/monokrome/vim-config.git" "Library/.vim"
 #include "Library/.vim/.gitslave"
 "git://github.com/altercation/solarized.git" "Library/solarized"
-#include "Library/solarized/.gitslave"
