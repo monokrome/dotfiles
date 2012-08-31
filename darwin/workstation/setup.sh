@@ -10,4 +10,5 @@ add_configuration .tmux.conf
 add_configuration .vim
 add_configuration .vimrc
 add_configuration .Xdefaults
+add_configuration .hushlogin
 
