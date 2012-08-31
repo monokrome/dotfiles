@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+""" rf - outputs paths to random files """
+### TODO: Rewrite this in C, or find my old C code for this.
+import sys, os, random
+
+# By default, ignore hidden files.
+IGNORE_HIDDEN_FILES = True
+
+# List of provided paths that random a file will be picked from
+search_paths = sys.argv[1:]
+
+# If no path is specified, we'll use the current working directory
+if len(sys.argv) < 2:
+    search_paths.append(os.getcwd())
+
+pick_paths = []
+
+# Verify that paths exist and aren't duplicates
+for path in search_paths:
+    test_path = os.path.abspath(os.path.expanduser(path))
+
+    if os.path.exists(test_path) and test_path not in pick_paths:
+        pick_paths.append(test_path)
+
+if len(pick_paths) == 0:
+    exit()
+
+pick_files = []
+
+for path in pick_paths:
+    for filename in os.listdir(path):
+        # Don't read parent directories
+        if filename == '.' or filename == '..':
+            continue
+
+        # Ignore hidden files unless marked not to
+        if IGNORE_HIDDEN_FILES and filename[0] == '.':
+            continue
+
+        # Fix hardcoded path separator
+        pick_files.append('%s/%s' % (path, filename))
+
+print(pick_files[random.randrange(len(pick_files))])
+

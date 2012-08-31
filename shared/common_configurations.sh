@@ -13,6 +13,7 @@ add_configuration .bash_profile
 add_configuration .bashrc
 add_configuration .zshrc
 add_configuration .config/cli-shims
+add_configuration bin/rf
 
 if [[ $SHELL != $(which zsh) ]]; then
   info 'Changing shell to zsh...'
