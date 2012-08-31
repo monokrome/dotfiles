@@ -76,25 +76,6 @@ if [[ ! -d ${configuration_directory} ]]; then
 	exit
 fi
 
-# Check for MD5 support
-echo test | md5 > /dev/null 2> /dev/null
-md5_exists=$?
-
-function compare_files() {
-  if [[ ${md5_exists} != 0 ]]; then
-    return 0
-  fi
-
-  comparison_a=$(md5 $0)
-  comparison_b=$(md5 $1)
-
-  if [[ ${comparison_a} == ${comparison_b} ]]; then
-    return 1
-  else
-    return 0
-  fi
-}
-
 # Installs a configuration onto the machine
 function add_configuration() {
   target_filename=${repository_root}/Library/$@
@@ -111,9 +92,9 @@ function add_configuration() {
   if [[ -L ${result_filename} || -e ${result_filename} ]]; then
 
     # Check if files have changed if possible
-    file_has_changed=compare_files "${target_filename}" "${result_filename}"
+    diff $target_filename $result_filename > /dev/null 2> /dev/null
 
-    if [[ $file_has_changed == 1 ]]; then
+    if [[ $? == 0 ]]; then
       echo " (unchanged)"
       return
     fi
@@ -139,12 +120,14 @@ for configuration_filename in "${configuration_filenames[@]}"; do
 	IFS=/ read -ra dirs <<< "${configuration_directory}"
 
 	for next_directory in "${dirs[@]}"; do
-		repository_root="${repository_root}/${next_directory}"
+		current_directory="${current_directory}/${next_directory}"
 
-		current_setup_file="${repository_root}/${configuration_filename}"
+		current_setup_file="${current_directory}/${configuration_filename}"
+
+    export current_setup_file
 
 		if [[ -f "${current_setup_file}" ]]; then
-			command "${current_setup_file}"
+			. "${current_setup_file}"
 		fi
 	done
 
