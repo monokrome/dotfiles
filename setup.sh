@@ -18,9 +18,13 @@
 # command-line.
 #
 
+nocolor='\e[0m'
+red='\e[0;31m'
+green='\e[0;32m'
+
 # Functions for displaying errors
 function printf_error() {
-  printf "!! $@"
+  printf "${red}!!!${nocolor}  $@"
 }
 
 function error() {
@@ -30,7 +34,7 @@ function error() {
 
 # Functions for displaying informational text
 function printf_info() {
-  printf "======> $@"
+  printf "${green}===>${nocolor} $@"
 }
 
 function info() {
