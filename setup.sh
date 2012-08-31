@@ -72,9 +72,25 @@ fi
 
 # Installs a configuration onto the machine
 function add_configuration() {
-  echo "======> Installing $@"
+  result_filename=${HOME}/$@
+  result_directory=$(dirname $result_filename)
 
-  ln -s ${repository_root}/Library/$@ ${HOME}/
+  printf "======> Installing "
+  printf ${result_filename}
+
+  if [[ ! -d ${result_directory} ]]; then
+    mkdir -p ${result_directory}
+  fi
+
+  if [[ -L ${result_filename} || -e ${result_filename} ]]; then
+    printf " (overwriting)"
+
+    rm -rf ${result_filename}
+  fi
+
+  echo
+
+  ln -s ${repository_root}/Library/$@ ${result_filename}
 }
 
 export -f add_configuration
