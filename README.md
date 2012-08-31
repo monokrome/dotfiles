@@ -37,7 +37,7 @@ repository and execute them in the following order:
     /linux/server/setup.sh
 
 It is assumed that these files will tell the system what to install. All
-files that are installed are symlinked into this repositories Library
+files that are installed are symlinked into this repositories lib
 directory. This design is intentional, as it means that updating the
 repository will automatically sync any pulled changes on your machine.
 
@@ -48,6 +48,6 @@ code to one of your configurations:
     add_configuration .Xdefaults
 
 This will tell your system to symlink ${HOME}/.Xdefaults to this repository's
-/Library/.Xdefaults file. If your configuration file is the same as the file
+/lib/.Xdefaults file. If your configuration file is the same as the file
 in your repository, then the step will be skipped.
 
