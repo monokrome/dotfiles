@@ -9,7 +9,6 @@ add_configuration .gitconfig
 add_configuration .tmux.conf
 add_configuration .vim
 add_configuration .vimrc
-add_configuration .hushlogin
 
 if [[ $SHELL != $(which zsh) ]]; then
   echo '======> Changing shell to zsh...'

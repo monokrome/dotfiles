@@ -20,3 +20,6 @@ cd ${current_directory}
 
 add_configuration .iterm2
 
+# Shut up OS X terminals.
+add_configuration .hushlogin
+
