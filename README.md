@@ -51,3 +51,9 @@ This will tell your system to symlink ${HOME}/.Xdefaults to this repository's
 /Library/.Xdefaults file. If your configuration file is the same as the file
 in your repository, then the step will be skipped.
 
+I WANT ONE!!!
+-------------
+
+Awesome! I want you to have one, too! Go ahead and pull the `framework` branch
+of this repository, and there is a fresh installation waiting for you to make
+it beautiful!
