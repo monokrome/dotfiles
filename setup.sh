@@ -126,7 +126,11 @@ function add_configuration() {
   ln -s ${target_filename} ${result_filename}
 }
 
-export -f add_configuration
+function shared_source() {
+  . ${repository_root}/shared/$@
+}
+
+export -f add_configuration shared_source
 export configuration_directory repository_root operating_system workstation
 
 # Let the user know that we are about to attempt a configuration with the platform supplied as
