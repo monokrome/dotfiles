@@ -12,3 +12,10 @@ add_configuration .vimrc
 add_configuration .Xdefaults
 add_configuration .hushlogin
 
+if [[ $SHELL != $(which zsh) ]]; then
+  echo '======> Changing shell to zsh...'
+  chsh -s `which zsh`
+else
+  echo '======> Current shell is already zsh. Not changing.'
+fi
+
