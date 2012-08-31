@@ -33,21 +33,30 @@ fi
 # If this script is not provided a platform to install for, then we have to
 # provide an error requesting that one is supplied.
 if [[ $1 == "" ]]; then
+  operating_system=$(uname | tr '[:upper:]' '[:lower:]')
+else
+  operating_system=$1
+fi
+
+if [[ ! -d ${operating_system} ]]; then
 	# TODO: Provide a list of supported platforms.
 
-	echo "You must supply a platform to install for as an argument in the following format:"
+	echo "Detected platform was:" $operating_system
+  echo
+  echo "If this is not correct, then you must supply a platform to install for as an argument in the following format:"
 	echo "./setup.sh <platform>"
 
 	exit
 fi
 
 # Provide an error if an unsupported platform is supplied as an argument to this application
-if [[ ! -d $1 ]]; then
+if [[ ! -d $operating_system ]]; then
 	# TODO: Provide a list of supported platforms.
 
-	echo "$1 is not a supported platform."
+	echo "$operating_system is not a supported platform."
 
 	exit
+fi
 fi
 
 configuration_directory="${1}/${configuration_type}"
