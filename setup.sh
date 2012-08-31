@@ -55,8 +55,8 @@ if [[ $? == 1 ]]; then
 else
   echo "Populating and updating git-slave repositories. Please wait..."
 
-  gits populate
-  gits pull
+  gits --no-pager --quiet populate > /dev/null 2> /dev/null
+  gits --no-pager --quiet pull > /dev/null 2> /dev/null
 fi
 
 if [[ ! -d ${operating_system} ]]; then
