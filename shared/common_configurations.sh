@@ -13,10 +13,10 @@ add_configuration .bash_profile
 add_configuration .bashrc
 
 if [[ $SHELL != $(which zsh) ]]; then
-  echo '======> Changing shell to zsh...'
+  info 'Changing shell to zsh...'
   chsh -s `which zsh`
 else
-  echo '======> Current shell is already zsh. Not changing.'
+  info 'Current shell is already zsh. Not changing.'
 fi
 
 

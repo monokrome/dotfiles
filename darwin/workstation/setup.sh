@@ -12,7 +12,7 @@ if [[ -e ${current_iterm_configuration_dir} ]]; then
 fi
 
 if [[ $(pwd) != $current_iterm_configuration_dir ]]; then
-  echo '======> Updating iTerm2 configuration...'
+  info 'Updating iTerm2 configuration...'
   defaults write com.googlecode.iterm2 PrefsCustomFolder ~/.iterm2
 fi
 
