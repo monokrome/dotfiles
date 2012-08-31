@@ -93,7 +93,7 @@ done
 function add_configuration() {
   echo "======> Installing $@"
 
-  ln -s Library/$@ ${HOME}/
+  ln -s ${repository_root}/Library/$@ ${HOME}/
 }
 
 export add_configuration configuration_directory repository_root operating_system workstation
