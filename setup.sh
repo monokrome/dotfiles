@@ -153,7 +153,7 @@ export configuration_directory repository_root operating_system workstation
 
 # Let the user know that we are about to attempt a configuration with the platform supplied as
 # the specified system directory.
-echo "Attempting to configure using the" $operating_system "platform as a" "${configuration_type}"
+info "Attempting to configure using the" $operating_system "platform as a" "${configuration_type}"
 
 for configuration_filename in "${configuration_filenames[@]}"; do
 	IFS=/ read -ra dirs <<< "${configuration_directory}"
