@@ -1,8 +1,4 @@
 [user]
 	name = Brandon R. Stoner
 	email = bstoner@yrsi.com
-[diff]
-    external = git_diff_wrapper
-[pager]
-    diff =
 

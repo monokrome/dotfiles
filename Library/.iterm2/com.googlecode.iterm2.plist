@@ -534,7 +534,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>145 523 924 485 0 0 1920 1058 </string>
+	<string>732 479 924 485 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>26 17 960 1023 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2943,7 +2943,7 @@
 				<real>0.44058024883270264</real>
 			</dict>
 			<key>Guid</key>
-			<string>98BAF16E-F935-4234-A84D-406303B49B4B</string>
+			<string>147CE086-8F67-4B64-9BC5-31630417D623</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
