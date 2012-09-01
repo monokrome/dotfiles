@@ -70,19 +70,6 @@ else
   operating_system=$1
 fi
 
-# Check if git-slave has been installed
-which gits > /dev/null 2> /dev/null
-
-if [[ $? == 1 ]]; then
-  error 'This script currently requires gitslave to be installed. Please install it and try again.'
-  exit
-else
-  info 'Populating and updating git-slave repositories. Please wait...'
-
-  gits --no-pager --quiet populate > /dev/null 2> /dev/null
-  gits --no-pager --quiet pull > /dev/null 2> /dev/null
-fi
-
 if [[ ! -d ${operating_system} ]]; then
 	# TODO: Provide a list of supported platforms.
 
@@ -112,6 +99,19 @@ if [[ ! -d ${configuration_directory} ]]; then
 
 	error "The $operating_system platform does not provide a $configuration_type configuration."
 	exit
+fi
+
+# Check if git-slave has been installed
+which gits > /dev/null 2> /dev/null
+
+if [[ $? == 1 ]]; then
+  error 'This script currently requires gitslave to be installed. Please install it and try again.'
+  exit
+else
+  info 'Populating and updating git-slave repositories. Please wait...'
+
+  gits --no-pager --quiet populate > /dev/null 2> /dev/null
+  gits --no-pager --quiet pull > /dev/null 2> /dev/null
 fi
 
 # Installs a configuration onto the machine
