@@ -4,6 +4,7 @@ shared_source common.sh
 shared_source common_configurations.sh
 
 add_configuration .Xdefaults
+add_configuration .Xresources
 
 # A little not for the Linux people!
 echo
