@@ -101,17 +101,19 @@ if [[ ! -d ${configuration_directory} ]]; then
 	exit
 fi
 
-# Check if git-slave has been installed
-which gits > /dev/null 2> /dev/null
+# Use gitslave if this configuration makes use of it
+if [[ -f "${repository_root}/.gitslave" ]]; then
+  which gits > /dev/null 2> /dev/null
 
-if [[ $? == 1 ]]; then
-  error 'This script currently requires gitslave to be installed. Please install it and try again.'
-  exit
-else
-  info 'Populating and updating git-slave repositories. Please wait...'
+  if [[ $? == 1 ]]; then
+    error 'This configuration currently requires gitslave to be installed. Please install it and try again.'
+    exit
+  else
+    info 'Populating and updating git-slave repositories. Please wait...'
 
-  gits --no-pager --quiet populate > /dev/null 2> /dev/null
-  gits --no-pager --quiet pull > /dev/null 2> /dev/null
+    gits --no-pager --quiet populate > /dev/null 2> /dev/null
+    gits --no-pager --quiet pull > /dev/null 2> /dev/null
+  fi
 fi
 
 # Installs a configuration onto the machine
