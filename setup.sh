@@ -116,9 +116,9 @@ fi
 
 # Installs a configuration onto the machine
 function add_configuration() {
-  target_filename=${repository_root}/lib/$@
-  result_filename=${HOME}/$@
-  result_directory=$(dirname $result_filename)
+  target_filename="${repository_root}/lib/$@"
+  result_filename="${HOME}/$@"
+  result_directory="$(dirname $result_filename)"
 
   printf_info "Installing"
   printf "$result_filename"
@@ -130,7 +130,7 @@ function add_configuration() {
   if [[ -L ${result_filename} || -e ${result_filename} ]]; then
 
     # Check if files have changed if possible
-    diff $target_filename $result_filename > /dev/null 2> /dev/null
+    diff "$target_filename" "$result_filename" > /dev/null 2> /dev/null
 
     if [[ $? == 0 ]]; then
       printf " (skipping unchanged file)"
@@ -140,12 +140,12 @@ function add_configuration() {
 
     printf " (overwriting)"
 
-    rm -rf ${result_filename}
+    rm -rf "${result_filename}"
   fi
 
   echo
 
-  ln -s ${target_filename} ${result_filename}
+  ln -s "${target_filename}" "${result_filename}"
 }
 
 function shared_source() {
