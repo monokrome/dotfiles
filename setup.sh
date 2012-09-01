@@ -70,19 +70,6 @@ else
   operating_system=$1
 fi
 
-# Check if git-slave has been installed
-which gits > /dev/null 2> /dev/null
-
-if [[ $? == 1 ]]; then
-  error 'This script currently requires gitslave to be installed. Please install it and try again.'
-  exit
-else
-  info 'Populating and updating git-slave repositories. Please wait...'
-
-  gits --no-pager --quiet populate > /dev/null 2> /dev/null
-  gits --no-pager --quiet pull > /dev/null 2> /dev/null
-fi
-
 if [[ ! -d ${operating_system} ]]; then
 	# TODO: Provide a list of supported platforms.
 
@@ -114,11 +101,26 @@ if [[ ! -d ${configuration_directory} ]]; then
 	exit
 fi
 
+# Use gitslave if this configuration makes use of it
+if [[ -f "${repository_root}/.gitslave" ]]; then
+  which gits > /dev/null 2> /dev/null
+
+  if [[ $? == 1 ]]; then
+    error 'This configuration currently requires gitslave to be installed. Please install it and try again.'
+    exit
+  else
+    info 'Populating and updating git-slave repositories. Please wait...'
+
+    gits --no-pager --quiet populate > /dev/null 2> /dev/null
+    gits --no-pager --quiet pull > /dev/null 2> /dev/null
+  fi
+fi
+
 # Installs a configuration onto the machine
 function add_configuration() {
-  target_filename=${repository_root}/lib/$@
-  result_filename=${HOME}/$@
-  result_directory=$(dirname $result_filename)
+  target_filename="${repository_root}/lib/$@"
+  result_filename="${HOME}/$@"
+  result_directory="$(dirname $result_filename)"
 
   printf_info "Installing"
   printf "$result_filename"
@@ -130,7 +132,7 @@ function add_configuration() {
   if [[ -L ${result_filename} || -e ${result_filename} ]]; then
 
     # Check if files have changed if possible
-    diff $target_filename $result_filename > /dev/null 2> /dev/null
+    diff "$target_filename" "$result_filename" > /dev/null 2> /dev/null
 
     if [[ $? == 0 ]]; then
       printf " (skipping unchanged file)"
@@ -140,12 +142,12 @@ function add_configuration() {
 
     printf " (overwriting)"
 
-    rm -rf ${result_filename}
+    rm -rf "${result_filename}"
   fi
 
   echo
 
-  ln -s ${target_filename} ${result_filename}
+  ln -s "${target_filename}" "${result_filename}"
 }
 
 function shared_source() {
