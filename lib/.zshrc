@@ -38,6 +38,8 @@ export PATH=/Users/bstoner/bin:/usr/local/bin:/usr/local/share/python:./node_mod
 
 PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{black}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}%{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%b%} '
 
+alias p=yaourt
+
 function ls() {
   clear
   command ls $@
