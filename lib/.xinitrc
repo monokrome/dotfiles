@@ -21,13 +21,6 @@ if [[ -d ${HOME}/Pictures/Wallpapers ]]; then
   feh --bg-tile $(rf ${HOME}/Pictures/Wallpapers)
 fi
 
-# Creates custom keybinds for commands.
-which xcompmgr > /dev/null 2> /dev/null
-
-if [[ $? == 0 ]]; then
-  xcompmgr -cCf -O 0.08 -I 0.08 &
-fi
-
 which xbindkeys > /dev/null 2> /dev/null
 
 if [[ $? == 0 ]]; then
