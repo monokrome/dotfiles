@@ -52,7 +52,9 @@ function ls() {
 # Fix annoying corrections
 if [ -f ~/.zsh_nocorrect ]; then
     while read -r COMMAND; do
-        alias $COMMAND="nocorrect $COMMAND"
+        if [ $COMMAND ]; then
+            alias $COMMAND="nocorrect $COMMAND"
+        fi
     done < ~/.zsh_nocorrect
 fi
 
