@@ -33,6 +33,9 @@ plugins=(git osx node heroku github brew django gem npm pip python textmate)
 
 source $ZSH/oh-my-zsh.sh
 
+# Optional - disable autocorrect.
+# unsetopt correct_all
+
 # Customize to your needs...
 export PATH=/Users/bstoner/bin:/usr/local/bin:/usr/local/share/python:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
 
@@ -45,4 +48,11 @@ function ls() {
   command ls $@
   echo
 }
+
+# Fix annoying corrections
+if [ -f ~/.zsh_nocorrect ]; then
+    while read -r COMMAND; do
+        alias $COMMAND="nocorrect $COMMAND"
+    done < ~/.zsh_nocorrect
+fi
 
