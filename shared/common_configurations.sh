@@ -16,6 +16,7 @@ add_configuration .zsh_nocorrect
 add_configuration .pentadactylrc
 add_configuration .config/cli-shims
 add_configuration bin/rf
+add_configuration .weechat/python/go.py
 
 if [[ $SHELL != $(which zsh) ]]; then
   info 'Changing shell to zsh...'
