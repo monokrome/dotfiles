@@ -3,4 +3,6 @@ heroku
 dig
 sudo
 tmux
+node
+npm
 
