@@ -1,3 +1,6 @@
 /lib/.vim/
 /lib/solarized/
 /lib/.config/cli-shims/
+
+.DS_Store
+
