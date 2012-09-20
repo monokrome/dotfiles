@@ -4,4 +4,6 @@ dig
 sudo
 tmux
 ipython
+node
+npm
 
