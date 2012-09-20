@@ -3,4 +3,5 @@ heroku
 dig
 sudo
 tmux
+ipython
 
