@@ -12,6 +12,7 @@ add_configuration .vimrc
 add_configuration .bash_profile
 add_configuration .bashrc
 add_configuration .zshrc
+add_configuration .pentadactylrc
 add_configuration .config/cli-shims
 add_configuration bin/rf
 

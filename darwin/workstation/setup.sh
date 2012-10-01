@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Execute configurations that are common on all (or maybe most) systems.
+shared_source common.sh
+
 # Execute common_configurations.sh from the repositories /shared/ directory.
 shared_source common_configurations.sh
 
