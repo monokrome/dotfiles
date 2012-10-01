@@ -8,4 +8,5 @@ add_configuration .screenrc
 add_configuration .gitconfig
 add_configuration .tmux.conf
 add_configuration .vim
+add_configuration .Xdefault
 
