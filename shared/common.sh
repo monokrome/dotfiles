@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-add_configuration Pictures/Wallpaper/Smokey_by_monokrome.png
+add_configuration Pictures/Wallpapers/Smokey_by_monokrome.png
 
