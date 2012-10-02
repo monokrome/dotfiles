@@ -5,6 +5,7 @@ shared_source common_configurations.sh
 
 add_configuration .Xdefaults
 add_configuration .Xresources
+add_configuration .xinitrc
 
 # A little not for the Linux people!
 echo
