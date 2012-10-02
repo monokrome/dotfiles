@@ -14,7 +14,7 @@ sleep 1
 which xrdb
 
 if [[ $? == 0 && -f ${HOME}/.Xresources ]]; then
-  rdb -merge ${HOME}.Xresources
+  xrdb -merge ${HOME}.Xresources
 fi
 
 if [[ -d ${HOME}/Pictures/Wallpapers ]]; then
