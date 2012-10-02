@@ -5,6 +5,7 @@ shared_source common_configurations.sh
 
 add_configuration .Xresources
 add_configuration .xinitrc
+add_configuration .xbindkeysrc
 
 # A little not for the Linux people!
 echo
