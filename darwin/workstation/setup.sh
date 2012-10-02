@@ -26,3 +26,5 @@ add_configuration .iterm2
 # Shut up OS X terminals.
 add_configuration .hushlogin
 
+add_configuration Library/Colors/solarized.clr
+
