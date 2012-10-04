@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import subprocess
+import decimal
+import sys
+import os
+
+driver = os.sep + os.sep.join(['sys', 'class', 'backlight', 'intel_backlight', 'brightness'])
+
+driver_max = 4882
+minimum_level = 50
+
+if len(sys.argv) < 2:
+    print('format: {command} [level]'.format(command=sys.argv[0]))
+    exit(1)
+
+level = decimal.Decimal(sys.argv[1])
+
+if level >= 1:
+    level = level / 100
+
+level = int(level * driver_max)
+
+if  level < minimum_level or level > driver_max:
+    print('A brightness value of {0} is not valid.'.format(sys.argv[1]))
+    exit(2)
+
+command = 'echo {0} > {1}'.format(level, driver)
+
+subprocess.call('bash -c "{0}"'.format(command), shell=True)
+
