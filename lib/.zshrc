@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/Users/bstoner/bin:/usr/local/bin:/usr/local/share/python:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+export PATH=//Users/bstoner/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/share/python:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
 
 PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{black}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}%{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%b%} '
 
