@@ -45,6 +45,8 @@ PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%}
 
 alias p=yaourt
 
+unsetopt share_history
+
 function ls() {
   clear
   command ls $@
