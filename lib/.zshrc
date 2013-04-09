@@ -51,6 +51,10 @@ function ls() {
   echo
 }
 
+if [ -f ~/.zsh_secrets ]; then
+  source ~/.zsh_secrets
+fi
+
 # Fix annoying corrections
 if [ -f ~/.zsh_nocorrect ]; then
     while read -r COMMAND; do
