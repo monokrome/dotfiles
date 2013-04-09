@@ -45,6 +45,7 @@ PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%}
 
 alias p=yaourt
 
+export DEBUG=True
 unsetopt share_history
 
 function ls() {
