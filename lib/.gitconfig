@@ -4,3 +4,5 @@
 
 [push]
 	default = matching
+[core]
+	excludesfile = /Users/monokrome/.config/.gitignore_global

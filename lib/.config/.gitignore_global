@@ -1,0 +1,7 @@
+*.un~
+
+Session.vim
+
+.*
+!.git*
+
