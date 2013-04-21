@@ -81,3 +81,5 @@ zle -N zle-keymap-select
 export GOBIN=/usr/local/bin
 export GOROOT=/usr/local/Cellar/go/1.0.3/
 
+export PIP_DOWNLOAD_CACHE=${HOME}/.pip/cache
+
