@@ -67,11 +67,10 @@ if [ -f ~/.zsh_nocorrect ]; then
     done < ~/.zsh_nocorrect
 fi
 
-# change the cursor color with vi mode - only works in rxvt-unicode, afaik
-
 function zle-line-init zle-keymap-select {
     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
     RPS2=$RPS1
+
     zle reset-prompt
 }
 
