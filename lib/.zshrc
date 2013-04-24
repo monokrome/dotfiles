@@ -88,3 +88,5 @@ export PROJECT_HOME=${HOME}/Projects
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/share/python/virtualenvwrapper.sh
 source /usr/local/share/python/virtualenvwrapper_lazy.sh
 
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--distribute'
+
