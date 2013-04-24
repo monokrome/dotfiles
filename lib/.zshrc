@@ -83,3 +83,8 @@ export GOROOT=/usr/local/Cellar/go/1.0.3/
 
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip/cache
 
+export WORKON_HOME=${HOME}/.config/virtualenv
+export PROJECT_HOME=${HOME}/Projects
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/share/python/virtualenvwrapper.sh
+source /usr/local/share/python/virtualenvwrapper_lazy.sh
+
