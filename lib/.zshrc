@@ -90,3 +90,5 @@ source /usr/local/share/python/virtualenvwrapper_lazy.sh
 
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--distribute'
 
+alias g="git $@ | tig"
+
