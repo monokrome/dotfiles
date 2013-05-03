@@ -14,6 +14,7 @@ add_configuration .bashrc
 add_configuration .zshrc
 add_configuration .zsh_nocorrect
 add_configuration .pentadactylrc
+add_configuration .pentadactyl
 add_configuration .config/cli-shims
 add_configuration bin/rf
 add_configuration .weechat/python/go.py
