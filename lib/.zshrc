@@ -89,3 +89,5 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--distribute'
 alias g="git $@ | tig"
 alias mkb='vim `mk blog`'
 
+export POWERLINE_ROOT=$(python -c 'import powerline, os; print(os.path.dirname(powerline.__file__))')
+
