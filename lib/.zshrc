@@ -29,7 +29,7 @@ ZSH_THEME="blinks"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx node heroku golang brew django gem npm pip python battery lol mercurial osx sprunge sublime svn systemd themes vagrant urltools wakeonlan knife vi-mode zle-vi-visual history-substring-search)
+plugins=(osx node heroku golang brew django npm pip python battery lol mercurial osx sprunge sublime svn systemd themes vagrant urltools wakeonlan knife vi-mode zle-vi-visual history-substring-search rvm ruby gem)
 
 source $ZSH/oh-my-zsh.sh
 
