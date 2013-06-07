@@ -4,6 +4,3 @@ Session.vim
 
 *.pyc
 
-.*
-!.git*
-
