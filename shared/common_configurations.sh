@@ -19,6 +19,7 @@ add_configuration .config/cli-shims
 add_configuration bin/rf
 add_configuration .weechat/python/go.py
 add_configuration .weechat/python/autoload/go.py
+add_configuration .htoprc
 
 if [[ $SHELL != $(which zsh) ]]; then
   info 'Changing shell to zsh...'
