@@ -91,3 +91,9 @@ alias mkb='vim `mk blog`'
 
 alias top=htop
 
+chef_bin_dir=/opt/chef/embedded/bin
+
+if [[ -f "${chef_bin_dir}" ]]; then
+  echo 'export PATH="${chef_bin_dir}:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
+fi
+
