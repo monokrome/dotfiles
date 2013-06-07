@@ -1,0 +1,5 @@
+set guioptions=s
+set showtabline=never
+
+nmap tbsn -ex tbs Navigation Toolbar
+
