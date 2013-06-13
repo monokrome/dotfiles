@@ -13,6 +13,7 @@ add_configuration .bash_profile
 add_configuration .bashrc
 add_configuration .zshrc
 add_configuration .zsh_nocorrect
+add_configuration .zsh_suffix
 add_configuration .pentadactylrc
 add_configuration .pentadactyl
 add_configuration .config/cli-shims
