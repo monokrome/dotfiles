@@ -60,12 +60,13 @@ if [ -f ~/.zsh_secrets ]; then
 fi
 
 # Fix annoying corrections
-if [ -f ~/.zsh_nocorrect ]; then
-    while read -r COMMAND; do
-        if [ $COMMAND ]; then
-            alias $COMMAND="nocorrect $COMMAND"
+nocorrectFile="${HOME}/.zsh_nocorrect"
+if [ -f "${nocorrectFile}" ]; then
+    while read -r command; do
+        if [ $command ]; then
+            alias $command="nocorrect $command"
         fi
-    done < ~/.zsh_nocorrect
+    done < ${nocorrectFile}
 fi
 
 # Add nice suffixes
