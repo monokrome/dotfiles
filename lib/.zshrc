@@ -68,6 +68,17 @@ if [ -f ~/.zsh_nocorrect ]; then
     done < ~/.zsh_nocorrect
 fi
 
+# Add nice suffixes
+suffixFile="${HOME}/.zsh_suffix"
+if [[ -f "${suffixFile}" ]]; then
+    while read -r suffix; do
+        if [[ ! -z "$suffix" ]]; then
+            aliasArguments=$(echo "$suffix" | sed 's/ /=/')
+            alias -s ${aliasArguments}
+        fi
+    done < ${suffixFile}
+fi
+
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
 
