@@ -55,6 +55,28 @@ function ls() {
   echo
 }
 
+dirof_open_command="open"
+
+function dirof() {
+  if [[ -z "${1}" ]]; then
+    echo 'Usage: dirof <executable>'
+    return
+  fi
+
+  if [[ -z "${2}" ]]; then
+    exec_command="${dirof_open_command}"
+  else
+    exec_command="${2}"
+  fi
+
+  filename="$(which ${1})"
+
+  if [[ ! -z "${filename}" ]]; then
+    file_dirname=$(dirname "${filename}")
+    ${exec_command} "${file_dirname}"
+  fi
+}
+
 if [ -f ~/.zsh_secrets ]; then
   source ~/.zsh_secrets
 fi
