@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/Users/${USER}/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/share/python:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/Cellar/ruby/2.0.0-p195/bin:$PATH
+export PATH=/Users/${USER}/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/Cellar/ruby/2.0.0-p195/bin:$PATH
 
 export EDITOR=vim
 
