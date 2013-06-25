@@ -49,7 +49,7 @@ alias it=clitunes
 export DEBUG=True
 unsetopt share_history
 
-function ls() {
+ls() {
   clear
   command ls $@
   echo
