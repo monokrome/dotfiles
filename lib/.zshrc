@@ -55,6 +55,11 @@ ls() {
   echo
 }
 
+cl() {
+  cd $1 &&
+  ls
+}
+
 dirof_open_command="open"
 
 function dirof() {
