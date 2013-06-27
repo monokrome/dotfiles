@@ -1,6 +1,7 @@
 /lib/.vim/
 /lib/solarized/
 /lib/.config/cli-shims/
+/lib/.pentadactyl/info/
 
 .DS_Store
 
