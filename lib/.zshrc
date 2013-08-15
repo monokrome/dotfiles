@@ -29,7 +29,7 @@ ZSH_THEME="blinks"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx node heroku golang brew django npm pip python battery lol mercurial osx sprunge sublime svn systemd themes vagrant urltools wakeonlan knife vi-mode zle-vi-visual history-substring-search rvm ruby gem)
+plugins=(osx node heroku golang brew django npm pip python battery lol mercurial osx sprunge sublime svn systemd themes vagrant urltools wakeonlan knife vi-mode zle-vi-visual history-substring-search rvm ruby gem zsh-syntax-highlighting user-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,8 +37,7 @@ source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/Users/${USER}/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/share/python:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:$PATH
-
+export PATH=/Users/${USER}/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/Cellar/ruby/2.0.0-p195/bin:$PATH
 export EDITOR=vim
 
 PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{black}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}%{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%b%} '
@@ -53,6 +52,33 @@ function ls() {
   clear
   command ls $@
   echo
+}
+
+cl() {
+  cd $1 &&
+  ls
+}
+
+dirof_open_command="open"
+
+function dirof() {
+  if [[ -z "${1}" ]]; then
+    echo 'Usage: dirof <executable>'
+    return
+  fi
+
+  if [[ -z "${2}" ]]; then
+    exec_command="${dirof_open_command}"
+  else
+    exec_command="${2}"
+  fi
+
+  filename="$(which ${1})"
+
+  if [[ ! -z "${filename}" ]]; then
+    file_dirname=$(dirname "${filename}")
+    ${exec_command} "${file_dirname}"
+  fi
 }
 
 if [ -f ~/.zsh_secrets ]; then
@@ -103,3 +129,13 @@ alias mkb='vim `mk blog`'
 
 alias top=htop
 
+chef_bin_dir=/opt/chef/embedded/bin
+
+if [[ -f "${chef_bin_dir}" ]]; then
+  echo 'export PATH="${chef_bin_dir}:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
+fi
+
+export MYVIMRC=${HOME}/.vim/vimrc
+
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
