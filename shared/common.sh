@@ -16,8 +16,10 @@ function installVim() {
   vim '+silent BundleInstall' '+qa!' > /dev/null 2> /dev/null &&
 
   cd "${vim_path}/bundle/YouCompleteMe/" > /dev/null 2> /dev/null &&
-  ./install.sh --clang-completer > /dev/null 2> /dev/null
+  ./install.sh --clang-completer > /dev/null 2> /dev/null &&
+
+  info 'Done installing & configuring Vim.'
 }
 
-info 'Configuring Vim (in background)'
+info 'Installing & configuring Vim (in background)'
 installVim &
