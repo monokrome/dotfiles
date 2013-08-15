@@ -137,5 +137,5 @@ fi
 
 export MYVIMRC=${HOME}/.vim/vimrc
 
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+# ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
+# ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
