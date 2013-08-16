@@ -13,6 +13,7 @@ add_configuration .bash_profile
 add_configuration .bashrc
 add_configuration .zshrc
 add_configuration .zsh_nocorrect
+add_configuration .zsh_suffix
 add_configuration .pentadactylrc
 add_configuration .pentadactyl
 add_configuration .config/cli-shims
@@ -30,9 +31,3 @@ fi
 
 vim_directory="${repository_root}/lib/.vim"
 vim_bundle_directory="${vim_directory}/bundle"
-
-# Checkout develop in the powerline repository due to a non-existant master.
-cd "${vim_bundle_directory}/vim-powerline/"
-git checkout develop > /dev/null 2> /dev/null
-cd "${repository_root}"
-

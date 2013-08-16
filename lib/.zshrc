@@ -38,7 +38,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/Users/${USER}/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/Cellar/ruby/2.0.0-p195/bin:$PATH
-
 export EDITOR=vim
 
 PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{black}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}%{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%b%} '
@@ -49,7 +48,7 @@ alias it=clitunes
 export DEBUG=True
 unsetopt share_history
 
-ls() {
+function ls() {
   clear
   command ls $@
   echo
@@ -87,12 +86,24 @@ if [ -f ~/.zsh_secrets ]; then
 fi
 
 # Fix annoying corrections
-if [ -f ~/.zsh_nocorrect ]; then
-    while read -r COMMAND; do
-        if [ $COMMAND ]; then
-            alias $COMMAND="nocorrect $COMMAND"
+nocorrectFile="${HOME}/.zsh_nocorrect"
+if [ -f "${nocorrectFile}" ]; then
+    while read -r command; do
+        if [ $command ]; then
+            alias $command="nocorrect $command"
         fi
-    done < ~/.zsh_nocorrect
+    done < ${nocorrectFile}
+fi
+
+# Add nice suffixes
+suffixFile="${HOME}/.zsh_suffix"
+if [[ -f "${suffixFile}" ]]; then
+    while read -r suffix; do
+        if [[ ! -z "$suffix" ]]; then
+            aliasArguments=$(echo "$suffix" | sed 's/ /=/')
+            alias -s ${aliasArguments}
+        fi
+    done < ${suffixFile}
 fi
 
 RPS1='$(vi_mode_prompt_info)'
@@ -126,12 +137,12 @@ fi
 
 export MYVIMRC=${HOME}/.vim/vimrc
 
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
-
 export CLITUNES_LIBRARY_FILE='/Volumes/Storage/Media/Applications/iTunes/iTunes\ Library.itl'
 
 export MINECRAFT_MAX_MEMORY=2048
 
 export PYTHONPATH=$(which python)
 export DISABLE_UPDATE_PROMPT=true
+
+# ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
+# ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
