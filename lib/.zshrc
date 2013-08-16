@@ -129,3 +129,9 @@ export MYVIMRC=${HOME}/.vim/vimrc
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
+export CLITUNES_LIBRARY_FILE='/Volumes/Storage/Media/Applications/iTunes/iTunes\ Library.itl'
+
+export MINECRAFT_MAX_MEMORY=2048
+
+export PYTHONPATH=$(which python)
+export DISABLE_UPDATE_PROMPT=true
