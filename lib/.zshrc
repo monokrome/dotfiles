@@ -86,7 +86,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 for pathname in ${additional_paths[@]}; do
-  export PATH="${pathname}:$PATH"
+  if [[ -d "${pathname}" ]]; then
+    export PATH="${pathname}:$PATH"
+  else
+    echo "WARN: Deprecated path in additional_paths: ${pathname}"
+  fi
 done
 
 export EDITOR=vim
