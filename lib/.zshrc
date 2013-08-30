@@ -148,3 +148,5 @@ export DISABLE_UPDATE_PROMPT=true
 # ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 DISABLE_UPDATE_PROMPT=true
+ZSH_CUSTOM="${HOME}/.config/oh-my-zsh"
+
