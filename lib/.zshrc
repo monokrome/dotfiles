@@ -55,7 +55,6 @@ plugins=(
   vi-mode
   zle-vi-visual
   history-substring-search
-  rvm
   ruby
   gem
   zsh-syntax-highlighting
@@ -64,7 +63,6 @@ plugins=(
 
 additional_paths=(
   "/Users/${USER}/bin"
-  "$HOME/.rvm/bin"
   "/usr/local/sbin"
   "/usr/local/share/npm/bin"
   "/usr/local/bin"
@@ -75,7 +73,6 @@ additional_paths=(
   "/usr/sbin"
   "/sbin"
   "/usr/local/bin"
-  "/opt/X11/bin"
   "/usr/local/Cellar/ruby/2.0.0-p195/bin"
 )
 
