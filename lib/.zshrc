@@ -146,3 +146,5 @@ export DISABLE_UPDATE_PROMPT=true
 
 # ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
 # ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+
+DISABLE_UPDATE_PROMPT=true
