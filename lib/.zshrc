@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="blinks"
 
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 # COMPLETION_WAITING_DOTS="true"
 
 plugins=(
