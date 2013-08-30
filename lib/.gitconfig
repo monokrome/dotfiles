@@ -11,3 +11,5 @@
 [github]
 	user = monokrome
 
+[help]
+	autocorrect = 1
