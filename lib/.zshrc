@@ -29,7 +29,55 @@ ZSH_THEME="blinks"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx node heroku golang brew django npm pip python battery lol mercurial osx sprunge sublime svn systemd themes vagrant urltools wakeonlan knife vi-mode zle-vi-visual history-substring-search rvm ruby gem zsh-syntax-highlighting user-highlighting)
+plugins=(
+  osx
+  node
+  heroku
+  golang
+  brew
+  django
+  npm
+  pip
+  python
+  battery
+  lol
+  mercurial
+  osx
+  sprunge
+  sublime
+  svn
+  systemd
+  themes
+  vagrant
+  urltools
+  wakeonlan
+  knife
+  vi-mode
+  zle-vi-visual
+  history-substring-search
+  rvm
+  ruby
+  gem
+  zsh-syntax-highlighting
+  user-highlighting
+)
+
+additional_paths=(
+  "/Users/${USER}/bin"
+  "$HOME/.rvm/bin"
+  "/usr/local/sbin"
+  "/usr/local/share/npm/bin"
+  "/usr/local/bin"
+  "./node_modules/.bin"
+  "./bin"
+  "/usr/bin"
+  "/bin"
+  "/usr/sbin"
+  "/sbin"
+  "/usr/local/bin"
+  "/opt/X11/bin"
+  "/usr/local/Cellar/ruby/2.0.0-p195/bin"
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,7 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/Users/${USER}/bin:$HOME/.rvm/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:./node_modules/.bin:./bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/Cellar/ruby/2.0.0-p195/bin:$PATH
+for pathname in ${additional_paths[@]}; do
+  export PATH="${pathname}:$PATH"
+done
+
 export EDITOR=vim
 
 PROMPT='%{%K{black}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{black}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}%{%K{black}%}$(_prompt_char)%{%K{black}%} %#%{%f%k%b%} '
