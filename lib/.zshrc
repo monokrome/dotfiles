@@ -5,35 +5,34 @@ ZSH_THEME="blinks"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
-  osx
-  node
-  heroku
-  golang
+  battery
   brew
   django
-  npm
-  pip
-  python
-  battery
+  gem
+  golang
+  heroku
+  history-substring-search
+  knife
   lol
   mercurial
+  node
+  npm
   osx
+  pip
+  python
+  ruby
   sprunge
   sublime
   svn
   systemd
   themes
-  vagrant
   urltools
-  wakeonlan
-  knife
-  vi-mode
-  zle-vi-visual
-  history-substring-search
-  ruby
-  gem
-  zsh-syntax-highlighting
   user-highlighting
+  vagrant
+  vi-mode
+  wakeonlan
+  zle-vi-visual
+  zsh-syntax-highlighting
 )
 
 additional_paths=(
