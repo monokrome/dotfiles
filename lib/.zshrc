@@ -12,6 +12,7 @@ plugins=(
   golang
   heroku
   history-substring-search
+  jump
   lol
   mercurial
   node
