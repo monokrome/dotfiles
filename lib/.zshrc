@@ -179,3 +179,5 @@ export DISABLE_UPDATE_PROMPT=true
 export DISABLE_UPDATE_PROMPT=true
 export ZSH_CUSTOM="${HOME}/.config/oh-my-zsh"
 
+export AWS_CONFIG_FILE=${HOME}/.config/aws.ini
+
