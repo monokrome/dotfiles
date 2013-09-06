@@ -12,7 +12,6 @@ plugins=(
   golang
   heroku
   history-substring-search
-  knife
   lol
   mercurial
   node
