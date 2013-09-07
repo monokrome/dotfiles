@@ -11,7 +11,6 @@ plugins=(
   gem
   golang
   heroku
-  history-substring-search
   jump
   lol
   mercurial
@@ -29,10 +28,12 @@ plugins=(
   urltools
   user-highlighting
   vagrant
-  vi-mode
   wakeonlan
-  zle-vi-visual
   zsh-syntax-highlighting
+
+  vi-mode
+  zle-vi-visual
+  history-substring-search
 )
 
 additional_paths=(
