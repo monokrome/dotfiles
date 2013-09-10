@@ -60,10 +60,6 @@ source $ZSH/oh-my-zsh.sh
 for pathname in ${additional_paths[@]}; do
   if [[ -d "${pathname}" ]]; then
     export PATH="${pathname}:$PATH"
-  else
-    if [[ ! "${pathname:0:1}" == "." ]]; then
-      echo "WARN: Deprecated path in additional_paths: ${pathname}"
-    fi
   fi
 done
 
