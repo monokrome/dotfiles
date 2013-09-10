@@ -37,7 +37,7 @@ plugins=(
 )
 
 additional_paths=(
-  "/Users/${USER}/bin"
+  "${HOME}/bin"
   "/usr/local/sbin"
   "/usr/local/share/npm/bin"
   "/usr/local/bin"
