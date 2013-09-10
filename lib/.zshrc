@@ -146,7 +146,11 @@ export PIP_DOWNLOAD_CACHE=${HOME}/.pip/cache
 export WORKON_HOME=${HOME}/.config/virtualenv
 export PROJECT_HOME=${HOME}/Projects
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/share/python/virtualenvwrapper.sh
-source /usr/local/share/python/virtualenvwrapper_lazy.sh
+export VIRTUALENVWRAPPER_SCRIPT_LAZY=/usr/local/share/python/virtualenvwrapper_lazy.sh
+
+if [[ -f "${VIRTUALENVWRAPPER_SCRIPT_LAZY}" ]]; then
+  source "${VIRTUALENVWRAPPER_SCRIPT_LAZY}"
+fi
 
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--distribute'
 
