@@ -48,6 +48,7 @@ additional_paths=(
   "/usr/sbin"
   "/sbin"
   "/usr/local/bin"
+  "${HOME}/.gem/ruby/2.0.0/bin"
   "/usr/local/Cellar/ruby/2.0.0-p195/bin"
 )
 
