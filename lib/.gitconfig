@@ -61,4 +61,5 @@
 [diff]
 	autorefreshindex = false
 	external = git_vimdiff
+	renames = copies
 	noprefix = true
