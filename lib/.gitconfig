@@ -33,3 +33,6 @@
 [branch]
 	autosetupmerge = true
 	autosetuprebase = always
+
+[clean]
+	requireForce = false
