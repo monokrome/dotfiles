@@ -51,3 +51,6 @@
 	status = auto
 	tag = auto
 	ui = auto
+
+[commit]
+	status = false
