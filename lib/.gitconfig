@@ -8,6 +8,7 @@
 [core]
 	excludesfile = /Users/monokrome/.config/.gitignore_global
 	precomposeunicode = true
+	compression = 9
 	safecrlf = true
 	eol = lf
 
