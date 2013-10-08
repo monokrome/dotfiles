@@ -31,4 +31,5 @@
 	amWorkDir = false
 
 [branch]
+	autosetupmerge = true
 	autosetuprebase = always
