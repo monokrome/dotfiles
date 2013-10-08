@@ -29,3 +29,6 @@
 	implicitIdentity = false
 	detachedHead = false
 	amWorkDir = false
+
+[branch]
+	autosetuprebase = always
