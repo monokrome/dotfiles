@@ -13,3 +13,12 @@
 
 [help]
 	autocorrect = 1
+
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+	commitBeforeMerge = false
+	resolveConflicts = false
+	implicitIdentity = false
+	detachedHead = false
+	amWorkDir = false
