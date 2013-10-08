@@ -65,5 +65,9 @@
 	renames = copies
 	noprefix = true
 
+[rebase]
+	autosquash = true
+
+
 ; [diff "coffee"]
 ; 	xfuncname = "\\s*(\\w[\\w\\d]+)(\\:|\\s*=)\\s+(\\(([\\w\\s]+(,)?)*\\))?\\s*[=-]>"
