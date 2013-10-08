@@ -64,3 +64,6 @@
 	external = git_vimdiff
 	renames = copies
 	noprefix = true
+
+; [diff "coffee"]
+; 	xfuncname = "\\s*(\\w[\\w\\d]+)(\\:|\\s*=)\\s+(\\(([\\w\\s]+(,)?)*\\))?\\s*[=-]>"
