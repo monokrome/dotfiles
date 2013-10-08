@@ -6,6 +6,7 @@
 	default = matching
 
 [core]
+	witespace=blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof,cr-at-eol,tabwidth=2
 	excludesfile = /Users/monokrome/.config/.gitignore_global
 	precomposeunicode = true
 	compression = 9
