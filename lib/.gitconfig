@@ -38,5 +38,16 @@
 	requireForce = false
 
 [color]
+	interactive = auto
 	branch = auto
+	status = auto
+	pager = true
+	grep = auto
+	diff = auto
 	ui = true
+
+[column]
+	branch = auto
+	status = auto
+	tag = auto
+	ui = auto
