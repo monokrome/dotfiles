@@ -59,6 +59,7 @@
 	useHttpPath = false
 
 [diff]
+	suppressBlankEmpty = true
 	autorefreshindex = false
 	external = git_vimdiff
 	renames = copies
