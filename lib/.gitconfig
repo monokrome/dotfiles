@@ -9,6 +9,7 @@
 	excludesfile = /Users/monokrome/.config/.gitignore_global
 	precomposeunicode = true
 	eol = lf
+	safecrlf = true
 
 [github]
 	user = monokrome
