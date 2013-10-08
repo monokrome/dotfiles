@@ -10,6 +10,7 @@
 	precomposeunicode = true
 	compression = 9
 	safecrlf = true
+	editor = vim
 	eol = lf
 
 [github]
