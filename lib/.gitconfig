@@ -54,3 +54,6 @@
 
 [commit]
 	status = false
+
+[credential]
+	useHttpPath = false
