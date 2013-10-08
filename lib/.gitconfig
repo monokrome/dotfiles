@@ -36,3 +36,7 @@
 
 [clean]
 	requireForce = false
+
+[color]
+	branch = auto
+	ui = true
