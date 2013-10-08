@@ -60,3 +60,5 @@
 
 [diff]
 	autorefreshindex = false
+	external = git_vimdiff
+	noprefix = true
