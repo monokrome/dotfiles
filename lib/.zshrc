@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 for pathname in ${additional_paths[@]}; do
-  if [[ -d "${pathname}" ]]; then
+  if [[ "${pathname:0:2}" == './' || -d "${pathname}" ]]; then
     export PATH="${pathname}:$PATH"
   fi
 done
