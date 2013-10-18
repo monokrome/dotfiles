@@ -36,6 +36,11 @@ plugins=(
   history-substring-search
 )
 
+source $ZSH/oh-my-zsh.sh
+
+# Optional - disable autocorrect.
+# unsetopt correct_all
+
 additional_paths=(
   "${HOME}/bin"
   "/usr/local/sbin"
