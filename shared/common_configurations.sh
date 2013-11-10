@@ -1,7 +1,13 @@
 #!/bin/bash
 
 if [[ ! -e ~/.oh-my-zsh ]]; then
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  which curl > /dev/null
+
+  if [[ $? == 0 ]]; then
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  else
+    wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+  fi
 fi
 
 add_configuration .screenrc
