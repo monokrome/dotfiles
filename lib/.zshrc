@@ -43,6 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 additional_paths=(
   "${HOME}/bin"
+  "${HOME}/.config/homebrew/bin"
   "/usr/local/sbin"
   "/usr/local/share/npm/bin"
   "/usr/local/bin"
