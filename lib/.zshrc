@@ -63,7 +63,9 @@ source $ZSH/oh-my-zsh.sh
 # unsetopt correct_all
 
 # Customize to your needs...
-for pathname in ${additional_paths[@]}; do
+for (( index=${#additional_paths[@]} - 1; index >= 0; index-- )); do
+  pathname=${additional_paths[index]}
+
   if [[ "${pathname:0:2}" == './' || -d "${pathname}" ]]; then
     export PATH="${pathname}:$PATH"
   fi
