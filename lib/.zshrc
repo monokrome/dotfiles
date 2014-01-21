@@ -31,10 +31,15 @@ plugins=(
   wakeonlan
   zsh-syntax-highlighting
 
-  vi-mode
   zle-vi-visual
   history-substring-search
 )
+
+which gem > /dev/null
+if [[ $? == 0 ]]; then
+  gempath=$(gem env gempath)
+  export PATH="${gempath}:${PATH}"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
