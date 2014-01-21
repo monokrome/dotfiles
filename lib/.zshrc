@@ -149,11 +149,11 @@ if [[ -f "${suffixFile}" ]]; then
     done < ${suffixFile}
 fi
 
-RPS1='$(vi_mode_prompt_info)'
-RPS2=$RPS1
+# RPS1='$(vi_mode_prompt_info)'
+# RPS2=$RPS1
 
-zle -N zle-line-init
-zle -N zle-keymap-select
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 export GOBIN=/usr/local/bin
 export GOROOT=/usr/local/Cellar/go/1.0.3/
