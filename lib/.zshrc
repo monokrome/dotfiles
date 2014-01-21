@@ -162,12 +162,12 @@ export PIP_DOWNLOAD_CACHE=${HOME}/.pip/cache
 
 export WORKON_HOME=${HOME}/.config/virtualenv
 export PROJECT_HOME=${HOME}/Projects
+
 export VIRTUALENVWRAPPER_SCRIPT=${HOME}/.config/homebrew/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_SCRIPT_LAZY=${HOME}/.config/homebrew/bin/virtualenvwrapper_lazy.sh
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--distribute'
 
 [[ -f "${VIRTUALENVWRAPPER_SCRIPT_LAZY}" ]] && source "${VIRTUALENVWRAPPER_SCRIPT_LAZY}"
-
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--distribute'
 
 alias g="git $@ | tig"
 alias mkb='vim `mk blog`'
