@@ -67,6 +67,8 @@
 [rebase]
 	autosquash = true
 
+[mergetool]
+	keepBackup = true
 
 ; [diff "coffee"]
 ; 	xfuncname = "\\s*(\\w[\\w\\d]+)(\\:|\\s*=)\\s+(\\(([\\w\\s]+(,)?)*\\))?\\s*[=-]>"
