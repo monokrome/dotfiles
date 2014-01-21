@@ -70,5 +70,8 @@
 [mergetool]
 	keepBackup = true
 
+[init]
+	templatedir = ~/.config/git/template
+
 ; [diff "coffee"]
 ; 	xfuncname = "\\s*(\\w[\\w\\d]+)(\\:|\\s*=)\\s+(\\(([\\w\\s]+(,)?)*\\))?\\s*[=-]>"
