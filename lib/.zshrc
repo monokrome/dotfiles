@@ -49,18 +49,22 @@ source $ZSH/oh-my-zsh.sh
 additional_paths=(
   "${HOME}/bin"
   "${HOME}/.config/homebrew/bin"
-  "/usr/local/sbin"
-  "/usr/local/share/npm/bin"
-  "/usr/local/bin"
-  "./node_modules/.bin"
+
   "./bin"
-  "/usr/bin"
-  "/bin"
-  "/usr/sbin"
-  "/sbin"
+  "./node_modules/.bin"
+
+  "/Applications/Postgres93.app/Contents/MacOS/bin"
+
   "/usr/local/bin"
-  "${HOME}/.gem/ruby/2.0.0/bin"
-  "/usr/local/Cellar/ruby/2.0.0-p195/bin"
+  "/usr/local/sbin"
+
+  "/usr/local/share/npm/bin"
+
+  "/usr/bin"
+  "/usr/sbin"
+
+  "/bin"
+  "/sbin"
 )
 
 source $ZSH/oh-my-zsh.sh
