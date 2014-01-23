@@ -2,7 +2,7 @@
 
 add_configuration Pictures/Wallpapers/Smokey_by_monokrome.png
 
-function installVim() {
+installVim() {
   vim_path="${HOME}/.vim"
 
   if [[ ! -d "${vim_path}" ]]; then
