@@ -10,13 +10,13 @@ installVim() {
     git clone http://github.com/monokrome/vim-config .vim > /dev/null 2> /dev/null &&
 
     cd "${vim_path}" &&
-    gits populate > /dev/null 2> /dev/null 
+    gits populate > /dev/null 2>&1 
   fi
 
-  vim '+silent BundleInstall' '+qa!' > /dev/null 2> /dev/null &&
+  vim '+silent BundleInstall' '+qa!' > /dev/null 2>&1 &&
 
-  cd "${vim_path}/bundle/YouCompleteMe/" > /dev/null 2> /dev/null &&
-  ./install.sh --clang-completer > /dev/null 2> /dev/null &&
+  cd "${vim_path}/bundle/YouCompleteMe/" > /dev/null 2>&1 &&
+  ./install.sh --clang-completer > /dev/null 2>&1 &&
 
   info 'Done installing & configuring Vim.'
 }
