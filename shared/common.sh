@@ -7,7 +7,7 @@ installVim() {
 
   if [[ ! -d "${vim_path}" ]]; then
     cd "$HOME" &&
-    git clone http://github.com/monokrome/vim-config .vim > /dev/null 2> /dev/null &&
+    git clone http://github.com/monokrome/vim-config .vim > /dev/null 2>&1 &&
 
     cd "${vim_path}" &&
     gits populate > /dev/null 2>&1 
