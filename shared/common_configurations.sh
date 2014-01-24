@@ -27,6 +27,8 @@ add_configuration bin/rf
 add_configuration .weechat/python/go.py
 add_configuration .weechat/python/autoload/go.py
 add_configuration .htoprc
+add_configuration .config/git
+add_configuration .ctags
 
 if [[ $SHELL != $(which zsh) ]]; then
   info 'Changing shell to zsh...'
