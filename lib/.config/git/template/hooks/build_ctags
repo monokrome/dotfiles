@@ -4,9 +4,11 @@ set -e
 trap "rm -f .git/tags.$$" EXIT
 
 ctags --tag-relative -Rf.git/tags.$$ \
-  --exclude=.git/\* \
-  --exclude=\*.min.\* \
-  --exclude=node_modules/\* \
-  --exclude=vendor/\* \
+  --exclude='@.gitignore'
+  --exclude='.git' \
+  --exclude='*.min.*' \
+  --exclude='node_modules/*/node_modules' \
+  --exclude='public' \
+  --exclude='coverage' \
   2> /dev/null &&
 mv .git/tags.$$ .git/tags &
