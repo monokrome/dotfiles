@@ -157,6 +157,22 @@ fi
 # zle -N zle-line-init
 # zle -N zle-keymap-select
 
+if [[ -z $VMWARE_PATH ]]; then
+  VMWARE_PATH="/Applications/VMware Fusion.app"
+fi
+
+if [[ -d "${VMWARE_PATH}" ]]; then
+  vmheadless() {
+    if [[ -z $1 ]]; then
+      echo 'Usage: vmheadless YourMachine.vmx'
+      return 1
+    fi
+
+    echo 'Running VM: ' $1
+    /Applications/VMware\ Fusion.app/Contents/Library/vmrun -T fusion start "$1" nogui
+  }
+fi
+
 export GOBIN=/usr/local/bin
 export GOROOT=/usr/local/Cellar/go/1.0.3/
 
