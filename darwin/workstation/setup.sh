@@ -23,6 +23,7 @@ cd ${current_directory}
 
 add_configuration .iterm2
 add_configuration Library/Fonts/Terminus-Powerline.ttf
+add_configuration Library/Fonts/Menlo-Powerline.otf
 
 # Shut up OS X terminals.
 add_configuration .hushlogin
