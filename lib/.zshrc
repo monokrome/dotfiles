@@ -33,8 +33,6 @@ plugins=(
 
   zle-vi-visual
   history-substring-search
-
-  git
 )
 
 which gem > /dev/null
