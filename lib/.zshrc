@@ -197,21 +197,16 @@ chef_bin_dir=/opt/chef/embedded/bin
 # fi
 
 export MYVIMRC=${HOME}/.vim/vimrc
-
-export CLITUNES_LIBRARY_FILE='/Volumes/Storage/Media/Applications/iTunes/iTunes\ Library.itl'
-
+export CLITUNES_LIBRARY_FILE='/Volumes/Storage/iTunes/iTunes\ Library.itl'
 export MINECRAFT_MAX_MEMORY=2048
-
 export PYTHONPATH=$(which python)
-export DISABLE_UPDATE_PROMPT=true
 
 # ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
 # ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 
 export DISABLE_UPDATE_PROMPT=true
 export ZSH_CUSTOM="${HOME}/.config/oh-my-zsh"
-
 export AWS_CONFIG_FILE=${HOME}/.config/aws.ini
-
 export SQLIST_CONFIGURATION=sqlist.json
 export DOCKER_HOST=localhost
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/'
