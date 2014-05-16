@@ -10,6 +10,7 @@ add_configuration .xbindkeysrc
 add_configuration bin/brightness
 
 add_configuration .fonts/Terminus-Powerline.ttf
+add_configuration .fonts/Menlo-Powerline.otf
 
 # A little not for the Linux people!
 echo
