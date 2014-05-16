@@ -4,7 +4,7 @@ set -e
 trap "rm -f .git/tags.$$" EXIT
 
 ctags --tag-relative -Rf.git/tags.$$ \
-  --exclude='@.gitignore'
+  --exclude='@.gitignore' \
   --exclude='.git' \
   --exclude='*.min.*' \
   --exclude='node_modules/*/node_modules' \
