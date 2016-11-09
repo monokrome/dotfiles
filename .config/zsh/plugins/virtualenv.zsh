@@ -1,3 +1,7 @@
+# Set default VIRTUAL_ENV_HIDDEN_ROOT if not set
+[[ -z VIRTUAL_ENV_HIDDEN_ROOT ]] && VIRTUAL_ENV_HIDDEN_ROOT=$HOME/.config/virtualenvs
+
+
 # Tool for easily creating new virtual environments
 mkvirtualenv() {
     which virtualenv > /dev/null 2> /dev/null || return
@@ -20,9 +24,6 @@ mkvirtualenv() {
 
 # Acticate virtualenvs when CDing into them. Deactivate then after having left
 # the project directory.
-VIRTUAL_ENV_HIDDEN_ROOT=$HOME/.config/virtualenvs
-
-
 activate_virtual_environment() {
     [[ -n $VIRTUAL_ENV && ${PWD:0:${#VIRTUAL_ENV}} != ${VIRTUAL_ENV} ]] && deactivate
 
