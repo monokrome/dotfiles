@@ -1,7 +1,3 @@
-autoload -U colors
-autoload -U compinit
-
-
 sourceall() {
     for filename in $@; do
         source "$filename"
@@ -14,5 +10,3 @@ sourceall ~/.config/zsh/*.zsh
 sourceall ~/.config/zsh/plugins/*.zsh
 
 
-compinit
-colors
