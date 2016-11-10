@@ -1,5 +1,5 @@
 # Set default VIRTUAL_ENV_HIDDEN_ROOT if not set
-[[ -z VIRTUAL_ENV_HIDDEN_ROOT ]] && VIRTUAL_ENV_HIDDEN_ROOT=$HOME/.config/virtualenvs
+[[ ! -z VIRTUAL_ENV_HIDDEN_ROOT ]] && VIRTUAL_ENV_HIDDEN_ROOT=$HOME/.config/virtualenvs
 
 
 # Tool for easily creating new virtual environments
