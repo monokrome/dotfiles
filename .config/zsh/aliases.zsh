@@ -1,6 +1,8 @@
 alias clean='find . -iname \*.pyc -exec rm {} \;'
 alias vim=nvim
 alias freeze="pip freeze | grep -v neovim"
+alias 'dot clone'='ls'
+alias dot='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 
 
 # Because OSX is WTF
