@@ -35,8 +35,7 @@ Plug 'ajh17/Spacegray.vim' " Based on the XCode SpaceGray theme
 " Helper plugins
 Plug 'Lokaltog/vim-easymotion' " Allows quick motions to characters that are currently in vim
 Plug 'Raimondi/delimitMate' " Puts things after other things!
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " Completion that is YouCompleteMe 
-" Plug 'Shougo/neocomplete' " Completion support that isn't YouCompleteMe
+Plug 'Shougo/deoplete.nvim' " Completion support that isn't YouCompleteMe
 Plug 'Shougo/unite-outline' " A nested outline of the current buffer's tags
 Plug 'SirVer/ultisnips' " Much smarter TextMate-style snippet support
 Plug 'duff/vim-bufonly' " A command for removing all buffers except the active one

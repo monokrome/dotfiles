@@ -5,6 +5,7 @@
 # ZSH files
 /.config/zsh/local.zsh
 /.config/zsh/private/*
+/.zcompdump
 
 
 # emacs state
@@ -13,11 +14,22 @@
 
 
 # Vim files
-/.vim/tmp/*
 /.vim/plugged/*
+/.vim/tmp/*
 !/.vim/tmp/undo/README.md
 !/.vim/tmp/backup/README.md
 !/.vim/tmp/swap/README.md
+
+
+# Atom packages & artifacts
+/.atom/.apm
+/.atom/.node-gyp
+/.atom/.npm
+/.atom/blob-store/*
+/.atom/compile-cache/*
+/.atom/dev/*
+/.atom/packages/*
+/.atom/storage/*
 
 
 # Dotfiles that I don't want in my dotfiles
