@@ -1,3 +1,7 @@
+# Wallpapers
+!/Pictures/Wallpapers
+
+
 # ZSH files
 /.config/zsh/local.zsh
 /.config/zsh/private/*
@@ -6,3 +10,60 @@
 # emacs state
 .emacs.d/*
 .emacs~
+
+
+# Dotfiles that I don't want in my dotfiles
+.DS_Store
+/.*.env
+/.*.tmp
+/.*_history
+/.CFUserTextEncoding /.Trash/*
+/.aws/*
+/.bash_sessions/*
+/.cache/*
+/.config/virtualenvs/*
+/.cups/*
+/.docker/*
+/.dotfiles/*
+/.electron/*
+/.gem/*
+/.gnupg/
+/.hyperterm.js
+/.hyperterm_plugins/*
+/.ipython/*
+/.ivy2/*
+/.jupyter/*
+/.lesshst*
+/.lldb/*
+/.local
+/.matplotlib/*
+/.node-gyp/*
+/.npm/*
+/.npmrc
+/.oracle_jre_usage/*
+/.pip/*
+/.pivotal.env
+/.pm2/*
+/.pypirc
+/.rnd
+/.sbt/*
+/.serverless/*
+/.slocdata/*
+/.ssh/*
+/.stdlib
+/.viminfo
+/Applications/*
+/Desktop/*
+/Documents/*
+/Downloads/*
+/FUCK_THIS_BANK
+/Library/*
+/Movies/*
+/Music/*
+/Pictures/*
+/Projects/*
+/Public/*
+/VirtualBox VMs/*
+/bin/*
+/britco.yml
+/.config/*
