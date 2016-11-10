@@ -12,15 +12,26 @@
 .emacs~
 
 
+# Vim files
+/.vim/tmp/*
+/.vim/plugged/*
+!/.vim/tmp/undo/README.md
+!/.vim/tmp/backup/README.md
+!/.vim/tmp/swap/README.md
+
+
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
 /.*.env
 /.*.tmp
 /.*_history
-/.CFUserTextEncoding /.Trash/*
+/.CFUserTextEncoding
+/.Trash/*
 /.aws/*
 /.bash_sessions/*
+/.bitcore/*
 /.cache/*
+/.config/*
 /.config/virtualenvs/*
 /.cups/*
 /.docker/*
@@ -66,4 +77,3 @@
 /VirtualBox VMs/*
 /bin/*
 /britco.yml
-/.config/*
