@@ -1,0 +1,8 @@
+# ZSH files
+/.config/zsh/local.zsh
+/.config/zsh/private/*
+
+
+# emacs state
+.emacs.d/*
+.emacs~
