@@ -22,3 +22,7 @@ setopt correct
 # Ignore duplicates and share history
 setopt hist_ignore_dups
 setopt share_history
+
+
+# Don't ask me if I'm sure that I want completions
+zstyle ':completion:*' list-prompt ''
