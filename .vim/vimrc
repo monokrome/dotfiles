@@ -96,6 +96,7 @@ if has('vim_starting')
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'Quramy/tsuquyomi'
   Plug 'afshinm/npm.vim'
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'chase/vim-ansible-yaml'
   Plug 'chrisbra/csv.vim'
   Plug 'dart-lang/dart-vim-plugin'
@@ -126,7 +127,7 @@ if has('vim_starting')
   Plug 'vim-scripts/glsl.vim'
   Plug 'wavded/vim-stylus'
   Plug 'wting/rust.vim'
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  Plug 'zchee/deoplete-go'
 
 
   " Framework-specific bundles
