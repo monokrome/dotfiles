@@ -2,6 +2,7 @@ alias clean='find . -iname \*.pyc -or -iname .DS_Store -or -iname Thumbds.db -ex
 alias dot='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 alias freeze="pip freeze | grep -v neovim"
 alias vim=nvim
+alias avi='get json $@'
 
 
 # Because OSX is WTF

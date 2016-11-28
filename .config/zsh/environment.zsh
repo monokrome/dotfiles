@@ -1,6 +1,3 @@
-path=($GOPATH/bin .bin/ ./node_modules/.bin $HOME/bin /usr/local/bin/ $path)
-
-
 export EDITOR=nvim
 export GOPATH=~/.config/go
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_API_TOKEN
@@ -10,3 +7,6 @@ export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_API_TOKEN
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=0
 HISTSIZE=10000
+
+
+path=($GOPATH/bin .bin/ ./node_modules/.bin $HOME/bin /usr/local/bin/ $path)
