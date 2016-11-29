@@ -44,7 +44,7 @@
 /.bitcore/*
 /.cache/*
 /.config/*
-/.config/virtualenvs/*
+!/.config/zsh
 /.cups/*
 /.docker/*
 /.dotfiles/*
