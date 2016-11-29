@@ -10,5 +10,5 @@ get() {
 
     [[ -z $content_type ]] && curl $@ && return
 
-    curl --header "'Accept: ${content_type}'" $@[2,-1]
+    curl --header "Accept: ${content_type}" $@[2,-1]
 }
