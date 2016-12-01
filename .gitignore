@@ -1,5 +1,42 @@
+# Dotfiles that I don't want in my dotfiles
+.DS_Store
+*.old
+/.*
+/Applications/*
+/Desktop/*
+/Documents/*
+/Downloads/*
+/Library/*
+/Movies/*
+/Music/*
+/Pictures/*
+/Projects/*
+/Public/*
+/bin/*
+/britco.yml
+
+
+# User configuration
+!/.config
+
+
+# Fonts
+!/Library/Fonts
+
+
 # Wallpapers
 !/Pictures/Wallpapers
+
+
+# Atom packages & artifacts
+!/.atom/.apm
+!/.atom/.node-gyp
+!/.atom/.npm
+!/.atom/blob-store/*
+!/.atom/compile-cache/*
+!/.atom/dev/*
+!/.atom/packages/*
+!/.atom/storage/*
 
 
 # ZSH files
@@ -14,6 +51,7 @@
 
 
 # Vim files
+!.vim
 /.vim/plugged/*
 /.vim/tmp/*
 !/.vim/tmp/undo/README.md
@@ -21,33 +59,3 @@
 !/.vim/tmp/swap/README.md
 
 
-# Atom packages & artifacts
-/.atom/.apm
-/.atom/.node-gyp
-/.atom/.npm
-/.atom/blob-store/*
-/.atom/compile-cache/*
-/.atom/dev/*
-/.atom/packages/*
-/.atom/storage/*
-
-
-# Dotfiles that I don't want in my dotfiles
-.DS_Store
-/.*
-!/.config
-/Applications/*
-/Desktop/*
-/Documents/*
-/Downloads/*
-/FUCK_THIS_BANK
-/Library/*
-!/Library/Fonts
-/Movies/*
-/Music/*
-/Pictures/*
-/Projects/*
-/Public/*
-/VirtualBox VMs/*
-/bin/*
-/britco.yml
