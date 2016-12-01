@@ -53,8 +53,11 @@
 
 # Vim files
 !.vim
+
 /.vim/plugged/*
 /.vim/tmp/*
+/.vim/.netrwhist
+
 !/.vim/tmp/undo/README.md
 !/.vim/tmp/backup/README.md
 !/.vim/tmp/swap/README.md
