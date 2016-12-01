@@ -61,3 +61,6 @@
 
 # Git configuration
 !/.gitconfig
+
+# Pentadactyl configuration
+!/.pentadactylrc
