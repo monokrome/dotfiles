@@ -41,6 +41,7 @@
 /Downloads/*
 /FUCK_THIS_BANK
 /Library/*
+!/Library/Fonts
 /Movies/*
 /Music/*
 /Pictures/*
