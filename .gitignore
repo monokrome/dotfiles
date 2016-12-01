@@ -16,6 +16,10 @@
 /britco.yml
 
 
+# Custom scripts
+!/bin/rf
+
+
 # User configuration
 !/.config
 
