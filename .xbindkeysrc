@@ -1,0 +1,33 @@
+# Toggle between play/pause
+"nyxmms2 toggle"
+    m:0x0 + c:172
+    XF86AudioPlay
+
+# Increase volume
+"amixer set Master playback 3+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"amixer set Master playback 3-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume
+
+# Toggle mute
+"amixer set Master toggle"
+    m:0x0 + c:121
+    XF86AudioMute
+
+# Next track
+"nyxmms2 next"
+    m:0x0 + c:171
+    XF86AudioNext
+
+# Previous track
+"nyxmms2 prev"
+    m:0x0 + c:173
+    XF86AudioPrev
+
+"import ~/Pictures/Screenshots/01.png"
+    m:0x9 + c:13
+    Shift+Alt + 4
