@@ -58,3 +58,6 @@
 !/.vim/tmp/undo/README.md
 !/.vim/tmp/backup/README.md
 !/.vim/tmp/swap/README.md
+
+# Git configuration
+!/.gitconfig

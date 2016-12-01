@@ -1,76 +1,75 @@
 [user]
-	name = Bailey Stoner
-	email = monokrome@monokro.me
-	signingKey = 47980EE2
+  name = Bailey Stoner
+  email = monokrome@monokro.me
 
 [push]
-	default = matching
+  default = matching
 
 [core]
-	witespace=blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof,cr-at-eol,tabwidth=2
-	excludesfile = /Users/monokrome/.config/git/ignored
-	precomposeunicode = true
-	preloadindex = true
-	compression = 9
-	safecrlf = true
-	editor = vim
-	eol = lf
+  whitespace=blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof,cr-at-eol,tabwidth=2
+  excludesfile = /Users/monokrome/.config/git/ignored
+  precomposeunicode = true
+  preloadindex = true
+  compression = 9
+  safecrlf = true
+  editor = vim
+  eol = lf
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [advice]
-	pushNonFastForward = false
-	statusHints = false
-	commitBeforeMerge = false
-	resolveConflicts = false
-	implicitIdentity = false
-	detachedHead = false
-	amWorkDir = false
+  pushNonFastForward = false
+  statusHints = false
+  commitBeforeMerge = false
+  resolveConflicts = false
+  implicitIdentity = false
+  detachedHead = false
+  amWorkDir = false
 
 [branch]
-	autosetupmerge = true
-	autosetuprebase = always
+  autosetupmerge = true
+  autosetuprebase = always
 
 [clean]
-	requireForce = false
+  requireForce = false
 
 [color]
-	interactive = true
-	branch = true
-	status = true
-	pager = true
-	grep = true
-	diff = true
-	ui = true
+  interactive = true
+  branch = true
+  status = true
+  pager = true
+  grep = true
+  diff = true
+  ui = true
 
 [column]
-	branch = auto
-	status = auto
-	tag = auto
-	ui = auto
+  branch = auto
+  status = auto
+  tag = auto
+  ui = auto
 
 [commit]
-	status = false
-	gpgsign = false
+  status = false
+  gpgsign = false
 
 [credential]
-	useHttpPath = false
+  useHttpPath = false
 
 [diff]
-	suppressBlankEmpty = true
-	autorefreshindex = false
-	renames = copies
-	noprefix = true
+  suppressBlankEmpty = true
+  autorefreshindex = false
+  renames = copies
+  noprefix = true
 
 [rebase]
-	autosquash = true
+  autosquash = true
 
 [mergetool]
-	keepBackup = true
+  keepBackup = true
 
 [init]
-	templatedir = ~/.config/git/template
+  templatedir = ~/.config/git/template
 
 [github]
-	user = monokrome
+  user = monokrome
