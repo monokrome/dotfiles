@@ -1,0 +1,17 @@
+html open
+jpg open
+png open
+gif open
+
+mov open
+mp3 open
+ogg open
+mp4 open
+
+py python
+rb ruby
+js node
+coffee coffee
+
+md ${EDITOR}
+txt ${EDITOR}
