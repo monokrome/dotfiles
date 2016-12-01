@@ -42,10 +42,11 @@
 # ZSH files
 /.config/zsh/local.zsh
 /.config/zsh/private/*
+!/.config/zsh/private/README.zsh
 /.zcompdump
 
 
-# emacs state
+# Emacs state
 .emacs.d/*
 .emacs~
 
@@ -57,5 +58,3 @@
 !/.vim/tmp/undo/README.md
 !/.vim/tmp/backup/README.md
 !/.vim/tmp/swap/README.md
-
-
