@@ -68,3 +68,5 @@
 # Various Linux configurations
 !/.xbindkeysrc
 
+# CTags configuration
+!/.ctags
