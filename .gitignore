@@ -35,6 +35,7 @@
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
 /.*
+!/.config
 /Applications/*
 /Desktop/*
 /Documents/*
