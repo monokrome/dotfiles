@@ -1,3 +1,6 @@
+#!/usr/bin/env zsh
+
+
 autoload -U vcs_info
 
 

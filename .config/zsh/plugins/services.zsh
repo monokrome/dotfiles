@@ -1,3 +1,6 @@
+#!/usr/bin/env zsh
+
+
 [[ -z $AVIATION_ROOT ]] && AVIATION_ROOT=http://localhost:8500/
 
 

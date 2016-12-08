@@ -1,3 +1,6 @@
+#!/usr/bin/env zsh
+
+
 [[ -z $HTTP_FORMAT_JSON ]] && HTTP_FORMAT_JSON=application/json
 [[ -z $HTTP_FORMAT_HTML ]] && HTTP_FORMAT_HTML=text/html
 

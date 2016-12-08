@@ -1,3 +1,6 @@
+#!/usr/bin/env zsh
+
+
 suffix_file="${ZSH_CONFIG_PATH}/suffixes"
 
 

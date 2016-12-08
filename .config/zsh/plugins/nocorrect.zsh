@@ -1,3 +1,6 @@
+#!/usr/bin/env zsh
+
+
 nocorrect_file="${ZSH_CONFIG_PATH}/nocorrect"
 
 
