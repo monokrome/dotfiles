@@ -80,3 +80,6 @@
 
 # CTags configuration
 !/.ctags
+
+# Steam games
+/Steam/*
