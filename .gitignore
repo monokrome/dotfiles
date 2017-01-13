@@ -22,8 +22,9 @@
 
 
 # User configuration
-!/.config/*
-/.config/go
+/.config/*
+!/.config/go
+!/.config/solarized
 
 # Fonts
 !/Library/Fonts
