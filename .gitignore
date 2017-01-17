@@ -18,6 +18,9 @@
 /VirtualBox VMs/*
 
 
+# Fonts
+!/.fonts
+
 # Custom scripts
 !/bin/rf
 
