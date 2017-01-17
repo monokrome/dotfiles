@@ -1,5 +1,5 @@
-URxvt.font:     xft:bitstream vera sans mono:size=10:antialias=true
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=10:antialias=true
+URxvt.font:     xft:Hack:size=11:antialias=true
+URxvt.boldFont: xft:Hack:bold:size=11:antialias=true
 
 
 ! Solarized color scheme for the X Window System
