@@ -1,7 +1,6 @@
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
 *.old
-/.*
 /Applications/*
 /Desktop/*
 /Documents/*
@@ -52,7 +51,7 @@
 
 # ZSH files
 /.config/zsh/local.zsh
-/.config/zsh/private/*
+/.config/zsh/private/*.zsh
 !/.config/zsh/private/README.zsh
 /.zcompdump
 
@@ -73,17 +72,28 @@
 !/.vim/tmp/backup/README.md
 !/.vim/tmp/swap/README.md
 
+
 # Git configuration
 !/.gitconfig
+
 
 # Pentadactyl configuration
 !/.pentadactylrc
 
+
 # Various Linux configurations
 !/.xbindkeysrc
+
 
 # CTags configuration
 !/.ctags
 
+
 # Steam games
 /Steam/*
+
+
+# Ignore non-git hidden files by default
+.*
+!/.git*
+!/.config
