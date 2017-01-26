@@ -14,3 +14,12 @@ aviation() {
 
     get json $url
 }
+
+
+up() {
+    [[ -f docker-compose.yml ]] && return $(docker-compose up)
+    [[ -f package.json ]] && return $(npm start)
+
+    echo 'No known method for starting this service.'
+    return 1
+}
