@@ -1,3 +1,18 @@
+# Ignore non-git hidden files by default
+.*
+!/.git*
+!/.config
+
+# Ignore specific local .config data
+/.config/xbuild
+/.config/bitcoin/
+/.config/xbuild/
+/.config/configstore/
+/.config/gocode/
+/.config/inform.yml
+/.config/virtualenvs/
+
+
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
 *.old
