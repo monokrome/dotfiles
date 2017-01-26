@@ -8,6 +8,5 @@ sourceall() {
 }
 
 
-sourceall ${ZSH_CONFIG_PATH}/private/*.zsh  # TODO: Encrypt these.
-sourceall ${ZSH_CONFIG_PATH}/*.zsh
-sourceall ${ZSH_CONFIG_PATH}/plugins/*.zsh
+sourceall ${ZSH_CONFIG_PATH}/*.zsh(N)
+sourceall ${ZSH_CONFIG_PATH}/plugins/*.zsh(N)
