@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
 
-[[ -z $PROJECT_ROOT ]] && PROJECT_ROOT=$HOME/Projects/
+[[ -z $PROJECTS_ROOT ]] && PROJECTS_ROOT=$HOME/Projects/
 
 
 project() {
     [[ -z $2 ]] && echo 'Usage: clone <organization> <repository>' && exit 1
 
-    organization_directory="${PROJECT_ROOT}${1}"
+    organization_directory="${PROJECTS_ROOT}${1}"
     project_directory="${organization_directory}/${2}"
 
     if [[ ! -d $project_directory ]]; then
