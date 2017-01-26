@@ -3,6 +3,7 @@
 !/.git*
 !/.config
 
+
 # Ignore specific local .config data
 /.config/xbuild
 /.config/bitcoin/
@@ -11,6 +12,7 @@
 /.config/gocode/
 /.config/inform.yml
 /.config/virtualenvs/
+/.config/go
 
 
 # Dotfiles that I don't want in my dotfiles
@@ -39,10 +41,6 @@
 !/bin/rf
 
 
-# User configuration
-/.config/*
-!/.config/solarized
-
 # Fonts
 !/Library/Fonts
 
@@ -66,7 +64,6 @@
 # ZSH files
 /.config/zsh/local.zsh
 /.config/zsh/private/*.zsh
-!/.config/zsh/private/README.zsh
 /.zcompdump
 
 
@@ -105,9 +102,3 @@
 
 # Steam games
 /Steam/*
-
-
-# Ignore non-git hidden files by default
-.*
-!/.git*
-!/.config
