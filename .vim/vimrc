@@ -118,6 +118,7 @@ if has('vim_starting')
   Plug 'mutewinter/nginx.vim'
   Plug 'othree/html5.vim'
   Plug 'plasticboy/vim-markdown'
+  Plug 'raichoo/haskell-vim'
   Plug 't9md/vim-chef'
   Plug 'tpope/vim-git'
   Plug 'tpope/vim-liquid'
