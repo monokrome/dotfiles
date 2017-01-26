@@ -1,6 +1,7 @@
 export EDITOR=nvim
 export GOPATH=~/.config/go
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_API_TOKEN
+export ELECTRON_DEBUG=1
 
 
 # Share history between all shells, but don't save anywhere
@@ -9,4 +10,4 @@ SAVEHIST=0
 HISTSIZE=10000
 
 
-path=($GOPATH/bin .bin/ ./node_modules/.bin $HOME/bin /usr/local/bin/ $path)
+path=($GOPATH/bin .bin/ ./node_modules/.bin $HOME/bin /usr/local/bin/ /Users/monokrome/.local/bin $path)
