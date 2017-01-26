@@ -69,7 +69,7 @@
   keepBackup = true
 
 [init]
-templatedir = ~/.config/git/template
+  templatedir = ~/.config/git/template
 
 [github]
   user = monokrome
