@@ -69,7 +69,13 @@
   keepBackup = true
 
 [init]
-  templatedir = ~/.config/git/template
+templatedir = ~/.config/git/template
 
 [github]
   user = monokrome
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
