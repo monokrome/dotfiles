@@ -13,6 +13,7 @@
 /.config/inform.yml
 /.config/virtualenvs/
 /.config/go
+/.config/hub
 
 
 # Dotfiles that I don't want in my dotfiles
