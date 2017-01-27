@@ -96,9 +96,10 @@
 !/.xbindkeysrc
 
 
-# CTags configuration
-!/.ctags
-
-
 # Steam games
 /Steam/*
+
+
+# Miscellaneous unix tools
+!/.ctags
+!/.screenrc
