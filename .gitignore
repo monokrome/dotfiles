@@ -103,3 +103,4 @@
 # Miscellaneous unix tools
 !/.ctags
 !/.screenrc
+!/.mutt

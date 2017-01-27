@@ -1,0 +1,1 @@
+source `ls ~/.config/mutt/conf.d/*.muttrc`
