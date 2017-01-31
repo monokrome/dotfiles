@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 
 
+autoload -U colors && colors
+
+
 [[ -z $ZSH_CONFIG_PATH ]] && export ZSH_CONFIG_PATH=$HOME/.config/zsh
 
 
@@ -53,7 +56,7 @@ lock_zsh_configs() {
 
 
 zsh_secret() {
-    [[ -z ${1} ]] && echo 'Must provide a filename to edit secrets.' && return 1
+    [[ -z ${1} ]] && print -P '%F{red}Must provide a filename to edit secrets.%f' && return 1
     [[ -z ${EDITOR} ]] && EDITOR=vim
 
     filename=${ZSH_PRIVATE_PATH}$1.zsh
