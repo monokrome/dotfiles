@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 
-autoload -U compinit && compinit
+autoload -U compinit && compinit -D
 
 
 # Do case-insensitive matching, but prefer exact matches
