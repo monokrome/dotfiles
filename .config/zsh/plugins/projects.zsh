@@ -7,7 +7,7 @@ autoload -U colors && colors
 [[ -z $PROJECTS_ROOT ]] && PROJECTS_ROOT=$HOME/Projects/
 
 
-project_init_python() {
+__project_init_python() {
     [[ ! -f setup.py && ! -f requirements.txt ]] && return 0
 
     if [[ -z $VIRTUAL_ENV ]]; then
@@ -30,12 +30,13 @@ project_init_python() {
 }
 
 
-project_init_ruby() {
+__project_init_ruby() {
     [[ -f Gemfile ]] && bundle install
+    return 0
 }
 
 
-npm_or_yarn_install() {
+__npm_or_yarn_install() {
     # Prefer yarn over NPM, but failover to NPM.
     which yarn 2> /dev/null > /dev/null
     yarn_missiong=$?
@@ -47,19 +48,29 @@ npm_or_yarn_install() {
 }
 
 
-project_init_node() {
+__project_init_node() {
     [[ -f package.json ]] && npm_or_yarn_install
     [[ -f bower.json ]] && bower install
 }
 
 
-project_init_golang() {
-    go list > /dev/null 2> /dev/null || return 0
-    go get .
+__project_init_golang() {
+    [[ -z $GOPATH ]] && return 0
+
+    go_src_organization_path=${GOPATH}/src/github.com/$2/
+    go_src_project_path=${go_src_organization_path}${3}/
+
+    if [[ ! -d $go_src_project_path ]]; then
+        [[ -d $go_src_organization_path ]] || mkdir -p $go_src_organization_path
+        mv $1 $go_src_project_path
+        ln -s $go_src_project_path $1
+    fi
+
+    go list > /dev/null 2> /dev/null && go get .
 }
 
 
-project_init_make() {
+__project_init_make() {
     [[ -f CMakeLists.txt ]] && cmake .
     [[ -f configure.ac ]] && autoreconf --install
     [[ -f configure ]] && ./configure
@@ -67,12 +78,14 @@ project_init_make() {
 }
 
 
-project_init() {
-    project_init_make &&
-    project_init_python &&
-    project_init_node &&
-    project_init_ruby &&
-    project_init_golang
+__project_init() {
+    print -P "%F{cyan}Initializing project at ${1}%f"
+
+    __project_init_golang $@ &&
+    __project_init_make $@ &&
+    __project_init_python $@ &&
+    __project_init_node $@ &&
+    __project_init_ruby $@
 }
 
 
@@ -94,8 +107,5 @@ project() {
     git clone github.com:$organization/$repository
     cd $project_directory
 
-    # TODO: Preparation steps.
-    # For instance, Golang wants all it's packages in the same directory.
-
-    project_init
+    __project_init $project_directory $organization $repository
 }
