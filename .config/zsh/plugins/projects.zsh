@@ -7,6 +7,25 @@ autoload -U colors && colors
 [[ -z $PROJECTS_ROOT ]] && PROJECTS_ROOT=$HOME/Projects/
 
 
+__project_prepare_golang() {
+    [[ -z $GOPATH ]] && return 0
+
+    # Wipe out golang source directory if we are cloning a project that isn't
+    # in the projects directory.
+
+    go_src_project_path=${GOPATH}/src/github.com/$2/$3/
+    [[ ! -d $go_src_project_path ]] && return 0
+    
+    print -P "%F{white}Cleaning up old source path for new files.%f"
+    rm -rf $go_src_project_path
+}
+
+
+__project_prepare() {
+    __project_prepare_golang $@
+}
+
+
 __project_init_python() {
     [[ ! -f setup.py && ! -f requirements.txt ]] && return 0
 
@@ -103,6 +122,8 @@ project() {
 
     [[ ! -d $organization_directory ]] && mkdir -p $organization_directory
     cd $organization_directory
+
+    __project_prepare $project_directory $organization $repository
 
     git clone github.com:$organization/$repository
     cd $project_directory
