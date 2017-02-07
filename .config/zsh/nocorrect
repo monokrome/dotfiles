@@ -12,6 +12,7 @@ node
 npm
 pip
 rf
+sls
 sudo
 tmux
 vagrant
