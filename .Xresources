@@ -1,5 +1,13 @@
-URxvt.font:     xft:Hack:size=11:antialias=true
-URxvt.boldFont: xft:Hack:bold:size=11:antialias=true
+! Open links in urxvt.
+urxvt*perl-lib:          /usr/lib/urxvt/perl/
+urxvt*perl-ext:          default,matcher
+
+! Use matches list with Control+Delete
+urxvt.keysym.C-Delete:   perl:matcher:list
+
+! Use Hack for terminal font.
+urxvt.font:     xft:Hack:size=9:antialias=true
+urxvt.boldFont: xft:Hack:bold:size=9:antialias=true
 
 
 ! Solarized color scheme for the X Window System
@@ -72,4 +80,3 @@ URxvt.boldFont: xft:Hack:bold:size=11:antialias=true
 *color13:                 S_violet
 *color14:                 S_base1
 *color15:                 S_base3
-
