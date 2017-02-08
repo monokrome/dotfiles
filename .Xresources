@@ -1,6 +1,7 @@
 ! Open links in urxvt.
 urxvt*perl-lib:          /usr/lib/urxvt/perl/
 urxvt*perl-ext:          default,matcher
+URxvt.matcher.rend.0: Uline Bold fg5
 
 ! Use matches list with Control+Delete
 urxvt.keysym.C-Delete:   perl:matcher:list
