@@ -5,16 +5,35 @@
 
 
 # Ignore specific local .config data
-/.config/xbuild
-/.config/bitcoin/
-/.config/xbuild/
-/.config/configstore/
-/.config/gocode/
-/.config/inform.yml
-/.config/virtualenvs/
+/.config/Slack
+/.config/Trolltech.conf
+/.config/bitcoin
+/.config/chromium
+/.config/compiz-*
+/.config/configstore
+/.config/dconf
+/.config/evolution
 /.config/go
+/.config/gocode
+/.config/gtk-*
 /.config/hub
-
+/.config/ibus
+/.config/inform.yml
+/.config/libaccounts*
+/.config/libreoffice
+/.config/monitors.xml
+/.config/nautilus
+/.config/pithos.ini
+/.config/pulse
+/.config/totem
+/.config/touchegg
+/.config/unity
+/.config/update-notifier
+/.config/user-*
+/.config/virtualenvs
+/.config/xbuild
+/.config/xmms2
+/.config/zoomus.conf
 
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
