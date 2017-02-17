@@ -37,6 +37,7 @@
 
 # Fonts
 !/.fonts
+/.fonts/Soleil-*
 
 # Custom scripts
 !/bin/rf
