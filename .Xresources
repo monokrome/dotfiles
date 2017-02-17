@@ -7,8 +7,8 @@ URxvt.matcher.rend.0: Uline Bold fg5
 urxvt.keysym.C-Delete:   perl:matcher:list
 
 ! Use Hack for terminal font.
-urxvt.font:     xft:Hack:size=9:antialias=true
-urxvt.boldFont: xft:Hack:bold:size=9:antialias=true
+urxvt.font:     xft:Hack:size=11:antialias=true
+urxvt.boldFont: xft:Hack:bold:size=11:antialias=true
 
 
 ! Solarized color scheme for the X Window System
