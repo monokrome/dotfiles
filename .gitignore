@@ -1,5 +1,5 @@
 # Ignore non-git hidden files by default
-.*
+/.*
 !/.git*
 !/.config
 
@@ -34,6 +34,7 @@
 /.config/xbuild
 /.config/xmms2
 /.config/zoomus.conf
+
 
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
@@ -126,6 +127,11 @@
 !/.screenrc
 !/.mutt
 
+
 # Dynamic Window Manager
 /.config/dwm/*
 !/.config/dwm/Makefile
+
+
+# URXVT configurations
+!/.urxvt
