@@ -4,7 +4,7 @@ alias vim=nvim
 
 
 clean() {
-    find . -iname '*.pyc' -or -iname '.DS_Store' -or -iname 'Thumbds.db' -exec rm -rf \;
+    find . -iname '*.pyc' -or -iname '.DS_Store' -or -iname 'Thumbds.db' -exec rm -rf {} \;
 }
 
 
