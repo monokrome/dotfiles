@@ -15,7 +15,7 @@ __project_prepare_golang() {
 
     go_src_project_path=${GOPATH}/src/github.com/$2/$3/
     [[ ! -d $go_src_project_path ]] && return 0
-    
+
     print -P "%F{white}Cleaning up old source path for new files.%f"
     rm -rf $go_src_project_path
 }
@@ -75,6 +75,9 @@ __project_init_node() {
 
 __project_init_golang() {
     [[ -z $GOPATH ]] && return 0
+
+    go_files=$(find . -iname *.go)
+    [[ -z $go_files ]] && return 0
 
     go_src_organization_path=${GOPATH}/src/github.com/$2/
     go_src_project_path=${go_src_organization_path}${3}/
