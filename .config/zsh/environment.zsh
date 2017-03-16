@@ -2,6 +2,7 @@ export EDITOR=nvim
 export GOPATH=~/.config/go
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_API_TOKEN
 export ELECTRON_DEBUG=1
+export GPG_TTY=$(tty)
 
 
 # Share history between all shells, but don't save anywhere
