@@ -1,12 +1,14 @@
 #!/usr/bin/env zsh
 
 
+autoload -U predict-on
 autoload -U compinit
 autoload -U colors
 
 
 # Initialize completion system
 compinit -DC
+predict-on -DC
 
 
 # Breakdown of style completion fields, for reference:
@@ -39,4 +41,5 @@ zstyle ':completion:*'              group-name   ''
 zstyle ':completion:*'              verbose      yes
 zstyle ':completion:*:corrections'  format '     %B%d (errors: %e)%b'
 zstyle ':completion:*:descriptions' format "     %F{yellow}%B--- %d%b%f"
+zstyle ':completion:*:warnings'     format "     %F{yellow}--- No matches found.%f"
 zstyle ':completion:*:warnings'     format "     %F{yellow}--- No matches found.%f"

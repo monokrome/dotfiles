@@ -1,0 +1,45 @@
+set realname="Bailey Stoner"
+
+
+set alias_file=~/.config/mutt/aliases
+set ascii_chars=yes
+set charset=utf-8
+set confirmappend
+set delete=no
+set edit_headers
+set editor="vim +13 -c 'set nobackup' -c 'set noswapfile' -c 'set nowritebackup' -c 'set tw=72 ft=mail noautoindent'"
+set envelope_from
+set fast_reply
+set hidden_host
+set include
+set meta_key=yes
+set mime_forward
+set move = no
+set noallow_8bit
+set nobeep
+set nohelp
+set nomark_old
+set nomarkers
+set nopipe_decode
+set nosmart_wrap
+set nostrict_threads
+set pager_context=3
+set pager_index_lines=20
+set pager_stop
+set postpone=ask-no
+set print=ask-yes
+set read_inc=100
+set reverse_name=yes
+set sort=threads
+set sort_aux=date-received
+set text_flowed
+set tilde
+set write_inc=100
+
+
+unset record
+
+
+set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
+set print_command="enscript --font=Times-Roman10 --pretty-print"
+set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"

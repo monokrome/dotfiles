@@ -1,0 +1,6 @@
+# Don't sign?
+# set php_autosign=yes
+set pgp_sign_as=0xB0B277B1
+set pgp_replyencrypt=yes
+set pgp_timeout=1800
+
