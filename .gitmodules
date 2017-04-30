@@ -1,3 +1,6 @@
 [submodule ".config/solarized"]
 	path = .config/solarized
 	url = https://github.com/altercation/solarized
+[submodule ".config/zsh/external/zsh-autosuggestions"]
+	path = .config/zsh/external/zsh-autosuggestions
+	url = git://github.com/zsh-users/zsh-autosuggestions

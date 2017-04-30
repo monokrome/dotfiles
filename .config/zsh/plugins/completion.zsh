@@ -1,14 +1,12 @@
 #!/usr/bin/env zsh
 
 
-autoload -U predict-on
 autoload -U compinit
 autoload -U colors
 
 
 # Initialize completion system
 compinit -DC
-predict-on -DC
 
 
 # Breakdown of style completion fields, for reference:
