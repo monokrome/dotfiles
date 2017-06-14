@@ -6,7 +6,6 @@
 if has('vim_starting')
   call plug#begin('~/.vim/plugged')
 
-
   " My custom configurations. This is akin to what most people might put into one
   " giant .vimrc file.
   Plug 'monokrome/vim-user-configuration'
@@ -14,11 +13,12 @@ if has('vim_starting')
 
   " Utility plugins - used by other scripts for their features.
   Plug 'Shougo/unite.vim' " Library for generalized navigation of item lists
+  Plug 'Shougo/vimproc.vim' " Async utility library
+  Plug 'alx741/spec.vim' " BDD-bsed unit testing library
   Plug 'kien/ctrlp.vim' " BOOP!
   Plug 'mattn/webapi-vim' " HTTP access to VimScript commands
   Plug 'rizzatti/funcoo.vim' " Adds 'object-oriented' constructs to VimL
   Plug 'vim-scripts/L9' " Helper library for VimL
-  Plug 'Shougo/vimproc.vim' " Async utility library
 
 
   " Colors
@@ -54,8 +54,10 @@ if has('vim_starting')
   Plug 'mhinz/vim-signify' " Signs that describe your current SCM changeset
   Plug 'michaeljsmith/vim-indent-object' " An indentation (i) text object for indent-based languages
   Plug 'monokrome/vim-flow' " Rhyme completion and syllable counting
+  Plug 'monokrome/vim-projector' " Load project-specific configuration files
   Plug 'nathanaelkane/vim-indent-guides' " Guide lines for indentation
   Plug 'neochrome/todo.vim' " A todo list for Vim.
+  Plug 'neomake/neomake'
   Plug 'nicholaides/words-to-avoid.vim' " Highlights words that should be avoided in technical writing
   Plug 'sjl/gundo.vim' " Tools to help better manage the undo tree
   Plug 'taxilian/a.vim' " Commands for jumping between alternate related files
@@ -91,7 +93,6 @@ if has('vim_starting')
   Plug 'vim-scripts/openssl.vim' " Allows wrapping Vim's I/O around OpenSSL
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'wellle/targets.vim' " Some smart generic text objects!
-  Plug 'neomake/neomake'
 
   " Language bundles
   Plug 'mxw/vim-jsx'
