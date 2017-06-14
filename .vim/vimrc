@@ -14,9 +14,11 @@ if has('vim_starting')
 
   " Utility plugins - used by other scripts for their features.
   Plug 'Shougo/unite.vim' " Library for generalized navigation of item lists
+  Plug 'kien/ctrlp.vim' " BOOP!
   Plug 'mattn/webapi-vim' " HTTP access to VimScript commands
   Plug 'rizzatti/funcoo.vim' " Adds 'object-oriented' constructs to VimL
   Plug 'vim-scripts/L9' " Helper library for VimL
+  Plug 'Shougo/vimproc.vim' " Async utility library
 
 
   " Colors
@@ -55,7 +57,6 @@ if has('vim_starting')
   Plug 'nathanaelkane/vim-indent-guides' " Guide lines for indentation
   Plug 'neochrome/todo.vim' " A todo list for Vim.
   Plug 'nicholaides/words-to-avoid.vim' " Highlights words that should be avoided in technical writing
-  Plug 'scrooloose/syntastic' " Wraps semantic analysis into various UIs in Vim
   Plug 'sjl/gundo.vim' " Tools to help better manage the undo tree
   Plug 'taxilian/a.vim' " Commands for jumping between alternate related files
   Plug 'terryma/vim-multiple-cursors' " The ability to use multiple cursors
@@ -74,7 +75,7 @@ if has('vim_starting')
   Plug 'tpope/vim-haml' " Provides support for HAML and SASS
   Plug 'tpope/vim-jdaddy' " JSON text objects
   Plug 'tpope/vim-obsession' " Automatic session management via :Obsession
-  Plug 'tpope/vim-projectile' " Scaffolding in Vim
+  Plug 'tpope/vim-projectionist' " Scaffolding in Vim
   Plug 'tpope/vim-repeat' " Makes repeat even more powerful
   Plug 'tpope/vim-rhubarb' " Tools for interacting with the social aspect of GitHub
   Plug 'tpope/vim-sensible' " Somewhat sensible defaults for modernizing Vim a bit by default.
@@ -90,9 +91,10 @@ if has('vim_starting')
   Plug 'vim-scripts/openssl.vim' " Allows wrapping Vim's I/O around OpenSSL
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'wellle/targets.vim' " Some smart generic text objects!
-
+  Plug 'neomake/neomake'
 
   " Language bundles
+  Plug 'mxw/vim-jsx'
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'Quramy/tsuquyomi'
   Plug 'afshinm/npm.vim'
@@ -129,6 +131,8 @@ if has('vim_starting')
   Plug 'wavded/vim-stylus'
   Plug 'wting/rust.vim'
   Plug 'zchee/deoplete-go'
+  Plug 'mpyatishev/vim-sqlformat'
+  Plug 'sbdchd/neoformat'
 
 
   " Framework-specific bundles
