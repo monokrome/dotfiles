@@ -14,8 +14,6 @@ if has('vim_starting')
   " Utility plugins - used by other scripts for their features.
   Plug 'Shougo/unite.vim' " Library for generalized navigation of item lists
   Plug 'Shougo/vimproc.vim' " Async utility library
-  Plug 'alx741/spec.vim' " BDD-bsed unit testing library
-  Plug 'kien/ctrlp.vim' " BOOP!
   Plug 'mattn/webapi-vim' " HTTP access to VimScript commands
   Plug 'rizzatti/funcoo.vim' " Adds 'object-oriented' constructs to VimL
   Plug 'vim-scripts/L9' " Helper library for VimL
@@ -48,6 +46,7 @@ if has('vim_starting')
   Plug 'johnsyweb/vim-makeshift' " 'intelligent' selection of makeprg
   Plug 'junegunn/fzf' " FZF fuzzy finder
   Plug 'kana/vim-exjumplist' " Plug mappings to jump between buffers in the jumplist
+  Plug 'kien/ctrlp.vim' " Fuzzy-matching file finder!
   Plug 'majutsushi/tagbar' " A tagbar pane for the current buffer
   Plug 'mattn/emmet-vim' " Add shortcuts for making HTML elements
   Plug 'mattn/gist-vim' " Allows simple posting to Gist from within Vim
