@@ -7,6 +7,7 @@ inform
 informd
 ipython
 ircd
+jest
 mocha
 mosh
 node
