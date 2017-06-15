@@ -6,7 +6,6 @@
 if has('vim_starting')
   call plug#begin('~/.vim/plugged')
 
-
   " My custom configurations. This is akin to what most people might put into one
   " giant .vimrc file.
   Plug 'monokrome/vim-user-configuration'
@@ -14,6 +13,7 @@ if has('vim_starting')
 
   " Utility plugins - used by other scripts for their features.
   Plug 'Shougo/unite.vim' " Library for generalized navigation of item lists
+  Plug 'Shougo/vimproc.vim' " Async utility library
   Plug 'mattn/webapi-vim' " HTTP access to VimScript commands
   Plug 'rizzatti/funcoo.vim' " Adds 'object-oriented' constructs to VimL
   Plug 'vim-scripts/L9' " Helper library for VimL
@@ -46,16 +46,18 @@ if has('vim_starting')
   Plug 'johnsyweb/vim-makeshift' " 'intelligent' selection of makeprg
   Plug 'junegunn/fzf' " FZF fuzzy finder
   Plug 'kana/vim-exjumplist' " Plug mappings to jump between buffers in the jumplist
+  Plug 'kien/ctrlp.vim' " Fuzzy-matching file finder!
   Plug 'majutsushi/tagbar' " A tagbar pane for the current buffer
   Plug 'mattn/emmet-vim' " Add shortcuts for making HTML elements
   Plug 'mattn/gist-vim' " Allows simple posting to Gist from within Vim
   Plug 'mhinz/vim-signify' " Signs that describe your current SCM changeset
   Plug 'michaeljsmith/vim-indent-object' " An indentation (i) text object for indent-based languages
   Plug 'monokrome/vim-flow' " Rhyme completion and syllable counting
+  Plug 'monokrome/vim-projector' " Load project-specific configuration files
   Plug 'nathanaelkane/vim-indent-guides' " Guide lines for indentation
   Plug 'neochrome/todo.vim' " A todo list for Vim.
+  Plug 'neomake/neomake'
   Plug 'nicholaides/words-to-avoid.vim' " Highlights words that should be avoided in technical writing
-  Plug 'scrooloose/syntastic' " Wraps semantic analysis into various UIs in Vim
   Plug 'sjl/gundo.vim' " Tools to help better manage the undo tree
   Plug 'taxilian/a.vim' " Commands for jumping between alternate related files
   Plug 'terryma/vim-multiple-cursors' " The ability to use multiple cursors
@@ -74,7 +76,7 @@ if has('vim_starting')
   Plug 'tpope/vim-haml' " Provides support for HAML and SASS
   Plug 'tpope/vim-jdaddy' " JSON text objects
   Plug 'tpope/vim-obsession' " Automatic session management via :Obsession
-  Plug 'tpope/vim-projectile' " Scaffolding in Vim
+  Plug 'tpope/vim-projectionist' " Scaffolding in Vim
   Plug 'tpope/vim-repeat' " Makes repeat even more powerful
   Plug 'tpope/vim-rhubarb' " Tools for interacting with the social aspect of GitHub
   Plug 'tpope/vim-sensible' " Somewhat sensible defaults for modernizing Vim a bit by default.
@@ -91,7 +93,6 @@ if has('vim_starting')
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'wellle/targets.vim' " Some smart generic text objects!
   Plug 'sbdchd/neoformat' " Clean code for me, plz!
-
 
   " Language bundles
   Plug 'Glench/Vim-Jinja2-Syntax'
@@ -116,11 +117,15 @@ if has('vim_starting')
   Plug 'lunaru/vim-less'
   Plug 'mctenshi/vim-literate-coffeescript'
   Plug 'monokrome/vim-testdrive'
+  Plug 'mpyatishev/vim-sqlformat'
   Plug 'mutewinter/nginx.vim'
+  Plug 'mxw/vim-jsx'
   Plug 'othree/html5.vim'
   Plug 'plasticboy/vim-markdown'
   Plug 'raichoo/haskell-vim'
+  Plug 'sbdchd/neoformat'
   Plug 't9md/vim-chef'
+  Plug 'ternjs/tern_for_vim'
   Plug 'tpope/vim-git'
   Plug 'tpope/vim-liquid'
   Plug 'vim-ruby/vim-ruby'
@@ -130,8 +135,6 @@ if has('vim_starting')
   Plug 'wavded/vim-stylus'
   Plug 'wting/rust.vim'
   Plug 'zchee/deoplete-go'
-  Plug 'sbdchd/neoformat'
-  Plug 'ternjs/tern_for_vim'
 
   " Framework-specific bundles
   Plug 'jmcomets/vim-pony' " Wraps Django commands into Vim commands
