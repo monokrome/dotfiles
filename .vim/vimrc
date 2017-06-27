@@ -96,9 +96,9 @@ if has('vim_starting')
   Plug 'vim-scripts/openssl.vim' " Allows wrapping Vim's I/O around OpenSSL
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'wellle/targets.vim' " Some smart generic text objects!
+  Plug 'sbdchd/neoformat' " Clean code for me, plz!
 
   " Language bundles
-  Plug 'mxw/vim-jsx'
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'Quramy/tsuquyomi'
   Plug 'afshinm/npm.vim'
@@ -121,11 +121,15 @@ if has('vim_starting')
   Plug 'lunaru/vim-less'
   Plug 'mctenshi/vim-literate-coffeescript'
   Plug 'monokrome/vim-testdrive'
+  Plug 'mpyatishev/vim-sqlformat'
   Plug 'mutewinter/nginx.vim'
+  Plug 'mxw/vim-jsx'
   Plug 'othree/html5.vim'
   Plug 'plasticboy/vim-markdown'
   Plug 'raichoo/haskell-vim'
+  Plug 'sbdchd/neoformat'
   Plug 't9md/vim-chef'
+  Plug 'ternjs/tern_for_vim'
   Plug 'tpope/vim-git'
   Plug 'tpope/vim-liquid'
   Plug 'vim-ruby/vim-ruby'
@@ -135,9 +139,6 @@ if has('vim_starting')
   Plug 'wavded/vim-stylus'
   Plug 'wting/rust.vim'
   Plug 'zchee/deoplete-go'
-  Plug 'mpyatishev/vim-sqlformat'
-  Plug 'sbdchd/neoformat'
-
 
   " Framework-specific bundles
   Plug 'jmcomets/vim-pony' " Wraps Django commands into Vim commands
