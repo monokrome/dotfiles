@@ -26,10 +26,14 @@ if has('vim_starting')
   Plug 'jeetsukumaran/vim-nefertiti' " Colorscheme formerly known as MochaLatte
   Plug 'ajh17/Spacegray.vim' " Based on the XCode SpaceGray theme
 
+  " Completions for nvim
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim' " Completion support that isn't YouCompleteMe
+  endif
+
   " Helper plugins
   Plug 'Lokaltog/vim-easymotion' " Allows quick motions to characters that are currently in vim
   Plug 'Raimondi/delimitMate' " Puts things after other things!
-  Plug 'Shougo/deoplete.nvim' " Completion support that isn't YouCompleteMe
   Plug 'Shougo/unite-outline' " A nested outline of the current buffer's tags
   Plug 'SirVer/ultisnips' " Much smarter TextMate-style snippet support
   Plug 'duff/vim-bufonly' " A command for removing all buffers except the active one
