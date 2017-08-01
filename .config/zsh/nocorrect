@@ -18,5 +18,4 @@ sls
 sudo
 tmux
 vagrant
-vim
 watch
