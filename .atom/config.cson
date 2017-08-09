@@ -1,3 +1,43 @@
 "*":
+  "atom-terminal":
+    MacWinRunDirectly: true
+    app: "iTerm.app"
+  core:
+    disabledPackages: [
+      "tabs"
+      "vim-mode-plus"
+      "vim-modeline"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 21
   "exception-reporting":
     userId: "b450f49e-601c-69fc-1f26-d4475062ce27"
+  "linter-ui-default":
+    panelHeight: 69
+    showProviderName: true
+  "markdown-preview":
+    useGitHubStyle: true
+  "minimap-plus":
+    moveCursorOnMinimapClick: true
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      showInStatusBar: true
+    prettierOptions:
+      parser: "flow"
+      trailingComma: "all"
+    useEslint: true
+  "python-yapf":
+    checkOnSave: false
+    formatOnSave: true
+  tabs:
+    alwaysShowTabBar: false
+    enableMruTabSwitching: false
+    showIcons: false
+  welcome:
+    showOnStartup: false
