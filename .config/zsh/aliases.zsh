@@ -1,6 +1,5 @@
 alias dot='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 alias freeze="pip freeze | grep -v neovim"
-alias vim=nvim
 
 
 clean() {
