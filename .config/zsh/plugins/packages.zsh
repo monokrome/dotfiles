@@ -3,8 +3,9 @@
 
 setup_xbps_packaging() {
     alias pkg="sudo xbps-install -S"
-    alias pkgrm="sudo xbps-remove -Su"
+    alias pkgrm="sudo xbps-remove"
     alias pkgup="sudo xbps-install -Su"
+    alias pkgls="xbps-query -Rs"
 }
 
 
@@ -12,6 +13,7 @@ setup_apt_packaging() {
     alias pkg="sudo apt-get install -y"
     alias pkgrm="sudo apt-get uninstall --purge"
     alias pkgup="sudo apt-get update -yy && sudo apt-get upgrade -yy"
+    alias pkgls="apt-cache search"
 }
 
 
@@ -19,6 +21,7 @@ setup_homebrew_packaging() {
     alias pkg="brew install"
     alias pkgrm="brew uninstall"
     alias pkgup="brew update"
+    alias pkgls="brew search"
 }
 
 
