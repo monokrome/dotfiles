@@ -25,6 +25,7 @@ if has('vim_starting')
   Plug 'junegunn/seoul256.vim' " Add seoul256.vim color scheme
   Plug 'jeetsukumaran/vim-nefertiti' " Colorscheme formerly known as MochaLatte
   Plug 'ajh17/Spacegray.vim' " Based on the XCode SpaceGray theme
+  Plug 'chrisbra/Colorizer' " Colorize hex values and such <3
 
   " Completions for nvim
   if has('nvim')
