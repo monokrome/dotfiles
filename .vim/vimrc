@@ -49,9 +49,8 @@ if has('vim_starting')
   Plug 'https://github.com/rking/ag.vim' " Use silver searcher for :find-like searches with :Ag
   Plug 'itchyny/lightline.vim' " A lightweight alternative to PowerLIne for pretty statusbars
   Plug 'johnsyweb/vim-makeshift' " 'intelligent' selection of makeprg
-  Plug 'junegunn/fzf' " FZF fuzzy finder
+  Plug 'junegunn/fzf.vim' " FZF fuzzy finder
   Plug 'kana/vim-exjumplist' " Plug mappings to jump between buffers in the jumplist
-  Plug 'kien/ctrlp.vim' " Fuzzy-matching file finder!
   Plug 'majutsushi/tagbar' " A tagbar pane for the current buffer
   Plug 'mattn/emmet-vim' " Add shortcuts for making HTML elements
   Plug 'mattn/gist-vim' " Allows simple posting to Gist from within Vim
@@ -111,6 +110,7 @@ if has('vim_starting')
   Plug 'davidhalter/jedi-vim'
   Plug 'davidoc/taskpaper.vim'
   Plug 'digitaltoad/vim-jade'
+  Plug 'dleonard0/pony-vim-syntax'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'fatih/vim-go'
   Plug 'guns/vim-clojure-static'
