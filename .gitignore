@@ -6,6 +6,7 @@
 
 # Ignore specific local .config data
 /.config/Slack
+/.config/Synergy
 /.config/Trolltech.conf
 /.config/bitcoin
 /.config/chromium
@@ -22,9 +23,11 @@
 /.config/libaccounts*
 /.config/libreoffice
 /.config/monitors.xml
+/.config/n
 /.config/nautilus
 /.config/pithos.ini
 /.config/pulse
+/.config/teamviewer
 /.config/totem
 /.config/touchegg
 /.config/unity
@@ -34,7 +37,6 @@
 /.config/xbuild
 /.config/xmms2
 /.config/zoomus.conf
-/.config/n
 
 
 # Dotfiles that I don't want in my dotfiles
@@ -120,6 +122,8 @@
 
 
 # Steam games
+/Games/*
+/My Games/*
 /Steam/*
 
 
@@ -127,15 +131,6 @@
 !/.ctags
 !/.screenrc
 !/.mutt
-
-
-# Synergy
-/.config/Synergy/*
-
-
-# TeamViewer
-/.config/teamviewer/*
-
 
 # Dynamic Window Manager
 /.config/dwm/*
