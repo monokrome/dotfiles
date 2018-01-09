@@ -1,0 +1,18 @@
+consolekit=false
+cktimeout=3
+
+binlist=(
+  "xinit ${HOME}/bin/big-picture"
+  "xinit"
+  "/bin/sh"
+  "sudo /usr/bin/halt"
+)
+
+namelist=(
+  "Steam"
+  "Desktop"
+  "Fallback Shell"
+  "Shutdown"
+)
+
+flaglist=(C C C C)

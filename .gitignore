@@ -143,3 +143,6 @@
 
 # URXVT configurations
 !/.urxvt
+
+# CDM configuration
+!/.cdmrc
