@@ -5,7 +5,10 @@
 
 
 # Ignore specific local .config data
+/.config/autostart
 /.config/Slack
+/.config/Signal
+/.config/Signal-*
 /.config/Synergy
 /.config/Trolltech.conf
 /.config/bitcoin
@@ -61,6 +64,7 @@
 # Fonts
 !/.fonts
 /.fonts/Soleil-*
+
 
 # Custom scripts
 !/bin/rf
@@ -136,9 +140,12 @@
 /.config/dwm/*
 !/.config/dwm/Makefile
 
-
 # URXVT configurations
 !/.urxvt
 
 # CDM configuration
 !/.cdmrc
+
+# Hyper terminal
+/.config/Hyper/*
+!/.config/Hyper/config.json

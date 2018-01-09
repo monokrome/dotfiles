@@ -1,0 +1,14 @@
+{
+	"windowPosition": [
+		773,
+		6
+	],
+	"windowSize": [
+		1141,
+		528
+	],
+	"hyper": {
+		"plugins": "{\"plugins\":[\"hyper-hide-title\",\"hyper-tabs-enhanced\",\"hyper-native-window-decoration\",\"hypersixteen\"],\"localPlugins\":[]}",
+		"plugin-versions": "[[\"hyper-hide-title\",\"1.0.2\"],[\"hyper-tabs-enhanced\",\"0.4.2\"],[\"hyper-native-window-decoration\",\"0.0.1\"],[\"hypersixteen\",\"1.0.4\"]]"
+	}
+}
