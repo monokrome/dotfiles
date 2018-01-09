@@ -5,12 +5,13 @@
 
 
 # Ignore specific local .config data
-/.config/autostart
-/.config/Slack
+/.config/QtProject.conf
 /.config/Signal
 /.config/Signal-*
+/.config/Slack
 /.config/Synergy
 /.config/Trolltech.conf
+/.config/autostart
 /.config/bitcoin
 /.config/chromium
 /.config/compiz-*
@@ -23,11 +24,13 @@
 /.config/hub
 /.config/ibus
 /.config/inform.yml
+/.config/krita*
 /.config/libaccounts*
 /.config/libreoffice
 /.config/monitors.xml
 /.config/n
 /.config/nautilus
+/.config/nw
 /.config/pithos.ini
 /.config/pulse
 /.config/teamviewer
@@ -37,6 +40,7 @@
 /.config/update-notifier
 /.config/user-*
 /.config/virtualenvs
+/.config/vlc
 /.config/xbuild
 /.config/xmms2
 /.config/zoomus.conf
@@ -59,6 +63,8 @@
 /bin/*
 /britco.yml
 /VirtualBox VMs/*
+/Dropbox/*
+/Audio/*
 
 
 # Fonts
@@ -129,6 +135,9 @@
 /Games/*
 /My Games/*
 /Steam/*
+
+# Game engines
+/.config/unity3d/*
 
 
 # Miscellaneous unix tools
