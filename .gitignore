@@ -34,6 +34,7 @@
 /.config/xbuild
 /.config/xmms2
 /.config/zoomus.conf
+/.config/n
 
 
 # Dotfiles that I don't want in my dotfiles
