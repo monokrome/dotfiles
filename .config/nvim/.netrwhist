@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/monokrome/Projects/MelodyBoard/services/melody/mail/api'
+let g:netrw_dirhist_2='/home/monokrome/Projects/MelodyBoard/services'
+let g:netrw_dirhist_3='/home/monokrome/Projects/MelodyBoard/services/melody'
+let g:netrw_dirhist_4='/home/monokrome/Projects/MelodyBoard/services/melody/mail'
+let g:netrw_dirhist_5='/home/monokrome/Projects/MelodyBoard/services/melody/mail/api'
+let g:netrw_dirhist_6='/home/monokrome/Projects/MelodyBoard/services'
+let g:netrw_dirhist_7='/home/monokrome/Projects/MelodyBoard/services/melody/mail/api'

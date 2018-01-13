@@ -1,6 +1,10 @@
-  " Note: Skip initialization for vim-tiny or vim-small.
-  if !1 | finish | endif  " Disable Vi compatibility
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif  " Disable Vi compatibility
 
+" Initialize Python plugin in Neovim
+if has('nvim')
+    runtime! plugin/python_setup.vim
+endif
 
 " Initialize Plug package management
 if has('vim_starting')
@@ -112,6 +116,7 @@ if has('vim_starting')
   Plug 'digitaltoad/vim-jade'
   Plug 'dleonard0/pony-vim-syntax'
   Plug 'ekalinin/Dockerfile.vim'
+  Plug 'elzr/vim-json'
   Plug 'fatih/vim-go'
   Plug 'guns/vim-clojure-static'
   Plug 'https://github.com/pangloss/vim-javascript'
@@ -129,6 +134,7 @@ if has('vim_starting')
   Plug 'othree/html5.vim'
   Plug 'plasticboy/vim-markdown'
   Plug 'raichoo/haskell-vim'
+  Plug 'rust-lang/rust.vim'
   Plug 'sbdchd/neoformat'
   Plug 't9md/vim-chef'
   Plug 'ternjs/tern_for_vim'
@@ -139,7 +145,6 @@ if has('vim_starting')
   Plug 'vim-scripts/Better-CSS-Syntax-for-Vim'
   Plug 'vim-scripts/JavaScript-Indent'
   Plug 'wavded/vim-stylus'
-  Plug 'wting/rust.vim'
   Plug 'zchee/deoplete-go'
 
   " Framework-specific bundles
