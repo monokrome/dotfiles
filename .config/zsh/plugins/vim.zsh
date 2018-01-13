@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 
 
+which nvim > /dev/null && alias vim=nvim
+
 autoload -U colors && colors
 
 

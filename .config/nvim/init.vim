@@ -14,7 +14,6 @@ if has('vim_starting')
   " giant .vimrc file.
   Plug 'monokrome/vim-user-configuration'
 
-
   " Utility plugins - used by other scripts for their features.
   Plug 'Shougo/unite.vim' " Library for generalized navigation of item lists
   Plug 'Shougo/vimproc.vim' " Async utility library
@@ -53,7 +52,7 @@ if has('vim_starting')
   Plug 'https://github.com/rking/ag.vim' " Use silver searcher for :find-like searches with :Ag
   Plug 'itchyny/lightline.vim' " A lightweight alternative to PowerLIne for pretty statusbars
   Plug 'johnsyweb/vim-makeshift' " 'intelligent' selection of makeprg
-  Plug 'junegunn/fzf.vim' " FZF fuzzy finder
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'kana/vim-exjumplist' " Plug mappings to jump between buffers in the jumplist
   Plug 'majutsushi/tagbar' " A tagbar pane for the current buffer
   Plug 'mattn/emmet-vim' " Add shortcuts for making HTML elements
@@ -66,6 +65,7 @@ if has('vim_starting')
   Plug 'neochrome/todo.vim' " A todo list for Vim.
   Plug 'neomake/neomake'
   Plug 'nicholaides/words-to-avoid.vim' " Highlights words that should be avoided in technical writing
+  Plug 'sbdchd/neoformat' " Clean code for me, plz!
   Plug 'sjl/gundo.vim' " Tools to help better manage the undo tree
   Plug 'taxilian/a.vim' " Commands for jumping between alternate related files
   Plug 'terryma/vim-multiple-cursors' " The ability to use multiple cursors
@@ -100,7 +100,6 @@ if has('vim_starting')
   Plug 'vim-scripts/openssl.vim' " Allows wrapping Vim's I/O around OpenSSL
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'wellle/targets.vim' " Some smart generic text objects!
-  Plug 'sbdchd/neoformat' " Clean code for me, plz!
 
   " Language bundles
   Plug 'Glench/Vim-Jinja2-Syntax'
@@ -152,7 +151,6 @@ if has('vim_starting')
   Plug 'moll/vim-node' " Helpers for working in NodeJS
   Plug 'smerrill/vagrant-vim' " Automatically set `ruby` filetype on Vagrantfile
   Plug 'vim-scripts/django.vim' " Syntax highlighting for Django templates
-
 
   " Mark dependencies as having all been listed
   call plug#end()
