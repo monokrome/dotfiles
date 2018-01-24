@@ -64,7 +64,6 @@ if has('vim_starting')
   Plug 'monokrome/vim-projector' " Load project-specific configuration files
   Plug 'nathanaelkane/vim-indent-guides' " Guide lines for indentation
   Plug 'neochrome/todo.vim' " A todo list for Vim.
-  Plug 'neomake/neomake'
   Plug 'nicholaides/words-to-avoid.vim' " Highlights words that should be avoided in technical writing
   Plug 'sbdchd/neoformat' " Clean code for me, plz!
   Plug 'sjl/gundo.vim' " Tools to help better manage the undo tree
@@ -101,6 +100,7 @@ if has('vim_starting')
   Plug 'vim-scripts/openssl.vim' " Allows wrapping Vim's I/O around OpenSSL
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'wellle/targets.vim' " Some smart generic text objects!
+  Plug 'w0rp/ale' " Linting and fixing!
 
   " Language bundles
   Plug 'Glench/Vim-Jinja2-Syntax'
