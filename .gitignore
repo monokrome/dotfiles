@@ -67,6 +67,9 @@
 /Audio/*
 
 
+# Compositor script
+!/bin/compose
+
 # Fonts
 !/.fonts
 /.fonts/Soleil-*

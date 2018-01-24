@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+pkill compton
+compton -m 0.97 -i 0.93
