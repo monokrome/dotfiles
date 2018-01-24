@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+
+# Themes are collections of wallpapers with a common subject. A theme exists
+# between background changes, but can be different for each X session. A random
+# theme will be chosen in the case that an expliti $WALLPAPER_ROOT isn't set.
+
+
+[[ -z $WALLPAPER_ROOT ]] && WALLPAPER_ROOT=${HOME}/Pictures/Wallpapers
+[[ -z $WALLPAPER_THEME ]] && WALLPAPER_THEME=$(rf $WALLPAPER_ROOT)
+
+
+rotate() {
+  wallpaper=$(rf $WALLPAPER_THEME)
+  printf '%s\n' $wallpaper
+  feh --bg-tile ${wallpaper}
+}
+
+
+rotate
+sleep 3600
+exec rotate_backgrounds $THEME

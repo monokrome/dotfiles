@@ -70,6 +70,9 @@
 # Compositor script
 !/bin/compose
 
+# Rotation of background images
+!/bin/rotate_backgrounds
+
 # Fonts
 !/.fonts
 /.fonts/Soleil-*
