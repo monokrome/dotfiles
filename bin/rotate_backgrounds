@@ -13,7 +13,7 @@
 rotate() {
   wallpaper=$(rf $WALLPAPER_THEME)
   printf '%s\n' $wallpaper
-  feh --bg-tile ${wallpaper}
+  feh --no-fehbg --bg-tile "${wallpaper}"
 }
 
 
