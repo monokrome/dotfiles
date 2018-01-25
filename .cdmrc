@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+dialogrc=/usr/share/doc/cdm/themes/default
+
 consolekit=false
 cktimeout=3
 
