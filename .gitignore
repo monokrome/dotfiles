@@ -67,6 +67,9 @@
 /Audio/*
 
 
+# Common user scripts
+!/bin/user-screenshot
+
 # Compositor script
 !/bin/compose
 
