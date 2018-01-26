@@ -7,11 +7,10 @@
 
 
 [[ -z $WALLPAPER_ROOT ]] && WALLPAPER_ROOT=${HOME}/Pictures/Wallpapers
-[[ -z $WALLPAPER_THEME ]] && WALLPAPER_THEME=$(rf $WALLPAPER_ROOT)
-
+[[ -z $WALLPAPER_THEME ]] && WALLPAPER_THEME=$WALLPAPER_ROOT/$(ls $WALLPAPER_ROOT | sort -R | head -n 1)
 
 rotate() {
-  wallpaper=$(rf $WALLPAPER_THEME)
+  wallpaper=${WALLPAPER_THEME}/$(ls $WALLPAPER_THEME | sort -R | head -n 1)
   printf '%s\n' $wallpaper
   feh --no-fehbg --bg-tile "${wallpaper}"
 }
