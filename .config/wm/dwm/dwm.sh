@@ -3,7 +3,7 @@
 sleep 3
 
 xbindkeys &
-onboard -a -t Nightshade -l Small &
+onboard -a &
 start-pulseaudio-x11 &
 rotate_backgrounds &
 compose &
