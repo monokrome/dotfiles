@@ -154,6 +154,9 @@
 !/.screenrc
 !/.mutt
 
+# xinit
+!/.xinit*
+
 # Dynamic Window Manager
 /.config/dwm/*
 !/.config/dwm/Makefile
