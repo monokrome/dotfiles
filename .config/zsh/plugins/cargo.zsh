@@ -1,2 +1,2 @@
 #!/usr/bin/env python
-[[ -e $HOME/.cargo ]] && source $HOME/.cargo/env
+[[ -e $HOME/.cargo/env ]] && source $HOME/.cargo/env
