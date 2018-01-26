@@ -28,6 +28,7 @@
     m:0x0 + c:173
     XF86AudioPrev
 
-"import ~/Pictures/Screenshots/01.png"
+# Take screenshots
+"user-screenshot"
     m:0x9 + c:13
-    Shift+Alt + 4
+    Shift+Alt+4
