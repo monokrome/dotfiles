@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+
+""" Manage X11 screen rotation & oritentation settings.
+
+The following software is required:
+
+  - xrandr
+
+For Wacom support, please install the following:
+
+  - xf86-input-wacom
+  - xsetwacom
+
+ROADMAP:
+
+  - Finish wacom support
+
+"""
+
+import json
+import os
+import sys
+
+TRUTHY_VALUES = {'on', 'yes', 'true', 'ok', '1'}
+
+DEFAULT_XRANDR_COMMAND = 'xrandr'
+XRANDR_COMMAND = os.environ.get('XRANDR_COMMAND', DEFAULT_XRANDR_COMMAND)
+
+FORMATTERS = {
+    'mode': lambda val: 'x'.join(map(str, val))
+}
+
+DEFAULT_ENVIRONMENT = os.environ.get('DEFAULT_ENVIRONMENT', 'standard')
+
+with open('/home/monokrome/.config/user-xrotate/environments.yaml') as f:
+    environments = json.loads(f.read())
+
+def wacom_enabled():
+    return os.environ.get('WACOM_ENABLED', 'TRUE').lower() in TRUTHY_VALUES
+
+def get_wacom_device():
+    device_name = os.environ.get('WACOM_DEVICE')
+
+    if not device_name:
+        print(os.system('xsetwacom list devices'))
+
+    return device_name
+
+def get_environment_names():
+    return ', '.join(environments.keys())
+
+def usage():
+    sys.stderr.write((
+        f'Usage: {sys.argv[0]} <environment>\n\n'
+        f'Environments: {get_environment_names()}\n'
+    ))
+
+    exit(1)
+
+if len(sys.argv) > 2:
+    usage()
+
+def get_environment():
+    environment = os.environ.get('ENVIRONMENT', '').lower()
+
+    if len(sys.argv) is 1:
+        environment = DEFAULT_ENVIRONMENT
+
+    elif not environment:
+        environment = sys.argv[1]
+
+    if environment not in get_environment_names():
+        usage()
+
+    return environment
+
+environment = get_environment()
+environment_options = environments.get(environment)
+
+if environment_options is None:
+    sys.stderr.write((
+        f'Failed to move to environment: {environment}. '
+        'The environment does not exist.\n'
+    ))
+
+    exit(2)
+
+def get_xrandr_command(output, options):
+    base_command = f'{XRANDR_COMMAND} --output {output}'
+    options_str = ''
+
+    for key, value in options.items():
+        options_str += f' --{key}'
+
+        if value is True:
+            continue
+
+        formatter = FORMATTERS.get(key)
+
+        if formatter:
+            value = formatter(value)
+
+        options_str += f' {value}'
+
+    return f'{base_command}{options_str}'
+
+for output, options in environment_options.items():
+    print(get_xrandr_command(output, options))
+    os.system(get_xrandr_command(output, options))

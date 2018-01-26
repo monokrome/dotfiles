@@ -68,7 +68,8 @@
 
 
 # Common user scripts
-!/bin/user-screenshot
+!/bin/user-*
+!/.config/user-*
 
 # Compositor script
 !/bin/compose

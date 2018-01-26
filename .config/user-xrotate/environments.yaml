@@ -1,0 +1,25 @@
+{
+    "home": {
+        "DP1": {"off": true},
+        "HDMI2": {"mode": [3840, 2160], "right-of": "eDP1"},
+        "eDP1": {"mode": [1920, 1080], "rotate": "normal"}
+    },
+
+    "office": {
+        "DP1": {"mode": [3840, 2160], "right-of": "eDP1", "rotate": "normal"},
+        "HDMI2": {"mode": [1920, 1080], "right-of": "DP1", "rotate": "left"},
+        "eDP1": {"mode": [2560, 1440], "rotate": "normal"}
+    },
+
+    "standard": {
+        "DP1": {"off": true},
+        "HDMI2": {"off": true},
+        "eDP1": {"mode": [2560, 1440], "rotate": "normal"}
+    },
+
+    "tablet": {
+        "DP1": {"off": true},
+        "HDMI2": {"off": true},
+        "eDP1": {"mode": [2560, 1440], "rotate": "normal"}
+    }
+}
