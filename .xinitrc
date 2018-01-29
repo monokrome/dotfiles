@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
 path=(${HOME}/bin $path)
 
 wm=$1

@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# Kill any currently running copies of this script
+pkill $(basename $0)
+
+# Disable trackpoint device
+xinput disable 14
+
+# Set up Synaptics
+synclient TouchPadOff=0
+
+synclient MaxTapTime=125
+synclient MaxDoubleTapTime=180
+
+synclient TapButton1=1
+synclient TapButton2=3
+synclient TapButton3=2
+
+synclient ClickFinger1=1
+synclient ClickFinger2=3
+synclient ClickFinger3=2
+
+synclient PalmDetect=on
+synclient PalmMinwidth=6
+synclient PalmMinwidth=80
+
+synclient ClickPad=false
+
+synclient VertScrollDelta=-111
+synclient HorizScrollDelta=68
+synclient {Vert,Horiz}Hysteresis=12
+
+synclient HorizTwoFingerScroll=0
+synclient VertTwoFingerScroll=1
+synclient {Horiz,Vert}EdgeScroll=on
+
+synclient EmulateTwoFingerMinW=8
+synclient EmulateTwoFingerMinZ=40
+
+synclient CoastingSpeed=0
+
+synclient CircularScrolling=off
+
+synclient LockedDrags=1
+
+# Run Synaptics daemon for disabling while typing
+syndaemon -i 0.6 -t -k -R
