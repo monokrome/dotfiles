@@ -1,19 +1,24 @@
 #!/usr/bin/env bash
 
 
+[[ -z $WALLPAPER_ROOT ]] && WALLPAPER_ROOT=${HOME}/Pictures/Wallpapers
+[[ -z $WALLPAPER_THEME ]] && WALLPAPER_THEME=$WALLPAPER_ROOT/$(ls $WALLPAPER_ROOT | sort -R | head -n 1)
+
+
 # Themes are collections of wallpapers with a common subject. A theme exists
 # between background changes, but can be different for each X session. A random
 # theme will be chosen in the case that an expliti $WALLPAPER_ROOT isn't set.
 
-
-[[ -z $WALLPAPER_ROOT ]] && WALLPAPER_ROOT=${HOME}/Pictures/Wallpapers
-[[ -z $WALLPAPER_THEME ]] && WALLPAPER_THEME=$WALLPAPER_ROOT/$(ls $WALLPAPER_ROOT | sort -R | head -n 1)
 
 rotate() {
   wallpaper=${WALLPAPER_THEME}/$(ls $WALLPAPER_THEME | sort -R | head -n 1)
   printf '%s\n' $wallpaper
   feh --no-fehbg --bg-tile "${wallpaper}"
 }
+
+
+# Kill any currently running copies of this script
+pkill $(basename $0)
 
 
 rotate
