@@ -12,7 +12,6 @@ __project_prepare_golang() {
 
     # Wipe out golang source directory if we are cloning a project that isn't
     # in the projects directory.
-
     go_src_project_path=${GOPATH}/src/github.com/$2/$3/
     [[ ! -d $go_src_project_path ]] && return 0
 
@@ -76,7 +75,7 @@ __project_init_node() {
 __project_init_golang() {
     [[ -z $GOPATH ]] && return 0
 
-    go_files=$(find . -iname *.go)
+    go_files=$(find . -iname \*.go)
     [[ -z $go_files ]] && return 0
 
     go_src_organization_path=${GOPATH}/src/github.com/$2/
