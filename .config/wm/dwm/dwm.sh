@@ -12,7 +12,7 @@ touchegg &
 cbatticon -n &
 volumeicon &
 dwmstatus &
-statnot &
+user-notifications &
 user-touchpad &
 
 dwm

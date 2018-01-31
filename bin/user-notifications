@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Kill any currently running copies of this script
+pkill dunst
+
+# Run a notification daemon
+dunst
