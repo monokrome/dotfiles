@@ -5,6 +5,7 @@
 
 
 # Ignore specific local .config data
+/.config/emaildefaults
 /.config/QtProject.conf
 /.config/Signal
 /.config/Signal-*
