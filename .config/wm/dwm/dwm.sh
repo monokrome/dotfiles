@@ -11,7 +11,7 @@ compose &
 touchegg &
 cbatticon -n &
 volumeicon &
-dwmstatus &
+user-statusline &
 user-notifications &
 user-touchpad &
 
