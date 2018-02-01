@@ -7,7 +7,7 @@ onboard -a &
 start-pulseaudio-x11 &
 user-wallpapers &
 user-screen-rotation &
-compose &
+user-compositor &
 touchegg &
 cbatticon -n &
 volumeicon &
