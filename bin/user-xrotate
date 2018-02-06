@@ -105,5 +105,5 @@ def get_xrandr_command(output, options):
     return f'{base_command}{options_str}'
 
 for output, options in environment_options.items():
-    print(get_xrandr_command(output, options))
+    print(get_xrandr_command(output, options), file=sys.stderr)
     os.system(get_xrandr_command(output, options))

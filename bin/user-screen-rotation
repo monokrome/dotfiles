@@ -51,11 +51,23 @@ STATES = [
 def rotate(state):
     s = STATES[state]
     check_call(['xrandr', '-o', s['rot']])
+
     for dev in touchscreens if disable_touchpads else (touchscreens + touchpads):
         check_call([
             'xinput', 'set-prop', dev,
             'Coordinate Transformation Matrix',
         ] + s['coord'].split())
+
+        try:
+            check_call([
+                'xrandr-align',
+                'monitor',
+                '--input="' + dev + '"',
+            ])
+
+        except Exception as e:
+            pass
+
     if disable_touchpads:
         for dev in touchpads:
             check_call(['xinput', s['touchpad'], dev])
