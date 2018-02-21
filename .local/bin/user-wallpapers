@@ -10,17 +10,39 @@
 # theme will be chosen in the case that an expliti $WALLPAPER_ROOT isn't set.
 
 
+_update_gnome_wallpaper() {
+  echo $0
+
+  for schema in 'org.gnome.desktop.background' 'org.gnome.desktop.screensaver'; do
+    gsettings set "${schema}" picture-options "wallpaper"
+    gsettings set "${schema}" picture-uri "file://${1}"
+  done
+}
+
+_update_x11_wallpaper() {
+  feh --no-fehbg --bg-tile "${1}"
+}
+
+
 rotate() {
+  if [[ -z $ROTATE_MODE ]]; then
+    if [[ ! -z $GNOME_SHELL_SESSION_MODE ]]; then
+      ROTATE_MODE=gnome
+    else
+      ROTATE_MODE=x11
+    fi
+  fi
+
   wallpaper=${WALLPAPER_THEME}/$(ls $WALLPAPER_THEME | sort -R | head -n 1)
-  printf '%s\n' $wallpaper
-  feh --no-fehbg --bg-tile "${wallpaper}"
+  printf 'Switching wallpaper: %s\n' "${wallpaper}"
+
+  _update_${ROTATE_MODE}_wallpaper "${wallpaper}"
 }
 
 
 # Kill any currently running copies of this script
 pkill $(basename $0)
 
-
 rotate
-sleep 3600
-exec rotate_backgrounds $THEME
+
+sleep 3600 && exec update_backgrounds $THEME
