@@ -1,51 +1,51 @@
 # Ignore non-git hidden files by default
 /.*
 !/.git*
-!/.config
+!/.local
 
 
-# Ignore specific local .config data
-/.config/emaildefaults
-/.config/QtProject.conf
-/.config/Signal
-/.config/Signal-*
-/.config/Slack
-/.config/Synergy
-/.config/Trolltech.conf
-/.config/autostart
-/.config/bitcoin
-/.config/chromium
-/.config/compiz-*
-/.config/configstore
-/.config/dconf
-/.config/evolution
-/.config/go
-/.config/gocode
-/.config/gtk-*
-/.config/hub
-/.config/ibus
-/.config/inform.yml
-/.config/krita*
-/.config/libaccounts*
-/.config/libreoffice
-/.config/monitors.xml
-/.config/n
-/.config/nautilus
-/.config/nw
-/.config/openvpn/*.ovpn
-/.config/pithos.ini
-/.config/pulse
-/.config/teamviewer
-/.config/totem
-/.config/touchegg
-/.config/unity
-/.config/update-notifier
-/.config/user-*
-/.config/virtualenvs
-/.config/vlc
-/.config/xbuild
-/.config/xmms2
-/.config/zoomus.conf
+# Ignore specific local .local/etc data
+/.local/etc/emaildefaults
+/.local/etc/QtProject.conf
+/.local/etc/Signal
+/.local/etc/Signal-*
+/.local/etc/Slack
+/.local/etc/Synergy
+/.local/etc/Trolltech.conf
+/.local/etc/autostart
+/.local/etc/bitcoin
+/.local/etc/chromium
+/.local/etc/compiz-*
+/.local/etc/configstore
+/.local/etc/dconf
+/.local/etc/evolution
+/.local/etc/go
+/.local/etc/gocode
+/.local/etc/gtk-*
+/.local/etc/hub
+/.local/etc/ibus
+/.local/etc/inform.yml
+/.local/etc/krita*
+/.local/etc/libaccounts*
+/.local/etc/libreoffice
+/.local/etc/monitors.xml
+/.local/etc/n
+/.local/etc/nautilus
+/.local/etc/nw
+/.local/etc/openvpn/*.ovpn
+/.local/etc/pithos.ini
+/.local/etc/pulse
+/.local/etc/teamviewer
+/.local/etc/totem
+/.local/etc/touchegg
+/.local/etc/unity
+/.local/etc/update-notifier
+/.local/etc/user-*
+/.local/etc/virtualenvs
+/.local/etc/vlc
+/.local/etc/xbuild
+/.local/etc/xmms2
+/.local/etc/zoomus.conf
 
 
 # Dotfiles that I don't want in my dotfiles
@@ -71,7 +71,7 @@
 
 # Common user scripts
 !/bin/user-*
-!/.config/user-*
+!/.local/etc/user-*
 
 # Compositor script
 !/bin/compose
@@ -109,8 +109,8 @@
 
 
 # ZSH files
-/.config/zsh/local.zsh
-/.config/zsh/private/*.zsh
+/.local/etc/zsh/local/*.zsh
+/.local/etc/zsh/private/*.zsh
 /.zcompdump
 
 
@@ -122,13 +122,13 @@
 # Vim files
 !.vim
 
-/.config/nvim/plugged/*
-/.config/nvim/tmp/*
-/.config/nvim/.netrwhist
+/.local/etc/nvim/plugged/*
+/.local/etc/nvim/tmp/*
+/.local/etc/nvim/.netrwhist
 
-!/.config/nvim/tmp/undo/README.md
-!/.config/nvim/tmp/backup/README.md
-!/.config/nvim/tmp/swap/README.md
+!/.local/etc/nvim/tmp/undo/README.md
+!/.local/etc/nvim/tmp/backup/README.md
+!/.local/etc/nvim/tmp/swap/README.md
 
 
 # Git configuration
@@ -149,7 +149,7 @@
 /Steam/*
 
 # Game engines
-/.config/unity3d/*
+/.local/etc/unity3d/*
 
 
 # Miscellaneous unix tools
@@ -161,8 +161,8 @@
 !/.xinit*
 
 # Dynamic Window Manager
-/.config/dwm/*
-!/.config/dwm/Makefile
+/.local/etc/dwm/*
+!/.local/etc/dwm/Makefile
 
 # URXVT configurations
 !/.urxvt
@@ -171,5 +171,5 @@
 !/.cdmrc
 
 # Hyper terminal
-/.config/Hyper/*
-!/.config/Hyper/config.json
+/.local/etc/Hyper/*
+!/.local/etc/Hyper/config.json
