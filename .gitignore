@@ -1,3 +1,8 @@
+# Non-user-configuration oriented binary files
+/.local/bin/*
+!/.local/bin/user-*
+
+
 # Ignore non-git hidden files by default
 /.*
 !/.git*
@@ -62,8 +67,6 @@
 /Projects/*
 /Public/*
 /Videos/*
-/bin/*
-/britco.yml
 /VirtualBox VMs/*
 /Dropbox/*
 /Audio/*
@@ -73,11 +76,14 @@
 !/bin/user-*
 !/.local/etc/user-*
 
+
 # Compositor script
 !/bin/compose
 
+
 # Rotation of background images
 !/bin/rotate_backgrounds
+
 
 # Fonts
 !/.fonts
@@ -148,6 +154,7 @@
 /My Games/*
 /Steam/*
 
+
 # Game engines
 /.local/etc/unity3d/*
 
@@ -157,18 +164,23 @@
 !/.screenrc
 !/.mutt
 
+
 # xinit
 !/.xinit*
+
 
 # Dynamic Window Manager
 /.local/etc/dwm/*
 !/.local/etc/dwm/Makefile
 
+
 # URXVT configurations
 !/.urxvt
 
+
 # CDM configuration
 !/.cdmrc
+
 
 # Hyper terminal
 /.local/etc/Hyper/*

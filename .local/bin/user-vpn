@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+profile=$1
+
+
+usage() {
+  printf 'Usage: %s <profile>\n' $0 > /dev/stderr
+  exit 1
+}
+
+
+[[ -z ${profile} ]] && usage
+
+command -v openvpn 2>&1 > /dev/null || usage
+  
+
+abduco -A "vpn.${profile}" sudo openvpn --config ${HOME}/.local/etc/openvpn/${profile}.ovpn

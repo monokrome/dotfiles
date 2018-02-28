@@ -32,7 +32,9 @@ FORMATTERS = {
 
 DEFAULT_ENVIRONMENT = os.environ.get('DEFAULT_ENVIRONMENT', 'standard')
 
-with open('/home/monokrome/.config/user-xrotate/environments.yaml') as f:
+USER = os.environ.get('USER')
+
+with open('/home/' + USER + '/.config/user-xrotate/environments.yaml') as f:
     environments = json.loads(f.read())
 
 def wacom_enabled():
