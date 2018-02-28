@@ -28,10 +28,8 @@
     show_indicators = yes
     icon_position = right
     max_icon_size = 32
-    icon_path = /home/monokrome/.icons/AwOkenWhite/clear/128x128/status/:/home/monokrome/.icons/AwOkenWhite/clear/128x128/status/devices/
     sticky_history = yes
     history_length = 100
-    dmenu = /home/monokrome/bin/dmenu -p dunst:
     browser = /usr/bin/xdg-open
     always_run_script = false
 
