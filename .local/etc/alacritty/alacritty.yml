@@ -23,13 +23,14 @@ visual_bell:
   animation: EaseOutExpo
   duration: 0
 
-dimensions:
-  columns: 80
-  lines: 24
+window:
+  dimensions:
+    columns: 80
+    lines: 24
 
-padding:
-  x: 2
-  y: 2
+  padding:
+    x: 2
+    y: 2
 
 dpi:
   x: 96.0
