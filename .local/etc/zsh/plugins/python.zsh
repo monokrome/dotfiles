@@ -7,8 +7,7 @@ export VIRTUAL_ENV_HIDDEN_ROOT
 
 
 [[ -z $PYENV_ROOT ]] && PYENV_ROOT=${HOME}/.local/share/pyenv
-[[ ! -z $VIRTUAL_ENV_HIDDEN_ROOT ]] && VIRTUAL_ENV_HIDDEN_ROOT=$HOME/.config/virtualenvs
-
+[[ -z $VIRTUAL_ENV_HIDDEN_ROOT ]] && VIRTUAL_ENV_HIDDEN_ROOT=$HOME/.config/virtualenvs
 
 path=(${PYENV_ROOT}/bin $path)
 
@@ -32,7 +31,7 @@ activate_virtual_environment() {
 
     current_path=$PWD
     while [ $current_path != "/" ]; do
-        venv_bin_path=$VIRTUAL_ENV_HIDDEN_ROOT/$(basename $current_path)/bin
+        venv_bin_path=${VIRTUAL_ENV_HIDDEN_ROOT}/$(basename ${current_path})/bin
         if [[ -f $venv_bin_path/activate && -f $venv_bin_path/pip ]]; then
             source $venv_bin_path/activate
             return
