@@ -4,15 +4,15 @@
 autoload -U colors && colors
 
 
-[[ -z $ZSH_CONFIG_PATH ]] && export ZSH_CONFIG_PATH=$HOME/.config/zsh
+[[ -z $ZSH_CONFIG_PATH ]] && export ZSH_CONFIG_PATH=$HOME/.local/etc/zsh
 
 
 ZSH_PRIVATE_ENCRYPTED_SUFFIX=.enc
-ZSH_PRIVATE_PATH=${ZSH_CONFIG_PATH}/private/
+ZSH_SECRETS_PATH=${ZSH_CONFIG_PATH}/secrets/
 
 
 __walk_private() {
-    paths=$ZSH_PRIVATE_PATH${@[2,-1]}(N)
+    paths=$ZSH_SECRETS_PATH${@[2,-1]}(N)
     for filename in ${~paths}; do
         $1 $filename
     done
@@ -59,7 +59,7 @@ zsh_secret() {
     [[ -z ${1} ]] && print -P '%F{red}Must provide a filename to edit secrets.%f' && return 1
     [[ -z ${EDITOR} ]] && EDITOR=vim
 
-    filename=${ZSH_PRIVATE_PATH}$1.zsh
+    filename=${ZSH_SECRETS_PATH}$1.zsh
     [[ -e ${filename} ]] || unlock_zsh_configs $1
 
     $EDITOR $filename
@@ -67,7 +67,7 @@ zsh_secret() {
 
 
 setup_zsh_secrets() {
-    sourceall ${ZSH_CONFIG_PATH}/private/*.zsh(N)
+    sourceall ${ZSH_SECRETS_PATH}/*.zsh(N)
 }
 
 
