@@ -35,6 +35,20 @@ activate_virtual_environment() {
 }
 
 
+mkenv() {
+  which pipenv 2>&1 > /dev/null
+  [[ $? != 0 ]] && printf 'Failed: Please install pipenv.\n' > /dev/stderr && return 1
+
+  python_version=$1
+  [[ -z ${python_version} ]] && python_version=$(python --version | cut -f 2 -d \ )
+
+  pipenv --python "${python_version}"
+  [[ -f setup.py || -f Pipfile.lock ]] && pipenv install --dev 2>&1 > /dev/null
+
+  activate_virtual_environment
+}
+
+
 which pipenv 2>&1 > /dev/null && chpwd_functions=( \
   ${chpwd_functions[@]}                            \
   "activate_virtual_environment"                   \
