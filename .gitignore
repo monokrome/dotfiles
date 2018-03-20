@@ -17,6 +17,7 @@
 
 
 # Ignore specific local .local/etc data
+/.local/etc/.*
 /.local/etc/QtProject.conf
 /.local/etc/Signal
 /.local/etc/Signal-*
