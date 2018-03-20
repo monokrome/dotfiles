@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+printf 'Reconfiguring GNOME\n'
+
+# Set window manager to DWM
+gconftool --type boolean --set /apps/nautilus/preferences/show_desktop false
+gconftool-2 -t string -s /desktop/gnome/applications/window_manager/current dwm
+gconftool-2 -t string -s /desktop/gnome/session/required_components/windowmanager dwm
+gconftool-2 -u /desktop/gnome/session/required_components/windowmanager
