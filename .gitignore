@@ -1,3 +1,7 @@
+# Ignore specific file types
+*.h
+*.gypi
+
 # Non-user-configuration oriented binary files
 /.local/bin/*
 !/.local/bin/user-*
@@ -53,6 +57,20 @@
 /.local/etc/xmms2
 /.local/etc/zoomus.conf
 
+# Ignore local-only data
+/.local/doc
+/.local/var
+/.local/lib
+/.local/man
+
+# N installer makes a huge mess
+/.local/.n
+/.local/n
+/.local/n-*
+/.local/node
+/.local/node_modules/
+/.local/npm
+/.local/npx
 
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
