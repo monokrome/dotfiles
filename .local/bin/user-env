@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+export PATH
+export PREFIX
+
+# Usage message to help users when used inappropriately
+usage() {
+/dev/stderr <<FIN
+Usage: $0 [cmd...]
+
+Executes 'cmd...' within a user-local environment
+FIN
+}
+
+[[ ! -z $HOME ]] && PATH=${HOME}/.local/bin:${PATH}
+
+PREFIX=${HOME}/.local
+
+proxied_cmd=($@)
+
+[[ -z proxied_cmd ]] && usage && exit 1
+
+[[ ${PREFIX#*$2*} == PREFIX ]] && echo ok
+
+[[ $1 == make ]]\
+&& proxied_cmd=${proxied_cmd[@]} PREFIX=$PREFIX
+
+exec ${proxied_cmd[@]}
