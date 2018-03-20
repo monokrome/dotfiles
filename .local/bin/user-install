@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+
+make install PREFIX=${HOME}/.local
