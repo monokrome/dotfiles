@@ -1,6 +1,7 @@
 # Ignore specific file types
 *.h
 *.gypi
+*~
 
 # Non-user-configuration oriented binary files
 /.local/bin/*
@@ -51,11 +52,13 @@
 /.local/etc/unity
 /.local/etc/update-notifier
 /.local/etc/user-*
-/.local/etc/virtualenvs
 /.local/etc/vlc
 /.local/etc/xbuild
 /.local/etc/xmms2
 /.local/etc/zoomus.conf
+
+# Python virtual environments
+/.local/venvs
 
 # Ignore local-only data
 /.local/doc
@@ -71,6 +74,7 @@
 /.local/node_modules/
 /.local/npm
 /.local/npx
+/.local/etc/versions
 
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
