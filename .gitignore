@@ -6,6 +6,7 @@
 # Non-user-configuration oriented binary files
 /.local/bin/*
 !/.local/bin/user-*
+/.local/bin/user-local-*
 
 
 # Ignore non-git hidden files by default
