@@ -102,7 +102,7 @@ __project_init_make() {
 __project_init() {
     print -P "%F{cyan}Initializing project at ${1}%f"
 
-    __project_init_golang $@ &&
+    # __project_init_golang $@ &&
     __project_init_make $@ &&
     __project_init_python $@ &&
     __project_init_node $@ &&

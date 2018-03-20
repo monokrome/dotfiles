@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+key_path=~/.ssh
+cd $key_path
+ssh-add $(ls $key_path | grep id_ | grep -v .pub)

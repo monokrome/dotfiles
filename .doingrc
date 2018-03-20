@@ -1,6 +1,6 @@
 ---
-doing_file: "~/today.md"
-current_section: Currently
+doing_file: "~/Projects/monokrome/wassup/patreon.md"
+current_section: Patreon
 editor_app: vim
 marker_tag: flagged
 marker_color: red
@@ -36,6 +36,6 @@ views:
     date_format: "%F %_I:%M%P"
     template: "%boldblack%date %boldgreen| %boldwhite%title%default%note"
     wrap_width: 0
-    section: Currently
+    section: Patreon
     count: 10
     order: asc

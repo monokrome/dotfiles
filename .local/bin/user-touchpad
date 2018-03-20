@@ -3,9 +3,6 @@
 # Kill any currently running copies of this script
 pkill $(basename $0)
 
-# Disable trackpoint device
-xinput disable 14
-
 # Set up Synaptics
 synclient TouchPadOff=0
 

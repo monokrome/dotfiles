@@ -22,3 +22,8 @@ for plugin in ${ZSH_CONFIG_PATH}/external/*; do
   [[ -f ${after_config} ]] || continue
   source ${after_config}
 done
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
