@@ -56,6 +56,7 @@
 /.local/etc/xbuild
 /.local/etc/xmms2
 /.local/etc/zoomus.conf
+/.local/etc/yelp
 
 # Python virtual environments
 /.local/venvs
