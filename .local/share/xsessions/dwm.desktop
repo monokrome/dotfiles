@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=DWM
+Comment=Dynamic Window Manager
+Exec=gnome-session --session=dwm
+TryExec=/usr/bin/gnome-session
+Type=XSession
