@@ -16,7 +16,6 @@
 
 
 # Ignore specific local .local/etc data
-/.local/etc/emaildefaults
 /.local/etc/QtProject.conf
 /.local/etc/Signal
 /.local/etc/Signal-*
@@ -29,8 +28,10 @@
 /.local/etc/compiz-*
 /.local/etc/configstore
 /.local/etc/dconf
+/.local/etc/emaildefaults
 /.local/etc/evolution
 /.local/etc/go
+/.local/etc/goa-*
 /.local/etc/gocode
 /.local/etc/gtk-*
 /.local/etc/hub
@@ -55,8 +56,8 @@
 /.local/etc/vlc
 /.local/etc/xbuild
 /.local/etc/xmms2
-/.local/etc/zoomus.conf
 /.local/etc/yelp
+/.local/etc/zoomus.conf
 
 # Python virtual environments
 /.local/venvs
