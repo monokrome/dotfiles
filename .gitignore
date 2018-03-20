@@ -30,6 +30,7 @@
 /.local/etc/configstore
 /.local/etc/dconf
 /.local/etc/emaildefaults
+/.local/etc/epiphany
 /.local/etc/evolution
 /.local/etc/go
 /.local/etc/goa-*
@@ -59,7 +60,6 @@
 /.local/etc/xmms2
 /.local/etc/yelp
 /.local/etc/zoomus.conf
-/.local/etc/epiphany
 
 # Python virtual environments
 /.local/venvs
