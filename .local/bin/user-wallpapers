@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 
+export $WALLPAPER_ROOT
+export $WALLPAPER_THEME
+
+
 [[ -z $WALLPAPER_ROOT ]] && WALLPAPER_ROOT=${HOME}/Pictures/Wallpapers
 [[ -z $WALLPAPER_THEME ]] && WALLPAPER_THEME=$WALLPAPER_ROOT/$(ls $WALLPAPER_ROOT | sort -R | head -n 1)
 
@@ -11,8 +15,6 @@
 
 
 _update_gnome_wallpaper() {
-  echo $0
-
   for schema in 'org.gnome.desktop.background' 'org.gnome.desktop.screensaver'; do
     gsettings set "${schema}" picture-options "wallpaper"
     gsettings set "${schema}" picture-uri "file://${1}"
@@ -26,7 +28,7 @@ _update_x11_wallpaper() {
 
 rotate() {
   if [[ -z $ROTATE_MODE ]]; then
-    if [[ ! -z $GNOME_SHELL_SESSION_MODE ]]; then
+    if [[ ! -z $GNOME_SHELL_SESSION_MODE || ! -z $GNOME_DESKTOP_SESSION_ID ]]; then
       ROTATE_MODE=gnome
     else
       ROTATE_MODE=x11
@@ -45,4 +47,4 @@ pkill $(basename $0)
 
 rotate
 
-sleep 3600 && exec update_backgrounds $THEME
+sleep 3600 && exec $0

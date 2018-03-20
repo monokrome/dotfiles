@@ -8,3 +8,5 @@ XDG_CONFIG_DIRS=/usr/share/gnome
 for new_path in .*/bin; do
   PATH="${HOME}/${new_path}:${PATH}"
 done
+
+which ssh-agent && eval `ssh-agent -t 21600`

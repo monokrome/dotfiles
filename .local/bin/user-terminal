@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-[[ -z $USER_TERMINAL ]] && USER_TERMINAL=(alacritty rxvt-unicode urxvt st xterm)
+[[ -z $USER_TERMINAL ]] && USER_TERMINAL=(alacritty rxvt-unicode urxvt st gnome-terminal xterm)
 
-for terminal_program in $USER_TERMINAL; do
+for terminal_program in ${USER_TERMINAL[@]}; do
   which $terminal_program 2>&1 > /dev/null \
     && eval ${terminal_program} $@ \
     && break

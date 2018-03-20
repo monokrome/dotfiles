@@ -1,16 +1,22 @@
+# Ignore specific file types
+*.h
+*.gypi
+*~
+
 # Non-user-configuration oriented binary files
 /.local/bin/*
 !/.local/bin/user-*
+/.local/bin/user-local-*
 
 
 # Ignore non-git hidden files by default
 /.*
 !/.git*
 !/.local
+!.profile
 
 
 # Ignore specific local .local/etc data
-/.local/etc/emaildefaults
 /.local/etc/QtProject.conf
 /.local/etc/Signal
 /.local/etc/Signal-*
@@ -23,8 +29,11 @@
 /.local/etc/compiz-*
 /.local/etc/configstore
 /.local/etc/dconf
+/.local/etc/emaildefaults
+/.local/etc/epiphany
 /.local/etc/evolution
 /.local/etc/go
+/.local/etc/goa-*
 /.local/etc/gocode
 /.local/etc/gtk-*
 /.local/etc/hub
@@ -46,12 +55,31 @@
 /.local/etc/unity
 /.local/etc/update-notifier
 /.local/etc/user-*
-/.local/etc/virtualenvs
 /.local/etc/vlc
 /.local/etc/xbuild
 /.local/etc/xmms2
+/.local/etc/yelp
 /.local/etc/zoomus.conf
 
+# Python virtual environments
+/.local/venvs
+
+# Ignore local-only data
+/.local/doc
+/.local/var
+/.local/lib
+/.local/man
+
+# N installer makes a huge mess
+/.local/.n
+/.local/etc/versions
+/.local/n
+/.local/n-*
+/.local/node
+/.local/node_modules/
+/.local/npm
+/.local/npx
+/.local/systemtap/*
 
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
