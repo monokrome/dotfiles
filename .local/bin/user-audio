@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+previous_pids=`ps -aux | grep user-audio | awk '{ print($2) }'`
+
+for pid in ${previous_pids[@]}; do
+  [[ $pid == $$ ]] && continue
+  [[ -n $pid ]] && kill -9 $pid
+done
+
+paths=(share/mpd/playlists var/log/mpd var/run/mpd var/run/playlists)
+
+for path in ${paths[@]}; do
+  mkdir -p "${HOME}/.local/${path}"
+done
+
+mpd --no-daemon
