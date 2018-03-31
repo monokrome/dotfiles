@@ -1,6 +1,7 @@
 [user]
   name = Bailey Stoner
   email = monokrome@monokro.me
+  signingkey = 2A29B892D4E58749779CD4F45A4CC4638525E9B1
 
 [push]
   default = matching
@@ -12,7 +13,6 @@
   preloadindex = true
   compression = 9
   safecrlf = true
-  editor = vim
   eol = lf
 
 [help]
@@ -51,7 +51,7 @@
 
 [commit]
   status = false
-  gpgsign = false
+  gpgsign = true
 
 [credential]
   useHttpPath = false
