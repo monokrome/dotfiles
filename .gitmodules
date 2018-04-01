@@ -7,3 +7,6 @@
 [submodule ".config/tmux/plugins/tpm"]
 	path = .local/etc/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".local/share/pyenv"]
+	path = .local/share/pyenv
+	url = https://github.com/pyenv/pyenv
