@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-export N_PREFIX=${HOME}/.local
+export N_PREFIX=${HOME}/.local/share/n
 
 n_initialize() {
     n stable 2>&1 > /dev/null
