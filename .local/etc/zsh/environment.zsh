@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 export GOPATH=~/.config/go
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_API_TOKEN
 export ELECTRON_DEBUG=1
