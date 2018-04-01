@@ -40,6 +40,7 @@
 /.local/etc/hub
 /.local/etc/ibus
 /.local/etc/inform.yml
+/.local/etc/keybase/*
 /.local/etc/krita*
 /.local/etc/libaccounts*
 /.local/etc/libreoffice
