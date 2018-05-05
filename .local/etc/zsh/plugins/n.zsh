@@ -7,3 +7,6 @@ n_initialize() {
 }
 
 which n 2>&1 > /dev/null && n_initialize
+
+alias npm="PREFIX=${HOME}/.local npm"
+
