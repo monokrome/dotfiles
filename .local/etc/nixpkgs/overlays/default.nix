@@ -2,13 +2,8 @@ self: super: {
   dwm = super.dwm.overrideAttrs (oldAttrs: rec {
     src = super.fetchgit {
       url = "https://github.com/monokrome/dwm";
-      rev = "db970f83d9ed94a8df27595cbad3315f52b1751c";
+      rev = "476349296bbcf0fd4bd8361ff1216a0410d955c2";
+      sha256 = "0f9ydn5hl74irxpb1gbrk4gcjgcs4302lxfqxl3ac1scv06bw2m8";
     };
-  });
-
-  discord = super.discord.overrideAttrs (oldAttrs: rec {
-    pname = "discord";
-    version = "0.0.5";
-    name = "${pname}-${version}";
   });
 }
