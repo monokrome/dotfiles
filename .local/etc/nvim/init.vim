@@ -33,7 +33,7 @@ if has('vim_starting')
 
   " Completions for nvim
   if has('nvim')
-    Plug 'Shougo/deoplete.nvim' " Completion support that isn't YouCompleteMe
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Completion support that isn't YouCompleteMe
   endif
 
   " Helper plugins
@@ -103,6 +103,7 @@ if has('vim_starting')
   Plug 'w0rp/ale' " Linting and fixing!
 
   " Language bundles
+  " Plug 'othree/html5.vim'
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'Quramy/tsuquyomi'
   Plug 'afshinm/npm.vim'
@@ -131,8 +132,9 @@ if has('vim_starting')
   Plug 'mpyatishev/vim-sqlformat'
   Plug 'mutewinter/nginx.vim'
   Plug 'mxw/vim-jsx'
-  Plug 'othree/html5.vim'
   Plug 'plasticboy/vim-markdown'
+  Plug 'posva/vim-vue'
+  Plug 'quabug/vim-gdscript'
   Plug 'raichoo/haskell-vim'
   Plug 'rust-lang/rust.vim'
   Plug 'sbdchd/neoformat'
@@ -143,7 +145,6 @@ if has('vim_starting')
   Plug 'tpope/vim-liquid'
   Plug 'vim-ruby/vim-ruby'
   Plug 'vim-scripts/Better-CSS-Syntax-for-Vim'
-  Plug 'vim-scripts/JavaScript-Indent'
   Plug 'wavded/vim-stylus'
   Plug 'zchee/deoplete-go'
 
