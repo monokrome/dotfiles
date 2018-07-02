@@ -5,7 +5,7 @@ export XDG_CONFIG_DIRS
 
 XDG_CONFIG_DIRS=/usr/share/gnome
 
-for new_path in .*/bin; do
+for new_path in ${HOME}/.*/bin; do
   PATH="${HOME}/${new_path}:${PATH}"
 done
 
