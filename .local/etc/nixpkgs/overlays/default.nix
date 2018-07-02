@@ -2,8 +2,8 @@ self: super: {
   dwm = super.dwm.overrideAttrs (oldAttrs: rec {
     src = super.fetchgit {
       url = "https://github.com/monokrome/dwm";
-      rev = "476349296bbcf0fd4bd8361ff1216a0410d955c2";
-      sha256 = "0f9ydn5hl74irxpb1gbrk4gcjgcs4302lxfqxl3ac1scv06bw2m8";
+      rev = "16ea3c1ecfcd26756fec99b273aab42adc289efe";
+      sha256 = "0kkrs5bsdynwjwdya2cad3xs0aqv9jivqdmxi1a0rq4xnmhc8am3";
     };
   });
 }
