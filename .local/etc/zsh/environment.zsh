@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
 export EDITOR=nvim
-export GOPATH=~/.config/go
 export HOMEBREW_GITHUB_API_TOKEN=$GITHUB_API_TOKEN
 export ELECTRON_DEBUG=1
 export GPG_TTY=$(tty)
 
+alias vimup="nvim '+PlugUpdate' '+qa'"
 
-path=($GOPATH/.local/bin /usr/local/bin ${HOME}/.local/bin ${HOME}/.cabal/bin $path)
+path=(/usr/local/bin ${HOME}/.local/bin ${HOME}/.cabal/bin $path)

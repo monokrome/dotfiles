@@ -7,7 +7,7 @@
     "office": {
         "DP1": {"left-of": "eDP1", "mode": [1920, 1080], "rotate": "left"},
         "HDMI2": {"mode": [3840, 2160], "right-of": "eDP1", "rotate": "normal"},
-        "eDP1": {"mode": [2560, 1440], "rotate": "normal"}
+        "eDP1": {"off" true}
     },
     "standard": {
         "DP1": {"off": true},

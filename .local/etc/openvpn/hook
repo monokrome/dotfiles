@@ -4,6 +4,17 @@
 # a really weird name.
 vpn_state=$script_type
 
+export PATH=${PATH}:/run/current-system/sw/bin:/run/current-system/bin:/usr/bin:/usr/local/bin
+
+resolvconf=$(which resolvconf)
+
+if [[ $? != 0 ]]; then
+  printf 'Could not find resolvconf in PATH: %s\n' "${PATH}"
+  exit 1
+fi
+
+printf 'Found resolvconf at %s\n' "${resolvconf}"
+
 case $vpn_state in
   up)
     # Create a result array for our final list of namservers
@@ -15,16 +26,20 @@ case $vpn_state in
       # Get value of our option as an array
       values=(${!option})
 
-      [[ ${values[0]} != 'dhcp-option' ]] && continue
+      if [[ ${values[0]} != 'dhcp-option' ]]; then
+        printf 'Skipping unknown OPTION passed to hook: %s\n' ${values[0]}
+        continue
+      fi
+
       [[ ${values[1]} == 'DNS' ]] && nameservers+=(${values[2]})
       [[ ${values[2]} = DOMAIN* ]] && search+=(${values[2]})
 
       for nameserver in $nameservers; do
-        printf 'nameserver %s\n' $nameserver | resolvconf -a $dev
+        printf 'nameserver %s\n' $nameserver | "${resolvconf}" -a $dev
       done
 
       for domain in $search; do
-        printf 'search %s\n' $domain | resolvconf -a $dev
+        printf 'search %s\n' $domain | "${resolvconf}" -a $dev
       done
     done
     ;;

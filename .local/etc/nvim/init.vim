@@ -33,7 +33,11 @@ if has('vim_starting')
 
   " Completions for nvim
   if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Completion support that isn't YouCompleteMe
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
   endif
 
   " Helper plugins
@@ -105,6 +109,7 @@ if has('vim_starting')
   " Language bundles
   " Plug 'othree/html5.vim'
   Plug 'Glench/Vim-Jinja2-Syntax'
+  Plug 'LnL7/vim-nix'
   Plug 'Quramy/tsuquyomi'
   Plug 'afshinm/npm.vim'
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }

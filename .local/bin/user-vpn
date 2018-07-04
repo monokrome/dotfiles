@@ -1,18 +1,27 @@
 #!/usr/bin/env bash
 
 
+log_path=$2
 profile=$1
-
 
 usage() {
   printf 'Usage: %s <profile>\n' $0 > /dev/stderr
   exit 1
 }
 
-
 [[ -z ${profile} ]] && usage
 
-command -v openvpn 2>&1 > /dev/null || usage
-  
+[[ -z ${log_path} ]] && log_path=${HOME}/.local/var/log
 
-abduco -A "vpn.${profile}" sudo openvpn --config ${HOME}/.local/etc/openvpn/${profile}.ovpn
+log_path=${log_path}/user-vpn/
+
+command -v openvpn 2>${log_path}/err.log > /dev/null || usage
+command -v resolvconf 2>${log_path}/err.log > /dev/null || usage
+
+mkdir -p ${log_path}
+
+cd ${HOME}/.local/etc/openvpn
+
+abduco -A "vpn.${profile}" sudo openvpn \
+  --config ${profile}.ovpn 2> ${log_path}/err.log \
+  | tee ${log_path}/out.log || sleep 10
