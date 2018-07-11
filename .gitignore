@@ -146,7 +146,7 @@
 
 # ZSH files
 /.local/etc/zsh/local/*.zsh
-/.local/etc/zsh/private/*.zsh
+/.local/etc/zsh/secrets/*.zsh
 /.zcompdump
 
 
