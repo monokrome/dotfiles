@@ -34,6 +34,7 @@ set sort=threads
 set sort_aux=date-received
 set text_flowed
 set tilde
+set timeout=3600
 set write_inc=100
 
 
