@@ -3,6 +3,6 @@ set from='monokrome@monokro.me'
 set imap_user='monokrome@monokro.me'
 set smtp_url='smtp://monokrome@monokro.me@smtp.gmail.com:587/'
 
+source 'gpg -d ~/.local/etc/mutt/accounts.d/.monokro.me |'
 
-source ~/.config/mutt/includes/gmail.muttrc
-source 'gpg -d ~/.config/mutt/accounts/monokro.me.secret |'
+source ~/.local/etc/mutt/includes/gmail.muttrc

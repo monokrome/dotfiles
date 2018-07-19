@@ -1,2 +1,2 @@
-macro index \P '<enter-command>source ~/.config/mutt/accounts/patreon.muttrc<enter>'
-macro index \M '<enter-command>source ~/.config/mutt/accounts/monokro.me.muttrc<enter>'
+macro index \P '<enter-command>source ~/.local/etc/mutt/accounts.d/patreon.muttrc<enter>'
+macro index \M '<enter-command>source ~/.local/etc/mutt/accounts.d/monokro.me.muttrc<enter>'

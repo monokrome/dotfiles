@@ -1,0 +1,30 @@
+#!/usr/bin/env zsh
+
+set -e
+
+script_name=$(basename $0)
+
+nope() {
+  printf ${@[@]} > /dev/stderr
+  echo "\n" > /dev/stderr
+  false
+}
+
+usage() {
+  nope 'usage: %s <account name> <gpg key>\n' "${script_name}"
+}
+
+[[ -z $1 ]] && usage
+[[ -z $2 ]] && usage
+
+passphrase_path=${HOME}/.local/etc/mutt/accounts.d/.${1}
+[[ -e $passphrase_path ]] && nope "Passphrase already exists at $passphrase_path"
+
+echo Updating passphrase from xsel into ${passphrase_path}
+passphrase=$(xsel --clipboard)
+xsel --clipboard --delete
+
+cat << EOF | gpg --encrypt -r "${2}" > ${passphrase_path}
+set imap_pass="${passphrase}"
+set smtp_pass="${passphrase}"
+EOF

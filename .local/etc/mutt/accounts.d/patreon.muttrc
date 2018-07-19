@@ -1,0 +1,9 @@
+set certificate_file=~/.local/etc/mutt/accounts.d/patreon.crt.muttrc
+set folder='imaps://imap.gmail.com:993'
+set from='bailey@patreon.com'
+set imap_user='bailey@patreon.com'
+set smtp_url='smtp://bailey@patreon.com@smtp.gmail.com:587/'
+
+source 'gpg -d ~/.local/etc/mutt/accounts.d/.patreon |'
+
+source ~/.local/etc/mutt/includes/gmail.muttrc

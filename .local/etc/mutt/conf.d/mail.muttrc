@@ -1,7 +1,7 @@
 set realname="Bailey Stoner"
 
 
-set alias_file=~/.config/mutt/aliases
+set alias_file=~/.local/etc/mutt/aliases
 set ascii_chars=yes
 set charset=utf-8
 set confirmappend

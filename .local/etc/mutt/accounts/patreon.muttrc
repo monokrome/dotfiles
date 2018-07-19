@@ -1,7 +1,0 @@
-set folder='imaps://imap.gmail.com:993'
-set from='bailey@patreon.com'
-set imap_user='bailey@patreon.com'
-set smtp_url='smtp://bailey@patreon.com@smtp.gmail.com:587/'
-
-source ~/.config/mutt/includes/gmail.muttrc
-source 'gpg -d ~/.config/mutt/accounts/patreon.secret |'

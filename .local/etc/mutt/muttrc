@@ -1,1 +1,1 @@
-source `ls ~/.config/mutt/conf.d/*.muttrc`
+source `ls ~/.local/etc/mutt/conf.d/*.muttrc`
