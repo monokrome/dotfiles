@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+export MAIL=${HOME}/.local/var/mail/${USER}/
+
+[[ ! -e "${MAIL}" ]] && mkdir "${MAIL}"
+
+abduco -A mail zsh -c mutt
