@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
 
-export PREFIX=${HOME}/.local
+export PREFIX=${HOME}/.local/

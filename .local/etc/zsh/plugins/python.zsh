@@ -19,7 +19,7 @@ python__virtual_environment_detect() {
 
 
 # Set up pyenv if it's available
-__init_pyenv() {
+python__init_pyenv() {
   command -v pyenv 4>&1 > /dev/null || return
 
   [[ -z $PYENV_ROOT ]] && PYENV_ROOT=${ENV_ROOT_SUFFIX}
@@ -66,8 +66,45 @@ python__activate() {
 }
 
 
+python-init() {
+  python_executable=$1
+
+  # Use Python3 as default when available
+  if [[ ! -n $python_executable ]]; then
+    which python3 2>&1 > /dev/null
+
+    if [[ $? == 0 ]]; then
+      python_executable=python3
+    else
+      python_executable=python2
+    fi
+  else
+    python_executable=$(which $python_executable 2>/dev/null)
+
+    if [[ $? == 0 ]]; then
+      printf 'Failed to create virtual enviroment. %s is not in your PATH.\n' $python_executable
+      return
+    fi
+  fi
+
+  python_version=$(${python_executable} --version)
+  python_major_version=${python_version[0]}
+
+  [[ ! -e "${ENV_ROOT}" ]] && mkdir -p "${ENV_ROOT}"
+  venv_path=${ENV_ROOT}/$(basename $PWD)
+
+  printf 'Creating new virtual environment with Python %s in %s\n' $python_version $venv_path
+
+  if [[ ${python_version[0]} == 2 ]]; then
+    virtualenv -p ${python_executable} "${venv_path}"
+  else
+    ${python_executable} -m venv "${venv_path}"
+  fi
+}
+
+
 chpwd_functions=("python__activate" ${chpwd_functions[@]})
 precmd_functions=("python__activate" ${precmd_functions[@]})
 
 
-__init_pyenv
+python__init_pyenv
