@@ -100,6 +100,8 @@ python-init() {
   else
     ${python_executable} -m venv "${venv_path}"
   fi
+
+  [[ ! -z $VIRTUAL_ENV ]] && pip install -U setuptools pip
 }
 
 
