@@ -62,6 +62,7 @@
 /.local/etc/xmms2
 /.local/etc/yelp
 /.local/etc/zoomus.conf
+/.local/etc/pavucontrol.ini
 
 # Python virtual environments
 /.local/venvs
