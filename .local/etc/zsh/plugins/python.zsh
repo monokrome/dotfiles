@@ -51,7 +51,7 @@ python__activate() {
   current_path=$PWD
   while [ $current_path != "/" ]; do
     hashed_path=$(echo $(basename ${current_path}) | md5sum | cut -f 1 -d \ )
-    bin_path=${ENV_ROOT}/${hashed_path}-$(basename ${current_path})/bin
+    bin_path=${ENV_ROOT}/${hashed_path}/$(basename ${current_path})/bin
 
     activate=${bin_path}/activate
     pip=${bin_path}/pip
@@ -95,7 +95,9 @@ python-init() {
 
   hashed_path=$(echo $(basename $PWD) | md5sum | cut -f 1 -d \ )
   project_name=$(basename $PWD)
-  venv_path=${ENV_ROOT}/${hashed_path}-${project_name}
+
+  venv_path=${ENV_ROOT}/${hashed_path}/${project_name}
+  mkdir -p $(dirname ${venv_path})
 
   printf 'Creating new virtual environment with Python %s in %s\n' $python_version $venv_path
 
