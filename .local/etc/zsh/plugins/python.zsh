@@ -107,7 +107,7 @@ python-init() {
     ${python_executable} -m venv --copies --clear --prompt "${project_name}" "${venv_path}"
   fi
 
-  # [[ ! -z $VIRTUAL_ENV ]] && pip install -U setuptools pip
+  [[ ! -z $VIRTUAL_ENV ]] && pip install -U setuptools pip
 }
 
 
