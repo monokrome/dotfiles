@@ -50,7 +50,8 @@ python__activate() {
   # Check whether the current path has a related virtaulenv
   current_path=$PWD
   while [ $current_path != "/" ]; do
-    bin_path=${ENV_ROOT}/$(basename ${current_path})/bin
+    hashed_path=$(echo $(basename ${current_path}) | md5sum | cut -f 1 -d \ )
+    bin_path=${ENV_ROOT}/${hashed_path}-$(basename ${current_path})/bin
 
     activate=${bin_path}/activate
     pip=${bin_path}/pip
@@ -91,17 +92,20 @@ python-init() {
   python_major_version=${python_version[0]}
 
   [[ ! -e "${ENV_ROOT}" ]] && mkdir -p "${ENV_ROOT}"
-  venv_path=${ENV_ROOT}/$(basename $PWD)
+
+  hashed_path=$(echo $(basename $PWD) | md5sum | cut -f 1 -d \ )
+  project_name=$(basename $PWD)
+  venv_path=${ENV_ROOT}/${hashed_path}-${project_name}
 
   printf 'Creating new virtual environment with Python %s in %s\n' $python_version $venv_path
 
   if [[ ${python_version[0]} == 2 ]]; then
-    virtualenv -p ${python_executable} "${venv_path}"
+    virtualenv -p ${python_executable} --copies --clear --prompt "${project_name}" "${venv_path}"
   else
-    ${python_executable} -m venv "${venv_path}"
+    ${python_executable} -m venv --copies --clear --prompt "${project_name}" "${venv_path}"
   fi
 
-  [[ ! -z $VIRTUAL_ENV ]] && pip install -U setuptools pip
+  # [[ ! -z $VIRTUAL_ENV ]] && pip install -U setuptools pip
 }
 
 
