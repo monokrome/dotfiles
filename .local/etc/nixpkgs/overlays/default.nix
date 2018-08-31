@@ -19,4 +19,15 @@ self: super: {
       sha256 = "1203mqvjya3fm8lfhsgc200bb017qcm9g7z26n826jdhpv516y4q";
     };
   });
+
+  kubernetes = super.kubernetes.overrideAttrs (oldAttrs: rec {
+    version = "1.11.1";
+
+    src = super.fetchFromGitHub {
+      owner = "kubernetes";
+      repo = "kubernetes";
+      rev = "v${version}";
+      sha256 = "00abs626rhgz5l2ij8jbyws4g3lnb9ipima1q83q0nlj7ksaqz7d";
+    };
+  });
 }
