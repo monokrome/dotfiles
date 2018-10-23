@@ -4,7 +4,7 @@
   signingkey = 2A29B892D4E58749779CD4F45A4CC4638525E9B1
 
 [push]
-  default = matching
+  default = current
 
 [core]
   whitespace=blank-at-eol,space-before-tab,tab-in-indent,blank-at-eof,cr-at-eol,tabwidth=2
@@ -79,3 +79,6 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+
+[rerere]
+  enabled = true
