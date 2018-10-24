@@ -3,8 +3,19 @@
 
 [[ -z $ENV_ROOT_SUFFIX ]] && ENV_ROOT_SUFFIX=share/virtualenvs
 
+hash_cmd_list=(shasum sha256sum md5sum)
+hash_cmd=''
+
+for hasher in ${hash_cmd_list[@]}; do
+  which $hasher > /dev/null 2>&1
+  if [[ $? == 0 ]]; then
+    hash_cmd=$hasher
+    break
+  fi
+done
 
 python__virtual_environment_detect() {
+  [[ -z $hash_cmd ]] && return
   [[ -n $ENV_ROOT ]] && return
 
   test ! -n $PREFIX
@@ -50,7 +61,7 @@ python__activate() {
   # Check whether the current path has a related virtaulenv
   current_path=$PWD
   while [ $current_path != "/" ]; do
-    hashed_path=$(echo $(basename ${current_path}) | md5sum | cut -f 1 -d \ )
+	  hashed_path=$(echo $(basename ${current_path}) | ${hash_cmd} | cut -f 1 -d \ )
     bin_path=${ENV_ROOT}/${hashed_path}/$(basename ${current_path})/bin
 
     activate=${bin_path}/activate
@@ -93,7 +104,7 @@ python-init() {
 
   [[ ! -e "${ENV_ROOT}" ]] && mkdir -p "${ENV_ROOT}"
 
-  hashed_path=$(echo $(basename $PWD) | md5sum | cut -f 1 -d \ )
+  hashed_path=$(echo $(basename $PWD) | ${hasher} | cut -f 1 -d \ )
   project_name=$(basename $PWD)
 
   venv_path=${ENV_ROOT}/${hashed_path}/${project_name}
