@@ -1,14 +1,12 @@
 #!/usr/bin/env zsh
 
-
 suffix_file="${ZSH_CONFIG_PATH}/suffixes"
 
+__suffix_init() {
+  while read -r suffix; do
+    [[ -z "$suffix" ]] && continue
+    alias -s $(echo "$suffix" | sed 's/ /=/')
+  done < ${suffix_file}
+}
 
-if [[ -f "${suffix_file}" ]]; then
-    while read -r suffix; do
-        if [[ ! -z "$suffix" ]]; then
-            alias_arguments=$(echo "$suffix" | sed 's/ /=/')
-            alias -s ${alias_arguments}
-        fi
-    done < ${suffix_file}
-fi
+[[ -f "${suffix_file}" ]] && __suffix_init
