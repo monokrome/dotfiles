@@ -1,10 +1,11 @@
 #!/usr/bin/env zsh
 
-
 [[ -z $ENV_ROOT_SUFFIX ]] && ENV_ROOT_SUFFIX=share/virtualenvs
+
 
 hash_cmd_list=(shasum sha256sum md5sum)
 hash_cmd=''
+
 
 for hasher in ${hash_cmd_list[@]}; do
   which $hasher > /dev/null 2>&1
@@ -13,6 +14,7 @@ for hasher in ${hash_cmd_list[@]}; do
     break
   fi
 done
+
 
 python__virtual_environment_detect() {
   [[ -z $hash_cmd ]] && return
@@ -48,7 +50,7 @@ python__activate() {
 
   if [[ ! -n $ENV_ROOT ]]; then
     printf 'Could not establish ENV_ROOT.\n'
-    exit 1
+    return
   fi
 
   # Ensure that we aren't already in a virtualenv if we have left a
@@ -58,10 +60,11 @@ python__activate() {
     export VIRTUAL_ENV=
   fi
 
-  # Check whether the current path has a related virtaulenv
+  # Check whether the current path has a related virtualenv
   current_path=$PWD
+
   while [ $current_path != "/" ]; do
-	  hashed_path=$(echo $(basename ${current_path}) | ${hash_cmd} | cut -f 1 -d \ )
+    hashed_path=$(echo $(basename ${current_path}) | ${hash_cmd} | cut -f 1 -d \ )
     bin_path=${ENV_ROOT}/${hashed_path}/$(basename ${current_path})/bin
 
     activate=${bin_path}/activate
