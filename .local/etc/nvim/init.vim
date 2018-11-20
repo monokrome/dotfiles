@@ -44,7 +44,8 @@ if has('vim_starting')
   Plug 'Lokaltog/vim-easymotion' " Allows quick motions to characters that are currently in vim
   Plug 'Raimondi/delimitMate' " Puts things after other things!
   Plug 'Shougo/unite-outline' " A nested outline of the current buffer's tags
-  Plug 'SirVer/ultisnips' " Much smarter TextMate-style snippet support
+  Plug 'Shougo/neosnippet.vim' " A library for snippets!
+  Plug 'Shougo/neosnippet-snippets' " Snippets! <3
   Plug 'duff/vim-bufonly' " A command for removing all buffers except the active one
   Plug 'editorconfig/editorconfig-vim' " Allows a common format for storing editor configuration conventions
   Plug 'ervandew/supertab' " Use tab for completions (This breaks stuff?)
@@ -90,6 +91,7 @@ if has('vim_starting')
   Plug 'tpope/vim-obsession' " Automatic session management via :Obsession
   Plug 'tpope/vim-projectionist' " Scaffolding in Vim
   Plug 'tpope/vim-repeat' " Makes repeat even more powerful
+  Plug 'tpope/vim-rhubarb' " Extended Git integration on top of Fugitive
   Plug 'tpope/vim-rhubarb' " Tools for interacting with the social aspect of GitHub
   Plug 'tpope/vim-sensible' " Somewhat sensible defaults for modernizing Vim a bit by default.
   Plug 'tpope/vim-sleuth' " Automatic exploration of related files to set up indentation settings
@@ -103,14 +105,13 @@ if has('vim_starting')
   Plug 'vim-scripts/closetag.vim' " Reduces redudant typing in XML-like file types
   Plug 'vim-scripts/openssl.vim' " Allows wrapping Vim's I/O around OpenSSL
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
-  Plug 'wellle/targets.vim' " Some smart generic text objects!
   Plug 'w0rp/ale' " Linting and fixing!
+  Plug 'wellle/targets.vim' " Some smart generic text objects!
 
   " Language bundles
   " Plug 'othree/html5.vim'
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'LnL7/vim-nix'
-  Plug 'Quramy/tsuquyomi'
   Plug 'afshinm/npm.vim'
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'chase/vim-ansible-yaml'
@@ -125,8 +126,8 @@ if has('vim_starting')
   Plug 'elzr/vim-json'
   Plug 'fatih/vim-go'
   Plug 'guns/vim-clojure-static'
-  Plug 'https://github.com/pangloss/vim-javascript'
-  Plug 'ivalkeen/vim-simpledb' 
+  Plug 'pangloss/vim-javascript'
+  Plug 'ivalkeen/vim-simpledb'
   Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
   Plug 'justinmk/vim-sneak'
   Plug 'kchmck/vim-coffee-script'
