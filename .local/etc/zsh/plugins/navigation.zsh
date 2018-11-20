@@ -3,6 +3,6 @@
 setopt autocd
 
 # Check if option exists since it's from a custom source change
-[[ -o cdsilent ]] && setopt cdsilent
+setopt cdsilent > /dev/null
 
 cdpath=( ${HOME}/Projects/{*/*/*,*/*,*}(/N) )
