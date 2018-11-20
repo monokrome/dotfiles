@@ -1,14 +1,8 @@
 #!/usr/bin/env zsh
 
 setopt autocd
-setopt cdsilent
 
-pathfrom() {
-  IFS=':'
-  shift
-  echo "$*"
-}
+# Check if option exists since it's from a custom source change
+[[ -o cdsilent ]] && setopt cdsilent
 
-
-# cdpath=${(0a)cdpath}
-export CDPATH=$(pathfrom $HOME/Projects/{*,*/*}(/N))
+cdpath=( $HOME/Projects/**(/N) )
