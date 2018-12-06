@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+
 [[ -z $ENV_ROOT_SUFFIX ]] && ENV_ROOT_SUFFIX=share/virtualenvs
 
 

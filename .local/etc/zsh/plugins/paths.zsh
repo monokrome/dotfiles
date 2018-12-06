@@ -1,7 +1,16 @@
-initial_path=${PATH}
+#!/usr/bin/env zsh
 
 
-setup_paths() {
+_pathstr() {
+  local IFS=':'
+  echo "$*"
+}
+
+
+PATH=${PATH}:$(_pathstr /opt/*/bin(-/N))
+
+
+initial_path=${PATH}; setup_paths() {
     append_path=''
 
     if [[ -d ./bin ]]; then
@@ -9,7 +18,7 @@ setup_paths() {
       append_path=${append_path}:$(pwd)/bin
     fi
 
-    export PATH=${append_path}:${initial_path}
+    PATH=${append_path}:${initial_path}
 }
 
 
