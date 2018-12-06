@@ -1,5 +1,16 @@
+#!/usr/bin/env zsh
+
+
+[[ ! -z $ZSH_DEBUG ]] && set -x
+
+
 export ZSH_CONFIG_PATH=${HOME}/.config/zsh
 export ZSH_PLUGIN_PATH=${ZSH_CONFIG_PATH}/external/**(N)
+
+
+func __zsh_info() {
+  echo $@
+}
 
 
 sourceall() {
@@ -9,23 +20,40 @@ sourceall() {
 }
 
 
-sourceall ${ZSH_CONFIG_PATH}/*.zsh(N)
-sourceall ${ZSH_CONFIG_PATH}/plugins/*.zsh(N)
+setopt extended_glob
+local_config_paths=(${ZSH_CONFIG_PATH}/local/*.zsh(.N))
+plugin_paths=(${ZSH_CONFIG_PATH}/{plugins,external}/(^after-)*.zsh(.N))
+plugin_after_paths=(${ZSH_CONFIG_PATH}/{external,plugins}/after-*.zsh(.N))
+unsetopt extended_glob
 
 
-for plugin in ${ZSH_CONFIG_PATH}/external/*; do
-  source_file=${plugin}/${plugin:t}.zsh
-  [[ -f ${source_file} ]] || continue
-  source ${source_file}
-
-  after_config=${plugin:h}/after-${plugin:t}.zsh
-  [[ -f ${after_config} ]] || continue
-  source ${after_config}
+for plugin in ${local_config_paths[@]}; do
+  plugin_name=${plugin:t}
+  printf 'Configuring %s' "${plugin_name}"
+  source "${plugin}" && echo ' [DONE]' || echo '[FAIL]'
 done
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+
+for plugin in ${plugin_paths[@]}; do
+  plugin_name=${plugin:t}
+  printf 'Initializing %s' "${plugin}"
+  source "${plugin}" && echo ' [DONE]' || echo '[FAIL]'
+done
+
+
+for plugin in ${plugin_after_paths[@]}; do
+  after_config=${plugin:h}/after-${plugin:t}.zsh
+  [[ -f ${after_config} ]] || continue
+
+  printf 'Culminating %s' "${plugin}"
+  source "${after_config}" && echo ' [DONE]' || echo '[FAIL]'
+done
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export N_PREFIX="$HOME/.local/share/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+if [[ -z $ZSH_DEBUG ]]; then
+  clear
+else
+  set +x
+fi
