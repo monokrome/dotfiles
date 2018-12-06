@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 
-[[ ! -z $ZSH_DEBUG ]] && set -x
+[ ! -z $zsh_debug ] && set -x
 
 
 export ZSH_CONFIG_PATH=${HOME}/.config/zsh
@@ -29,15 +29,15 @@ unsetopt extended_glob
 
 for plugin in ${local_config_paths[@]}; do
   plugin_name=${plugin:t}
-  printf 'Configuring %s' "${plugin_name}"
-  source "${plugin}" && echo ' [DONE]' || echo '[FAIL]'
+  [ ! -z $ZSH_DEBUG ] && printf 'Configuring %s' "${plugin_name}"
+  source "${plugin}" && [ ! -z $ZSH_DEBUG ] && echo ' [DONE]' || [ ! -z $ZSH_DEBUG ] && echo '[FAIL]'
 done
 
 
 for plugin in ${plugin_paths[@]}; do
   plugin_name=${plugin:t}
-  printf 'Initializing %s' "${plugin}"
-  source "${plugin}" && echo ' [DONE]' || echo '[FAIL]'
+  [ ! -z $ZSH_DEBUG ] && printf 'Initializing %s' "${plugin}"
+  source "${plugin}" && [ ! -z $ZSH_DEBUG ] && echo ' [DONE]' || [ ! -z $ZSH_DEBUG ] && echo '[FAIL]'
 done
 
 
@@ -45,15 +45,9 @@ for plugin in ${plugin_after_paths[@]}; do
   after_config=${plugin:h}/after-${plugin:t}.zsh
   [[ -f ${after_config} ]] || continue
 
-  printf 'Culminating %s' "${plugin}"
-  source "${after_config}" && echo ' [DONE]' || echo '[FAIL]'
+  [ ! -z $ZSH_DEBUG ] && printf 'Culminating %s' "${plugin}"
+  source "${after_config}" && [ ! -z $ZSH_DEBUG ] && echo ' [DONE]' || [ ! -z $ZSH_DEBUG ] && echo '[FAIL]'
 done
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if [[ -z $ZSH_DEBUG ]]; then
-  clear
-else
-  set +x
-fi
+[ -z $ZSH_DEBUG ] && set +x
