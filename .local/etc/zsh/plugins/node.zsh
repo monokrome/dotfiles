@@ -4,7 +4,10 @@
 export NODE_ENV=development
 
 
-alias node-scripts() {
-  [ ! -f package.json ] && return
-  cat package.json | jq '.scripts|keys'
+function node-scripts() {
+  if [[ ! -f package.json ]]; then
+    echo 'No package.json in current directory' > /dev/stderr
+  else
+    cat package.json | jq '.scripts|keys'
+  fi
 }
