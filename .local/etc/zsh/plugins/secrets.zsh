@@ -67,7 +67,7 @@ zsh_secret() {
 
 
 setup_zsh_secrets() {
-    sourceall ${ZSH_SECRETS_PATH}/*.zsh(N)
+    source ${ZSH_SECRETS_PATH}/*.zsh(N)
 }
 
 

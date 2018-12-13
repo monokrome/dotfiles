@@ -5,6 +5,7 @@
 
 # Non-user-configuration oriented binary files
 /.local/bin/*
+!/.local/bin/edit
 !/.local/bin/user-*
 /.local/bin/user-local-*
 
@@ -24,6 +25,7 @@
 /.local/etc/Slack
 /.local/etc/Synergy
 /.local/etc/Trolltech.conf
+/.local/etc/alacritty/alacritty.yml
 /.local/etc/autostart
 /.local/etc/bitcoin
 /.local/etc/chromium
@@ -49,6 +51,7 @@
 /.local/etc/nautilus
 /.local/etc/nw
 /.local/etc/openvpn/*.ovpn
+/.local/etc/pavucontrol.ini
 /.local/etc/pithos.ini
 /.local/etc/pulse
 /.local/etc/teamviewer
@@ -62,7 +65,6 @@
 /.local/etc/xmms2
 /.local/etc/yelp
 /.local/etc/zoomus.conf
-/.local/etc/pavucontrol.ini
 
 # Python virtual environments
 /.local/venvs
