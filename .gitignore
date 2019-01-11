@@ -1,3 +1,6 @@
+# Tern configurations
+.tern-*
+
 # Ignore specific file types
 *.h
 *.gypi
@@ -162,6 +165,7 @@
 !.vim
 
 /.local/etc/nvim/plugged/*
+/.local/etc/nvim/spell/*.spl
 /.local/etc/nvim/tmp/*
 /.local/etc/nvim/.netrwhist
 
