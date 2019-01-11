@@ -113,7 +113,7 @@ if has('vim_starting')
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'LnL7/vim-nix'
   Plug 'afshinm/npm.vim'
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'chase/vim-ansible-yaml'
   Plug 'chrisbra/csv.vim'
   Plug 'chriskempson/base16-vim'
@@ -145,7 +145,6 @@ if has('vim_starting')
   Plug 'rust-lang/rust.vim'
   Plug 'sbdchd/neoformat'
   Plug 't9md/vim-chef'
-  Plug 'ternjs/tern_for_vim'
   Plug 'tikhomirov/vim-glsl'
   Plug 'tpope/vim-git'
   Plug 'tpope/vim-liquid'
@@ -156,6 +155,7 @@ if has('vim_starting')
 
   " Framework-specific bundles
   Plug 'jmcomets/vim-pony' " Wraps Django commands into Vim commands
+  Plug 'justinj/vim-react-snippets' " Snippets for React
   Plug 'moll/vim-node' " Helpers for working in NodeJS
   Plug 'smerrill/vagrant-vim' " Automatically set `ruby` filetype on Vagrantfile
   Plug 'vim-scripts/django.vim' " Syntax highlighting for Django templates
