@@ -10,3 +10,6 @@
 [submodule ".local/share/pyenv"]
 	path = .local/share/pyenv
 	url = https://github.com/pyenv/pyenv
+[submodule ".local/share/neofetch"]
+	path = .local/share/neofetch
+	url = https://github.com/dylanaraps/neofetch
