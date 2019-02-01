@@ -7,3 +7,7 @@ setopt cdsilent > /dev/null
 cdpath=( ${HOME}/Projects/{*/*,*}(-/N) )
 
 export CDPATH=$CDPATH
+
+# Use exa instead of ls when available
+which exa 2>&1 > /dev/null
+[[ $? == 0 ]] && alias ls=exa
