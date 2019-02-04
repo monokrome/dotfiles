@@ -107,6 +107,7 @@ if has('vim_starting')
   Plug 'voithos/vim-python-matchit' " Allows the % motion to work with Python keywords.
   Plug 'w0rp/ale' " Linting and fixing!
   Plug 'wellle/targets.vim' " Some smart generic text objects!
+  Plug 'rafaqz/ranger.vim' " Ranger integration
 
   " Language bundles
   " Plug 'othree/html5.vim'
