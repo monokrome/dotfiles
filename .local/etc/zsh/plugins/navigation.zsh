@@ -11,3 +11,7 @@ export CDPATH=$CDPATH
 # Use exa instead of ls when available
 which exa 2>&1 > /dev/null
 [[ $? == 0 ]] && alias ls=exa
+
+# Use bat instead of cat when available
+which bat 2>&1 > /dev/null
+[[ $? == 0 ]] && alias cat=bat
