@@ -15,3 +15,7 @@ which exa 2>&1 > /dev/null
 # Use bat instead of cat when available
 which bat 2>&1 > /dev/null
 [[ $? == 0 ]] && alias cat=bat
+
+# Use fd instead of find
+which fd 2>&1 > /dev/null
+[[ $? == 0 ]] && alias find=fd
