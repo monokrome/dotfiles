@@ -19,3 +19,10 @@ which bat 2>&1 > /dev/null
 # Use fd instead of find
 which fd 2>&1 > /dev/null
 [[ $? == 0 ]] && alias find=fd
+
+# Enable fasd when possible
+which fasd 2>&1 > /dev/null
+if [[ $? == 0 ]]; then
+    eval "$(fasd --init auto)"
+    alias cd=z
+fi
