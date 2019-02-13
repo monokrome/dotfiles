@@ -1,16 +1,22 @@
 # Tern configurations
 .tern-*
 
+
 # Ignore specific file types
 *.h
 *.gypi
 *~
+
 
 # Non-user-configuration oriented binary files
 /.local/bin/*
 !/.local/bin/edit
 !/.local/bin/user-*
 /.local/bin/user-local-*
+
+
+# Allow for custom git commands
+!/.local/bin/git-*
 
 
 # Ignore non-git hidden files by default
@@ -69,14 +75,17 @@
 /.local/etc/yelp
 /.local/etc/zoomus.conf
 
+
 # Python virtual environments
 /.local/venvs
+
 
 # Ignore local-only data
 /.local/doc
 /.local/var
 /.local/lib
 /.local/man
+
 
 # N installer makes a huge mess
 /.local/.n
@@ -88,6 +97,7 @@
 /.local/npm
 /.local/npx
 /.local/systemtap/*
+
 
 # Dotfiles that I don't want in my dotfiles
 .DS_Store
