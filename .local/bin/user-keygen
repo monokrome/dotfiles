@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+export SSH_CONFIG_PATH
+
+hostname=$1
+
+[ -z $SSH_CONFIG_PATH ] && SSH_CONFIG_PATH=${HOME}/.ssh/
+
+usage() { printf '%s [hostname]\n' "${0}" > /dev/stderr; }
+
+shorthost() {
+  local IFS='.'
+  zones=($@)
+  echo ${zones[0]}
+}
+
+generate_key() {
+  short_hostname=$(shorthost "${hostname}")
+
+  private_key_path="${SSH_CONFIG_PATH}${hostname}"
+  public_key_path="${private_key_path}.pub"
+
+  private_link_path="${SSH_CONFIG_PATH}${short_hostname}"
+  public_link_path="${private_link_path}.pub"
+
+  ssh-keygen -o -f "${private_key_path}"
+
+  ln -f "${private_key_path}" "${private_link_path}"
+  ln -f "${public_key_path}" "${public_link_path}"
+}
+
+[ ! -z ${hostname} ] && generate_key || usage
