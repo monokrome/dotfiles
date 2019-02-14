@@ -232,3 +232,11 @@
 # Hyper terminal
 /.local/etc/Hyper/*
 !/.local/etc/Hyper/config.json
+
+# Allow SSH config, but NO other ssh files.
+/.ssh/*
+!/.ssh
+!.ssh/config
+
+# Shell output information
+*.out
