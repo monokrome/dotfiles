@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+set -e
+
+if [ "$(command -v git)" ]; then
+  git log "${@}" --format="%aN <%aE>" --reverse | cut -f 3 -d \ | sed '/^\s*$/d' | sort | uniq -c
+else
+  printf 'Can not use this tool unless git is installed and in your PATH'
+fi
